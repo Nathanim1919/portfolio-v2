@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const HomePage: React.FC = () => {
   return (
     <Home>
@@ -15,7 +16,7 @@ export const HomePage: React.FC = () => {
       <div className="content">
         <h3>Hello, I'm</h3>
         <h1>Nathanim Tadele</h1>
-        <h2>Software Engineer</h2>
+        <h2>a Software Engineer</h2>
         <div className="more">
           <p>Would you like to learn more about me?</p>
           <button>Download my CV</button>
@@ -28,12 +29,12 @@ export const HomePage: React.FC = () => {
 const Home = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #e9e2e2;
   position: relative;
   color: #333;
   display: grid;
   align-items: center;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  background-attachment: fixed;
 
   &:before {
     content: "";
@@ -43,6 +44,7 @@ const Home = styled.div`
     bottom: 0;
     left: 0;
     width: 35%;
+    border-right: 1px solid #e5dfdf;
   }
 
   .header {
@@ -50,6 +52,7 @@ const Home = styled.div`
     justify-content: space-around;
     align-items: center;
     padding: 0 10%;
+    font-family: "Satisfy", cursive;
     position: fixed;
     top: 0;
     left: 0;
@@ -88,6 +91,7 @@ const Home = styled.div`
     h3 {
       font-size: 1.5rem;
       font-weight: 400;
+      font-family: "Satisfy", cursive;
     }
 
     h1 {
@@ -98,12 +102,15 @@ const Home = styled.div`
     h2 {
       font-size: 4rem;
       font-weight: 500;
+      font-family: "Satisfy", cursive;
     }
 
     .more {
       display: flex;
       align-items: center;
       margin-top: 1rem;
+      font-family: "Satisfy", cursive;
+      flex-direction: column;
       button {
         background-color: #333;
         color: #fff;
