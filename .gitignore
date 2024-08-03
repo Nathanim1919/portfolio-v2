@@ -1,0 +1,13 @@
+./client/node_modules
+./client/dist
+./client/dist-ssr
+./client/*.local
+./client/.vscode/*
+./client/.idea
+./client/.DS_Store
+./client/*.suo
+./client/*.ntvs*
+./client/*.njsproj
+./client/*.sln
+./client/*.sw?
+
