@@ -45,6 +45,7 @@ const Home = styled.div`
     left: 0;
     width: 35%;
     border-right: 1px solid #e5dfdf;
+    border-bottom-right-radius: 300px;
   }
 
   .header {

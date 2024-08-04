@@ -10,11 +10,14 @@ export const WorksPage: React.FC = () => {
             <div className="works">
                 <div className="project1">
                     <div className="image">
-                        <img src="https://via.placeholder.com/150" alt="project1" />
+                        <img
+                            src="https://img.freepik.com/free-photo/dating-app-interface-smartphone_23-2149374755.jpg?t=st=1722783943~exp=1722787543~hmac=e4ef90369f91ae590e4783639ce8092ef7ddf3caa92dbd246a62ecb7f5001fcc&w=900"
+                            alt="project1"/>
                     </div>
                     <div className="content">
-                        <h3>Project 1</h3>
-                        <p>Project 1 description</p>
+                        <h3>FinanceVision</h3>
+                        <p>FinanceVision is a personal finance management app that helps you track your income and
+                            expenses. It also provides a dashboard to visualize your financial data.</p>
                         <div className="techStacks">
                             <span>React</span>
                             <span>Node</span>
@@ -28,11 +31,14 @@ export const WorksPage: React.FC = () => {
                 </div>
                 <div className="project1">
                     <div className="image">
-                        <img src="https://via.placeholder.com/150" alt="project1" />
+                        <img
+                            src="https://img.freepik.com/free-photo/high-angle-hands-holding-smartphone_23-2150671596.jpg?t=st=1722783919~exp=1722787519~hmac=f7c19208f1dcd7a7eba74b73656edf054b7254a0e349e4eaec97e1ade5b6fd13&w=996"
+                            alt="project1"/>
                     </div>
                     <div className="content">
-                        <h3>Project 1</h3>
-                        <p>Project 1 description</p>
+                        <h3>Eventify</h3>
+                        <p>Eventify is an event management app that helps you create and manage events. It also provides
+                            a dashboard to visualize your event data.</p>
                         <div className="techStacks">
                             <span>React</span>
                             <span>Node</span>
@@ -46,11 +52,14 @@ export const WorksPage: React.FC = () => {
                 </div>
                 <div className="project1">
                     <div className="image">
-                        <img src="https://via.placeholder.com/150" alt="project1" />
+                        <img
+                            src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?t=st=1722783885~exp=1722787485~hmac=50943c8d8e10a160f4a38e154f4b950a0da77f5ff9e981b9afb1edbabbc3dddf&w=900"
+                            alt="project1"/>
                     </div>
                     <div className="content">
-                        <h3>Project 1</h3>
-                        <p>Project 1 description</p>
+                        <h3>Influencer-HUB</h3>
+                        <p>Influencer-HUB is a social media management app that helps you manage your social media
+                            accounts. It also provides a dashboard to visualize your social media data.</p>
                         <div className="techStacks">
                             <span>React</span>
                             <span>Node</span>
@@ -64,11 +73,14 @@ export const WorksPage: React.FC = () => {
                 </div>
                 <div className="project1">
                     <div className="image">
-                        <img src="https://via.placeholder.com/150" alt="project1" />
+                        <img
+                            src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?t=st=1722783885~exp=1722787485~hmac=50943c8d8e10a160f4a38e154f4b950a0da77f5ff9e981b9afb1edbabbc3dddf&w=900"
+                            alt="project1"/>
                     </div>
                     <div className="content">
-                        <h3>Project 1</h3>
-                        <p>Project 1 description</p>
+                        <h3>Influencer-HUB</h3>
+                        <p>Influencer-HUB is a social media management app that helps you manage your social media
+                            accounts. It also provides a dashboard to visualize your social media data.</p>
                         <div className="techStacks">
                             <span>React</span>
                             <span>Node</span>
@@ -79,6 +91,48 @@ export const WorksPage: React.FC = () => {
                             <button>Code</button>
                         </div>
                     </div>
+                </div>
+                <div className="project1">
+                    <div className="image">
+                        <img
+                            src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?t=st=1722783885~exp=1722787485~hmac=50943c8d8e10a160f4a38e154f4b950a0da77f5ff9e981b9afb1edbabbc3dddf&w=900"
+                            alt="project1"/>
+                    </div>
+                    <div className="content">
+                        <h3>Influencer-HUB</h3>
+                        <p>Influencer-HUB is a social media management app that helps you manage your social media
+                            accounts. It also provides a dashboard to visualize your social media data.</p>
+                        <div className="techStacks">
+                            <span>React</span>
+                            <span>Node</span>
+                            <span>Express</span>
+                        </div>
+                        <div className="actions">
+                            <button>View</button>
+                            <button>Code</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="project1">
+                    <div className="image">
+                        <img
+                            src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?t=st=1722783885~exp=1722787485~hmac=50943c8d8e10a160f4a38e154f4b950a0da77f5ff9e981b9afb1edbabbc3dddf&w=900"
+                            alt="project1"/>
+                    </div>
+                    <div className="content">
+                        <h3>Influencer-HUB</h3>
+                        <p>Influencer-HUB is a social media management app that helps you manage your social media
+                            accounts. It also provides a dashboard to visualize your social media data.</p>
+                        <div className="techStacks">
+                            <span>React</span>
+                            <span>Node</span>
+                            <span>Express</span>
+                        </div>
+                        <div className="actions">
+                            <button>View</button>
+                            <button>Code</button>
+                        </div>
+                    </div>5px 0 0 5px;
                 </div>
             </div>
         </Container>
@@ -89,7 +143,8 @@ export const WorksPage: React.FC = () => {
 const Container = styled.div`
     display: grid;
     width: 80%;
-    margin: 0 auto;
+    margin: 3rem auto;
+    
 
     .content-header {
         display: flex;
@@ -104,16 +159,18 @@ const Container = styled.div`
     .works {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-gap: 20px;
-        padding: 20px;
-        margin-top: 50px;
+        gap: 1rem;
+        row-gap: 4rem;
+        margin-top: 3rem;
 
         .project1 {
             display: grid;
             grid-template-columns: 1fr;
-            /* background-color: #fff; */
+            transition: transform 0.5s;
             border-radius: 5px;
+            cursor: pointer;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
 
             .image {
                 display: flex;
@@ -121,30 +178,45 @@ const Container = styled.div`
                 align-items: center;
                 aspect-ratio: 16/9;
                 position: relative;
+                padding: 0 1rem;
                 top: -2rem;
-                padding: 1rem;
+                transition: all 0.2s;
+
+
                 img {
                     width: 100%;
                     height: 100%;
-                    border-radius: 5px 0 0 5px;
-                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                    border-radius: 10px;
+                    transition:top 0.5s;
+                    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
                 }
             }
 
             .content {
                 padding: 10px;
+                display: flex;
+                flex-direction: column;
+                gap:7px;
+                
+                >*{
+                    margin: 0;
+                }
                 h3 {
-                    font-size: 1.2rem;
+                    font-size: 2rem;
                     font-weight: bold;
+                    font-family: "Satisfy", cursive;
+                    padding: 0 10px;
                 }
 
                 p {
-                    font-size: 1rem;
+                    font-size: .8rem;
+                    padding: 0 10px;
                     color: #333;
                 }
 
                 .techStacks {
                     display: flex;
+                    padding: 0 10px;
                     span {
                         padding: 5px;
                         margin-right: 5px;
@@ -155,9 +227,11 @@ const Container = styled.div`
                 }
 
                 .actions {
+                    padding: 0 10px;
                     display: flex;
                     justify-content: space-between;
                     margin-top: 10px;
+                    border-top: 1px solid #333;
                     button {
                         padding: 5px 10px;
                         border: none;
