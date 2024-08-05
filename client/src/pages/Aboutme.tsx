@@ -3,14 +3,15 @@ import styled from "styled-components"
 export const AboutmePage: React.FC = () => {
     return (
         <Container>
-            <h1>Welcome to my Portfolio</h1>
+            <h1>Meet Nathanim</h1>
             <p>
-                I am a passionate software engineer experienced in full-stack development with React, Node.js, and MongoDB. Skilled in TypeScript, GraphQL, and PostgreSQL. Continuously learning and improving to deliver high-quality software solutions.
+                I am a passionate software engineer experienced in full-stack development with React, Node.js, and
+                MongoDB. Skilled in TypeScript, GraphQL, and PostgreSQL. Continuously learning and improving to deliver
+                high-quality software solutions.
             </p>
         </Container>
     )
 }
-
 
 
 const Container = styled.div`
@@ -55,5 +56,6 @@ const Container = styled.div`
         font-family: "Satisfy", cursive;
         position: relative;
         z-index: 1;
+        padding: 1rem;
     }
 `

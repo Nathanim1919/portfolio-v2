@@ -44,12 +44,12 @@ const FooterContainer = styled.div`
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
-    margin-top: 5rem;
 `
 
 const FooterContent = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
     margin-bottom: 20px;
 
@@ -87,7 +87,7 @@ const SocialMedias = styled.div`
 const ContactMe = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
 
     p {
         display: flex;
@@ -105,5 +105,9 @@ const FooterEnd = styled.div`
         display: flex;
         align-items: center;
         gap: 5px;
+
+        @media screen and (max-width: 700px)  {
+            flex-direction: column;
+        }
     }
 `
