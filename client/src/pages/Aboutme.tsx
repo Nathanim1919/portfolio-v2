@@ -25,13 +25,30 @@ const Container = styled.div`
     overflow: hidden;
     padding: 5rem 0;
     
+    
+    &:after{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        border-bottom-left-radius: 200px;
+        background-color: #efeeeb;
+        content: '';
+        
+    }
+    
+    
     p {
-        margin-top: 20px;
         width: 70%;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
     }
 
     h1{
         font-family: "Satisfy", cursive;
+        position: relative;
+        z-index: 1;
     }
 `

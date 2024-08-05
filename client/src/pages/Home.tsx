@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { CiLinkedin } from "react-icons/ci";
+import { FiGithub } from "react-icons/fi";
+import { FaXTwitter } from "react-icons/fa6";
 
 
 export const HomePage: React.FC = () => {
@@ -17,6 +20,11 @@ export const HomePage: React.FC = () => {
         <h3>Hello, I'm</h3>
         <h1>Nathanim Tadele</h1>
         <h2>a Software Engineer</h2>
+        <div className='socialMedias'>
+          <CiLinkedin/>
+          <FiGithub/>
+          <FaXTwitter/>
+        </div>
         <div className="more">
           <p>Would you like to learn more about me?</p>
           <button>Download my CV</button>
@@ -59,15 +67,19 @@ const Home = styled.div`
     left: 0;
     right: 0;
     width: 100vw;
+    z-index: 100;
+
     h1 {
       font-size: 2rem;
       font-weight: 700;
       color: #333;
     }
+
     .nav {
       ul {
         display: flex;
         list-style: none;
+
         li {
           margin-right: 1rem;
           font-size: 1.5rem;
@@ -77,6 +89,7 @@ const Home = styled.div`
       }
     }
   }
+
   .content {
     position: relative;
     z-index: 1;
@@ -84,6 +97,24 @@ const Home = styled.div`
     display: flex;
     flex-direction: column;
     line-height: 1;
+
+    .socialMedias {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 2rem;
+      margin-top: 2rem;
+
+
+      > * {
+        cursor: pointer;
+
+
+        &:hover {
+          color: #c4c2c2;
+        }
+      }
+    }
 
     > * {
       margin: 0;
@@ -112,6 +143,7 @@ const Home = styled.div`
       margin-top: 1rem;
       font-family: "Satisfy", cursive;
       flex-direction: column;
+
       button {
         background-color: #333;
         color: #fff;
@@ -119,9 +151,11 @@ const Home = styled.div`
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        font-family: "Satisfy", cursive;
       }
     }
   }
+
   .more {
   }
 `;

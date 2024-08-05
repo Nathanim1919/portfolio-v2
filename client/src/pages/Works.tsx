@@ -1,11 +1,17 @@
 import styled from "styled-components";
+import { MdLiveTv } from "react-icons/md";
+import { FaCode } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+
+
+
 
 export const WorksPage: React.FC = () => {
     return (
         <Container>
             <div className="content-header">
                 <h2>Latest Projects</h2>
-                <p>Github</p>
+                <a href={'https://www.github.com/Nathanim1919'}><FaGithub/>Github</a>
             </div>
             <div className="works">
                 <div className="project1">
@@ -24,8 +30,8 @@ export const WorksPage: React.FC = () => {
                             <span>Express</span>
                         </div>
                         <div className="actions">
-                            <button>View</button>
-                            <button>Code</button>
+                            <button><MdLiveTv/>Live Preview</button>
+                            <button><FaCode/>Source Code</button>
                         </div>
                     </div>
                 </div>
@@ -45,8 +51,8 @@ export const WorksPage: React.FC = () => {
                             <span>Express</span>
                         </div>
                         <div className="actions">
-                            <button>View</button>
-                            <button>Code</button>
+                            <button><MdLiveTv/>Live Preview</button>
+                            <button><FaCode/>Source Code</button>
                         </div>
                     </div>
                 </div>
@@ -66,8 +72,8 @@ export const WorksPage: React.FC = () => {
                             <span>Express</span>
                         </div>
                         <div className="actions">
-                            <button>View</button>
-                            <button>Code</button>
+                            <button><MdLiveTv/>Live Preview</button>
+                            <button><FaCode/>Source Code</button>
                         </div>
                     </div>
                 </div>
@@ -87,8 +93,8 @@ export const WorksPage: React.FC = () => {
                             <span>Express</span>
                         </div>
                         <div className="actions">
-                            <button>View</button>
-                            <button>Code</button>
+                            <button><MdLiveTv/>Live Preview</button>
+                            <button><FaCode/>Source Code</button>
                         </div>
                     </div>
                 </div>
@@ -108,8 +114,8 @@ export const WorksPage: React.FC = () => {
                             <span>Express</span>
                         </div>
                         <div className="actions">
-                            <button>View</button>
-                            <button>Code</button>
+                            <button><MdLiveTv/>Live Preview</button>
+                            <button><FaCode/>Source Code</button>
                         </div>
                     </div>
                 </div>
@@ -122,17 +128,17 @@ export const WorksPage: React.FC = () => {
                     <div className="content">
                         <h3>Influencer-HUB</h3>
                         <p>Influencer-HUB is a social media management app that helps you manage your social media
-                            accounts. It also provides a dashboard to visualize your social media data.</p>
+                            accounts.</p>
                         <div className="techStacks">
                             <span>React</span>
                             <span>Node</span>
                             <span>Express</span>
                         </div>
                         <div className="actions">
-                            <button>View</button>
-                            <button>Code</button>
+                            <button><MdLiveTv/>Live Preview</button>
+                            <button><FaCode/>Source Code</button>
                         </div>
-                    </div>5px 0 0 5px;
+                    </div>
                 </div>
             </div>
         </Container>
@@ -142,9 +148,30 @@ export const WorksPage: React.FC = () => {
 
 const Container = styled.div`
     display: grid;
-    width: 80%;
+    width: 100%;
     margin: 3rem auto;
-    
+    position: relative;
+
+    > * {
+        position: relative;
+        z-index: 1;
+        width: 80%;
+        margin: auto;
+    }
+
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #efeeeb;
+        top: 0;
+        border-bottom-right-radius: 200px;
+        padding: 5rem 0;
+    }
+
 
     .content-header {
         display: flex;
@@ -154,11 +181,30 @@ const Container = styled.div`
         font-size: 1.2rem;
         font-weight: bold;
         font-family: "Satisfy", cursive;
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #858282;
+            padding: .2rem .4rem;
+            border-radius: 5px;
+
+
+            &:hover {
+                background-color: #333;
+                color: #fff;
+            }
+        }
+
     }
 
     .works {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+        grid-template-rows: 1fr min-content;
         gap: 1rem;
         row-gap: 4rem;
         margin-top: 3rem;
@@ -169,7 +215,9 @@ const Container = styled.div`
             transition: transform 0.5s;
             border-radius: 5px;
             cursor: pointer;
+            height: 100%;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            background-color: #e9e2e2;
 
 
             .image {
@@ -178,29 +226,29 @@ const Container = styled.div`
                 align-items: center;
                 aspect-ratio: 16/9;
                 position: relative;
-                padding: 0 1rem;
                 top: -2rem;
                 transition: all 0.2s;
 
 
                 img {
-                    width: 100%;
+                    width: 90%;
                     height: 100%;
                     border-radius: 10px;
-                    transition:top 0.5s;
+                    transition: top 0.5s;
                     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
                 }
             }
 
             .content {
-                padding: 10px;
                 display: flex;
                 flex-direction: column;
-                gap:7px;
-                
-                >*{
+                gap: 7px;
+                overflow: hidden;
+
+                > * {
                     margin: 0;
                 }
+
                 h3 {
                     font-size: 2rem;
                     font-weight: bold;
@@ -217,31 +265,56 @@ const Container = styled.div`
                 .techStacks {
                     display: flex;
                     padding: 0 10px;
+
                     span {
-                        padding: 5px;
+                        padding: 3px 10px;
                         margin-right: 5px;
-                        background-color: #333;
-                        color: #fff;
+                        background-color: #eee;
+                        color: #333;
                         border-radius: 5px;
+                        font-family: "Satisfy", cursive;
                     }
                 }
 
                 .actions {
-                    padding: 0 10px;
+                    padding: 10px 0;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: space-around;
                     margin-top: 10px;
-                    border-top: 1px solid #333;
+                    border-top: 1px solid #cdc8c8;
+
                     button {
-                        padding: 5px 10px;
-                        border: none;
+                        padding: .5rem;
                         border-radius: 5px;
                         background-color: #333;
                         color: #fff;
                         cursor: pointer;
+                        font-family: "Satisfy", cursive;
+                        display: flex;
+                        align-items: center;
+                        gap: .5rem;
+                        font-size: 1rem;
+                        border: 1px solid transparent;
+
+                        &:hover {
+                            background-color: transparent;
+                            border: 1px solid #979494;
+                            color: #333;
+                        }
+                    }
+
+                    button:nth-child(2) {
+                        background-color: transparent;
+                        border: 1px solid #979494;
+                        color: #333;
+
+                        &:hover {
+                            background-color: #333;
+                            border: 1px solid #737171;
+                            color: #fff;
+                        }
                     }
                 }
             }
         }
-    }
 `
