@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
 const FooterContainer = styled.div`
     background-color: #333;
     color: #fff;
-    padding: 10rem 0;
+    padding-top: 10rem;
     padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -52,6 +52,10 @@ const FooterContent = styled.div`
     justify-content: space-between;
     width: 80%;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 700px){
+      flex-direction: column;
+    }
 `
 
 const FooterText = styled.div`

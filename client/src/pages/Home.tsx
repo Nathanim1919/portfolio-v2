@@ -54,6 +54,11 @@ const Home = styled.div`
     width: 35%;
     border-right: 1px solid #e5dfdf;
     border-bottom-right-radius: 300px;
+    
+    
+    @media screen and (max-width: 700px){
+       width: 50%;
+    }
   }
 
   .header {
@@ -129,12 +134,19 @@ const Home = styled.div`
     h1 {
       font-size: 5rem;
       font-weight: 700;
+      @media screen and (max-width: 700px){
+        font-size:  3rem;
+      }
     }
 
     h2 {
       font-size: 4rem;
       font-weight: 500;
       font-family: "Satisfy", cursive;
+
+      @media screen and (max-width: 700px){
+        font-size:  2rem;
+      }
     }
 
     .more {
@@ -143,6 +155,10 @@ const Home = styled.div`
       margin-top: 1rem;
       font-family: "Satisfy", cursive;
       flex-direction: column;
+
+      @media screen and (max-width: 700px){
+        display: block;
+      }
 
       button {
         background-color: #333;
@@ -156,6 +172,4 @@ const Home = styled.div`
     }
   }
 
-  .more {
-  }
 `;

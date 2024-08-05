@@ -44,6 +44,11 @@ const Container = styled.div`
         margin: 0 auto;
         position: relative;
         z-index: 1;
+        
+        @media screen and (max-width: 700px){
+            width: 90%;
+            text-align: left;
+        }
     }
 
     h1{
