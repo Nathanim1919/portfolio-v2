@@ -27,7 +27,7 @@ export const HomePage: React.FC = () => {
         </div>
         <div className="more">
           <p>Would you like to learn more about me?</p>
-          <button>Download my CV</button>
+          <a href={'https://drive.google.com/file/d/1mfqQa0VWwCyurmLJAdazIteAkX-5GcOe/view?usp=sharing'} target={'_blank'}>View my CV</a>
         </div>
       </div>
     </Home>
@@ -38,6 +38,7 @@ const Home = styled.div`
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
   color: #333;
   display: grid;
   align-items: center;
@@ -65,7 +66,6 @@ const Home = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 0 10%;
     font-family: "Satisfy", cursive;
     position: fixed;
     top: 0;
@@ -160,7 +160,7 @@ const Home = styled.div`
         display: block;
       }
 
-      button {
+      a {
         background-color: #333;
         color: #fff;
         padding: 0.5rem 1rem;
