@@ -12,30 +12,9 @@ export const WorksPage: React.FC = () => {
         <Container>
             <div className="content-header">
                 <h2>Latest Projects</h2>
-                <a href={'https://www.github.com/Nathanim1919'}><FaGithub/>Github</a>
+                <a href={'https://www.github.com/Nathanim1919'} target={'_blank'}><FaGithub/>Github</a>
             </div>
             <div className="works">
-                {/*<div className="project1">*/}
-                {/*    <div className="image">*/}
-                {/*        <img*/}
-                {/*            src="https://img.freepik.com/free-photo/dating-app-interface-smartphone_23-2149374755.jpg?t=st=1722783943~exp=1722787543~hmac=e4ef90369f91ae590e4783639ce8092ef7ddf3caa92dbd246a62ecb7f5001fcc&w=900"*/}
-                {/*            alt="project1"/>*/}
-                {/*    </div>*/}
-                {/*    <div className="content">*/}
-                {/*        <h3>FinanceVision</h3>*/}
-                {/*        <p>FinanceVision is a personal finance management app that helps you track your income and*/}
-                {/*            expenses. It also provides a dashboard to visualize your financial data.</p>*/}
-                {/*        <div className="techStacks">*/}
-                {/*            <span>React</span>*/}
-                {/*            <span>Node</span>*/}
-                {/*            <span>Express</span>*/}
-                {/*        </div>*/}
-                {/*        <div className="actions">*/}
-                {/*            <button><MdLiveTv/>Live Preview</button>*/}
-                {/*            <button><FaCode/>Source Code</button>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
                 {ProjectFile?.map((project, index) => (
                     <div className="project1" key={index}>
                         <div className="image">

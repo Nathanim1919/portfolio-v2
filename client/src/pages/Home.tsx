@@ -21,8 +21,8 @@ export const HomePage: React.FC = () => {
         <h1>Nathanim Tadele</h1>
         <h2>a Software Engineer</h2>
         <div className='socialMedias'>
-          <CiLinkedin/>
-          <FiGithub/>
+          <a href={'https://www.linkedin.com/in/nathanim-tadele-762099247/'} target={'_blank'}><CiLinkedin/></a>
+          <a href={'https://github.com/Nathanim1919'} target={'_blank'}><FiGithub/></a>
           <FaXTwitter/>
         </div>
         <div className="more">
@@ -113,6 +113,7 @@ const Home = styled.div`
 
       > * {
         cursor: pointer;
+        color: #333;
 
 
         &:hover {
