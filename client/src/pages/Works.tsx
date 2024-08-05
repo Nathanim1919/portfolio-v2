@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { MdLiveTv } from "react-icons/md";
 import { FaCode } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import ProjectFile from '../projects.json';
 
 
 
@@ -14,132 +15,47 @@ export const WorksPage: React.FC = () => {
                 <a href={'https://www.github.com/Nathanim1919'}><FaGithub/>Github</a>
             </div>
             <div className="works">
-                <div className="project1">
-                    <div className="image">
-                        <img
-                            src="https://img.freepik.com/free-photo/dating-app-interface-smartphone_23-2149374755.jpg?t=st=1722783943~exp=1722787543~hmac=e4ef90369f91ae590e4783639ce8092ef7ddf3caa92dbd246a62ecb7f5001fcc&w=900"
-                            alt="project1"/>
-                    </div>
-                    <div className="content">
-                        <h3>FinanceVision</h3>
-                        <p>FinanceVision is a personal finance management app that helps you track your income and
-                            expenses. It also provides a dashboard to visualize your financial data.</p>
-                        <div className="techStacks">
-                            <span>React</span>
-                            <span>Node</span>
-                            <span>Express</span>
+                {/*<div className="project1">*/}
+                {/*    <div className="image">*/}
+                {/*        <img*/}
+                {/*            src="https://img.freepik.com/free-photo/dating-app-interface-smartphone_23-2149374755.jpg?t=st=1722783943~exp=1722787543~hmac=e4ef90369f91ae590e4783639ce8092ef7ddf3caa92dbd246a62ecb7f5001fcc&w=900"*/}
+                {/*            alt="project1"/>*/}
+                {/*    </div>*/}
+                {/*    <div className="content">*/}
+                {/*        <h3>FinanceVision</h3>*/}
+                {/*        <p>FinanceVision is a personal finance management app that helps you track your income and*/}
+                {/*            expenses. It also provides a dashboard to visualize your financial data.</p>*/}
+                {/*        <div className="techStacks">*/}
+                {/*            <span>React</span>*/}
+                {/*            <span>Node</span>*/}
+                {/*            <span>Express</span>*/}
+                {/*        </div>*/}
+                {/*        <div className="actions">*/}
+                {/*            <button><MdLiveTv/>Live Preview</button>*/}
+                {/*            <button><FaCode/>Source Code</button>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+                {ProjectFile?.map((project, index) => (
+                    <div className="project1" key={index}>
+                        <div className="image">
+                            <img src={project.image} alt={project.title}/>
                         </div>
-                        <div className="actions">
-                            <button><MdLiveTv/>Live Preview</button>
-                            <button><FaCode/>Source Code</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="project1">
-                    <div className="image">
-                        <img
-                            src="https://img.freepik.com/free-photo/high-angle-hands-holding-smartphone_23-2150671596.jpg?t=st=1722783919~exp=1722787519~hmac=f7c19208f1dcd7a7eba74b73656edf054b7254a0e349e4eaec97e1ade5b6fd13&w=996"
-                            alt="project1"/>
-                    </div>
-                    <div className="content">
-                        <h3>Eventify</h3>
-                        <p>Eventify is an event management app that helps you create and manage events. It also provides
-                            a dashboard to visualize your event data.</p>
-                        <div className="techStacks">
-                            <span>React</span>
-                            <span>Node</span>
-                            <span>Express</span>
-                        </div>
-                        <div className="actions">
-                            <button><MdLiveTv/>Live Preview</button>
-                            <button><FaCode/>Source Code</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="project1">
-                    <div className="image">
-                        <img
-                            src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?t=st=1722783885~exp=1722787485~hmac=50943c8d8e10a160f4a38e154f4b950a0da77f5ff9e981b9afb1edbabbc3dddf&w=900"
-                            alt="project1"/>
-                    </div>
-                    <div className="content">
-                        <h3>Influencer-HUB</h3>
-                        <p>Influencer-HUB is a social media management app that helps you manage your social media
-                            accounts. It also provides a dashboard to visualize your social media data.</p>
-                        <div className="techStacks">
-                            <span>React</span>
-                            <span>Node</span>
-                            <span>Express</span>
-                        </div>
-                        <div className="actions">
-                            <button><MdLiveTv/>Live Preview</button>
-                            <button><FaCode/>Source Code</button>
+                        <div className="content">
+                            <h3>{project.title}</h3>
+                            <p>{project.description}</p>
+                            <div className="techStacks">
+                                {project.tech.map((tech, index) => (
+                                    <span key={index}>{tech}</span>
+                                ))}
+                            </div>
+                            <div className="actions">
+                                <button><MdLiveTv/>Live Preview</button>
+                                <button><FaCode/>Source Code</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="project1">
-                    <div className="image">
-                        <img
-                            src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?t=st=1722783885~exp=1722787485~hmac=50943c8d8e10a160f4a38e154f4b950a0da77f5ff9e981b9afb1edbabbc3dddf&w=900"
-                            alt="project1"/>
-                    </div>
-                    <div className="content">
-                        <h3>Influencer-HUB</h3>
-                        <p>Influencer-HUB is a social media management app that helps you manage your social media
-                            accounts. It also provides a dashboard to visualize your social media data.</p>
-                        <div className="techStacks">
-                            <span>React</span>
-                            <span>Node</span>
-                            <span>Express</span>
-                        </div>
-                        <div className="actions">
-                            <button><MdLiveTv/>Live Preview</button>
-                            <button><FaCode/>Source Code</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="project1">
-                    <div className="image">
-                        <img
-                            src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?t=st=1722783885~exp=1722787485~hmac=50943c8d8e10a160f4a38e154f4b950a0da77f5ff9e981b9afb1edbabbc3dddf&w=900"
-                            alt="project1"/>
-                    </div>
-                    <div className="content">
-                        <h3>Influencer-HUB</h3>
-                        <p>Influencer-HUB is a social media management app that helps you manage your social media
-                            accounts. It also provides a dashboard to visualize your social media data.</p>
-                        <div className="techStacks">
-                            <span>React</span>
-                            <span>Node</span>
-                            <span>Express</span>
-                        </div>
-                        <div className="actions">
-                            <button><MdLiveTv/>Live Preview</button>
-                            <button><FaCode/>Source Code</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="project1">
-                    <div className="image">
-                        <img
-                            src="https://img.freepik.com/free-photo/top-view-nutritional-counter-app-concept_23-2149880602.jpg?t=st=1722783885~exp=1722787485~hmac=50943c8d8e10a160f4a38e154f4b950a0da77f5ff9e981b9afb1edbabbc3dddf&w=900"
-                            alt="project1"/>
-                    </div>
-                    <div className="content">
-                        <h3>Influencer-HUB</h3>
-                        <p>Influencer-HUB is a social media management app that helps you manage your social media
-                            accounts.</p>
-                        <div className="techStacks">
-                            <span>React</span>
-                            <span>Node</span>
-                            <span>Express</span>
-                        </div>
-                        <div className="actions">
-                            <button><MdLiveTv/>Live Preview</button>
-                            <button><FaCode/>Source Code</button>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
         </Container>
     )
@@ -265,6 +181,8 @@ const Container = styled.div`
                 .techStacks {
                     display: flex;
                     padding: 0 10px;
+                    flex-wrap: wrap;
+                    gap: 5px;
 
                     span {
                         padding: 3px 10px;
