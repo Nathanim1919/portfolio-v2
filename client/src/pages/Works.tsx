@@ -3,19 +3,61 @@ import { MdLiveTv } from "react-icons/md";
 import { FaCode } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import ProjectFile from '../projects.json';
+import {useEffect, useState} from "react";
 
 
 
 
 export const WorksPage: React.FC = () => {
+    const [filterTags, setFilterTags] = useState<string[]>([]);
+    const [projects, setProjects] = useState(ProjectFile);
+    const [hoveredTag, setHoveredTag] = useState<string>(null);
+
+    const addFilterTags = (tag: string) => {
+        if(filterTags.includes(tag)){
+            setFilterTags(filterTags.filter((t) => t !== tag));
+        }else{
+            setFilterTags([...filterTags, tag])
+        }
+    }
+
+    useEffect(() => {
+        const filteredProjects = ProjectFile.filter((project) => {
+            return project.tech.some((tech) => filterTags.includes(tech));
+        });
+
+        if(filterTags.length === 0) {
+            setProjects(ProjectFile);
+        } else {
+            setProjects(filteredProjects);
+        }
+    }, [filterTags]);
+
+    const isTagActive = (tag: string) => {
+        return filterTags.includes(tag);
+    }
+
+    const changeInnerTextOnHovering = (tag: string) => {
+        if(isTagActive(tag)){
+            return "Remove";
+        }else{
+            return "Add";
+        }
+    }
+
     return (
         <Container>
             <div className="content-header">
                 <h2>Latest Projects</h2>
                 <a href={'https://www.github.com/Nathanim1919'} target={'_blank'}><FaGithub/>Github</a>
             </div>
+            <div className={'filterTags'}>
+                {filterTags.map((tag, index) => (
+                    <span onClick={()=>addFilterTags(tag)} key={index}>{tag}</span>
+                ))}
+            </div>
             <div className="works">
-                {ProjectFile?.map((project, index) => (
+                {projects?.map((project, index) => (
                     <div className="project1" key={index}>
                         <div className="image">
                             <img src={project.image} alt={project.title}/>
@@ -25,7 +67,11 @@ export const WorksPage: React.FC = () => {
                             <p>{project.description}</p>
                             <div className="techStacks">
                                 {project.tech.map((tech, index) => (
-                                    <span key={index}>{tech}</span>
+                                    <span
+                                        onMouseEnter={()=>changeInnerTextOnHovering(tech)}
+                                        onMouseLeave={()=>changeInnerTextOnHovering(tech)}
+                                        className={isTagActive(tech)?"activeTag":"notActive"}
+                                        onClick={()=>addFilterTags(tech)} key={index}>{tech}</span>
                                 ))}
                             </div>
                             <div className="actions">
@@ -70,6 +116,24 @@ const Container = styled.div`
             width: 60%;
         }
     }
+    
+    .filterTags{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin: 3rem 0;
+
+        span {
+            padding: 5px 10px;
+            background-color: #eee;
+            color: #333;
+            border-radius: 5px;
+            font-family: "Satisfy", cursive;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            animation: slideIn 0.5s;
+        }
+    }
 
 
     .content-header {
@@ -102,8 +166,8 @@ const Container = styled.div`
 
     .works {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
-        grid-template-rows: 1fr min-content;
+        grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+        place-items: center;
         gap: 1rem;
         row-gap: 4rem;
         margin-top: 3rem;
@@ -117,6 +181,19 @@ const Container = styled.div`
             height: 100%;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
             background-color: #e9e2e2;
+            animation: slideIn 0.5s;
+            
+            
+            @keyframes slideIn {
+                from {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
 
 
             .image {
@@ -174,6 +251,11 @@ const Container = styled.div`
                         color: #333;
                         border-radius: 5px;
                         font-family: "Satisfy", cursive;
+                    }
+                    
+                    span.activeTag{
+                        background-color: #333;
+                        color: #fff;
                     }
                 }
 
