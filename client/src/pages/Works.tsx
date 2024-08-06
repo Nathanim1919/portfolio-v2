@@ -11,7 +11,6 @@ import {useEffect, useState} from "react";
 export const WorksPage: React.FC = () => {
     const [filterTags, setFilterTags] = useState<string[]>([]);
     const [projects, setProjects] = useState(ProjectFile);
-    const [hoveredTag, setHoveredTag] = useState<string>(null);
 
     const addFilterTags = (tag: string) => {
         if(filterTags.includes(tag)){
