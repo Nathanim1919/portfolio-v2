@@ -4,6 +4,7 @@ import { FaCode } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import ProjectFile from '../projects.json';
 import {useEffect, useState} from "react";
+import {ProjectDetail} from "./ProjectDetail.tsx";
 
 
 
@@ -11,6 +12,7 @@ import {useEffect, useState} from "react";
 export const WorksPage: React.FC = () => {
     const [filterTags, setFilterTags] = useState<string[]>([]);
     const [projects, setProjects] = useState(ProjectFile);
+    const [selectedProject, setSelectedProject] = useState<any>();
 
     const addFilterTags = (tag: string) => {
         if(filterTags.includes(tag)){
@@ -45,6 +47,8 @@ export const WorksPage: React.FC = () => {
     }
 
     return (
+        <>
+        {selectedProject && <ProjectDetail project={selectedProject}/>}
         <Container>
             <div className="content-header">
                 <h2>Latest Projects</h2>
@@ -58,12 +62,18 @@ export const WorksPage: React.FC = () => {
             <div className="works">
                 {projects?.map((project, index) => {
                     if (project.featured) {
-                        return (<div className="project1" key={index}>
+                        return (<div onClick={()=> {
+                                setSelectedProject(project)
+                            }} className={"project1"} key={index}>
                             <div className="image">
                                 <img src={project.image} alt={project.title}/>
                             </div>
                             <div className="content">
-                                <h3>{project.title}</h3>
+                                <div className={"content-detail"}>
+                                    <h3>{project.title}</h3>
+                                    <span>{project.category}</span>
+                                </div>
+
                                 <p>{project.description}</p>
                                 <div className="techStacks">
                                     {project.tech.map((tech, index) => (
@@ -84,8 +94,12 @@ export const WorksPage: React.FC = () => {
                 })}
             </div>
         </Container>
+        </>
     )
+
 };
+
+
 
 
 const Container = styled.div`
@@ -113,12 +127,12 @@ const Container = styled.div`
         border-bottom-right-radius: 200px;
         padding: 5rem 0;
 
-        @media screen and (max-width: 700px){
+        @media screen and (max-width: 700px) {
             width: 60%;
         }
     }
-    
-    .filterTags{
+
+    .filterTags {
         display: flex;
         gap: 10px;
         justify-content: center;
@@ -145,6 +159,7 @@ const Container = styled.div`
         font-size: 1.2rem;
         font-weight: bold;
         font-family: "Satisfy", cursive;
+
 
         a {
             display: flex;
@@ -183,8 +198,8 @@ const Container = styled.div`
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
             background-color: #e9e2e2;
             animation: slideIn 0.5s;
-            
-            
+
+
             @keyframes slideIn {
                 from {
                     transform: translateY(50px);
@@ -222,6 +237,20 @@ const Container = styled.div`
                 gap: 7px;
                 overflow: hidden;
 
+                .content-detail {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    span {
+                        padding: 5px 10px;
+                        border:1px solid #ffd283;
+                        color: #333;
+                        border-radius: 5px;
+                        font-family: "Satisfy", cursive;
+                    }
+                }
+
                 > * {
                     margin: 0;
                 }
@@ -253,8 +282,8 @@ const Container = styled.div`
                         border-radius: 5px;
                         font-family: "Satisfy", cursive;
                     }
-                    
-                    span.activeTag{
+
+                    span.activeTag {
                         background-color: #333;
                         color: #fff;
                     }
@@ -301,4 +330,5 @@ const Container = styled.div`
                 }
             }
         }
+
 `

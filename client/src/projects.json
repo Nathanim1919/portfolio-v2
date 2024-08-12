@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "title": "influencer-HUB",
-    "description": "A platform that connects influencers with brands",
+    "title": "Finance-Vision",
+    "description": "A platform that helps you manage your finances, set goals, and track your progress over time",
     "image": "https://img.freepik.com/free-photo/sport-lifestyle-fitness-male-training_1139-724.jpg?t=st=1722929851~exp=1722933451~hmac=4f6c8b6e253087b8c74322126865dad7338b9886827d916920442755658408ad&w=996",
     "github": "https://github.com/Nathanim1919/influencer-HUB",
     "deployed": "https://influencer-hub.herokuapp.com/",
-    "tech": ["React", "Node.js", "Express", "MongoDB", "Mongoose"],
-    "date": "2021-06-01",
+    "tech": ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Gemini API"],
+    "date": "2023-06-01",
     "category": "Full Stack",
     "role": "Full Stack Developer",
     "team": 4,
@@ -42,7 +42,7 @@
     "rating": 5,
     "status": "Completed",
     "type": "Personal",
-    "featured": true,
+    "featured": false,
     "order": 1
   },
   {
