@@ -56,30 +56,32 @@ export const WorksPage: React.FC = () => {
                 ))}
             </div>
             <div className="works">
-                {projects?.map((project, index) => (
-                    <div className="project1" key={index}>
-                        <div className="image">
-                            <img src={project.image} alt={project.title}/>
-                        </div>
-                        <div className="content">
-                            <h3>{project.title}</h3>
-                            <p>{project.description}</p>
-                            <div className="techStacks">
-                                {project.tech.map((tech, index) => (
-                                    <span
-                                        onMouseEnter={()=>changeInnerTextOnHovering(tech)}
-                                        onMouseLeave={()=>changeInnerTextOnHovering(tech)}
-                                        className={isTagActive(tech)?"activeTag":"notActive"}
-                                        onClick={()=>addFilterTags(tech)} key={index}>{tech}</span>
-                                ))}
+                {projects?.map((project, index) => {
+                    if (project.featured) {
+                        return (<div className="project1" key={index}>
+                            <div className="image">
+                                <img src={project.image} alt={project.title}/>
                             </div>
-                            <div className="actions">
-                                <button><MdLiveTv/>Live Preview</button>
-                                <button><FaCode/>Source Code</button>
+                            <div className="content">
+                                <h3>{project.title}</h3>
+                                <p>{project.description}</p>
+                                <div className="techStacks">
+                                    {project.tech.map((tech, index) => (
+                                        <span
+                                            onMouseEnter={() => changeInnerTextOnHovering(tech)}
+                                            onMouseLeave={() => changeInnerTextOnHovering(tech)}
+                                            className={isTagActive(tech) ? "activeTag" : "notActive"}
+                                            onClick={() => addFilterTags(tech)} key={index}>{tech}</span>
+                                    ))}
+                                </div>
+                                <div className="actions">
+                                    <button><MdLiveTv/>Live Preview</button>
+                                    <button><FaCode/>Source Code</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                        )}
+                })}
             </div>
         </Container>
     )
