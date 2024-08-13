@@ -48,7 +48,7 @@ export const WorksPage: React.FC = () => {
 
     return (
         <>
-        {selectedProject && <ProjectDetail project={selectedProject}/>}
+        {selectedProject && <ProjectDetail project={selectedProject} setProjectDetail={setSelectedProject}/>}
         <Container>
             <div className="content-header">
                 <h2>Latest Projects</h2>

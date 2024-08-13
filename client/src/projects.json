@@ -29,7 +29,7 @@
     "image": "https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg?t=st=1722926976~exp=1722930576~hmac=b81a6e05d7cb9c9d995bcac5e760d65d1e0ac491bd58800fca4bb458559e1f13&w=1060",
     "github": "https://github.com/Nathanim1919/influencer-HUB",
     "deployed": "https://influencer-hub.herokuapp.com/",
-    "tech": ["React", "Node.js", "Express", "MongoDB", "Mongoose"],
+    "tech": ["React", "Node.js", "Express", "MongoDB", "Mongoose", "Node.js", "Express", "MongoDB", "Mongoose", "Node.js", "Express", "MongoDB", "Mongoose"],
     "date": "2021-06-01",
     "category": "Full Stack",
     "role": "Full Stack Developer",
@@ -42,7 +42,7 @@
     "rating": 5,
     "status": "Completed",
     "type": "Personal",
-    "featured": false,
+    "featured": true,
     "order": 1
   },
   {
