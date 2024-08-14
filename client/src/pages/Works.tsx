@@ -60,22 +60,6 @@ export const WorksPage: React.FC = () => {
         };
     }, [projects]);
 
-        const handleResize = () => {
-            const works = document.querySelector(".works");
-            if (works) {
-                const items = works.children;
-                masonryLayout(works, items);
-            }
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, [projects]);
-
     const isTagActive = (tag: string) => filterTags.includes(tag);
 
     const changeInnerTextOnHovering = (tag: string) => isTagActive(tag) ? "Remove" : "Add";
@@ -128,7 +112,7 @@ export const WorksPage: React.FC = () => {
                 </div>
             </Container>
         </>
-    );
+    )
 };
 
 const Container = styled.div<{ theme: string }>`
