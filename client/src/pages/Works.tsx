@@ -1,109 +1,121 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { MdLiveTv } from "react-icons/md";
-import { FaCode } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaCode, FaGithub } from "react-icons/fa";
 import ProjectFile from '../projects.json';
-import {useEffect, useState} from "react";
-import {ProjectDetail} from "./ProjectDetail.tsx";
-import {useTheme} from "../ThemeContext.tsx";
-
-
+import { ProjectDetail } from "./ProjectDetail.tsx";
+import { useTheme } from "../ThemeContext.tsx";
 
 export const WorksPage: React.FC = () => {
     const [filterTags, setFilterTags] = useState<string[]>([]);
     const [projects, setProjects] = useState(ProjectFile);
     const [selectedProject, setSelectedProject] = useState<any>();
-    const {theme} = useTheme();
+    const { theme } = useTheme();
 
     const addFilterTags = (tag: string) => {
-        if(filterTags.includes(tag)){
+        if (filterTags.includes(tag)) {
             setFilterTags(filterTags.filter((t) => t !== tag));
-        }else{
-            setFilterTags([...filterTags, tag])
+        } else {
+            setFilterTags([...filterTags, tag]);
         }
-    }
+    };
 
     useEffect(() => {
         const filteredProjects = ProjectFile.filter((project) => {
             return project.tech.some((tech) => filterTags.includes(tech));
         });
 
-        if(filterTags.length === 0) {
+        if (filterTags.length === 0) {
             setProjects(ProjectFile);
         } else {
             setProjects(filteredProjects);
         }
     }, [filterTags]);
 
-    const isTagActive = (tag: string) => {
-        return filterTags.includes(tag);
-    }
+    useEffect(() => {
+        const masonryLayout = (container, items) => {
+            const columns = getComputedStyle(container).getPropertyValue('grid-template-columns').split(' ').length;
+            const colHeights = Array(columns).fill(0);
 
-    const changeInnerTextOnHovering = (tag: string) => {
-        if(isTagActive(tag)){
-            return "Remove";
-        }else{
-            return "Add";
-        }
-    }
+            Array.from(items).forEach(item => {
+                const col = colHeights.indexOf(Math.min(...colHeights));
+                item.style.gridColumnStart = col + 1;
+                colHeights[col] += item.offsetHeight;
+            });
+        };
+
+        const handleResize = () => {
+            const works = document.querySelector(".works");
+            if (works) {
+                const items = works.children;
+                masonryLayout(works, items);
+            }
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [projects]);
+
+    const isTagActive = (tag: string) => filterTags.includes(tag);
+
+    const changeInnerTextOnHovering = (tag: string) => isTagActive(tag) ? "Remove" : "Add";
 
     return (
         <>
-        {selectedProject && <ProjectDetail project={selectedProject} setProjectDetail={setSelectedProject}/>}
-        <Container theme={theme}>
-            <div className="content-header">
-                <h2>Latest Projects</h2>
-                <a href={'https://www.github.com/Nathanim1919'} target={'_blank'}><FaGithub/>Github</a>
-            </div>
-            <div className={'filterTags'}>
-                {filterTags.map((tag, index) => (
-                    <span onClick={()=>addFilterTags(tag)} key={index}>{tag}</span>
-                ))}
-            </div>
-            <div className="works">
-                {projects?.map((project, index) => {
-                    if (project.featured) {
-                        return (<div onClick={()=> {
-                                setSelectedProject(project)
-                            }} className={"project1"} key={index}>
-                            <div className="image">
-                                <img src={project.image} alt={project.title}/>
-                            </div>
-                            <div className="content">
-                                <div className={"content-detail"}>
-                                    <h3>{project.title}</h3>
-                                    <span>{project.category}</span>
+            {selectedProject && <ProjectDetail project={selectedProject} setProjectDetail={setSelectedProject} />}
+            <Container theme={theme}>
+                <div className="content-header">
+                    <h2>Latest Projects</h2>
+                    <a href={'https://www.github.com/Nathanim1919'} target={'_blank'}><FaGithub />Github</a>
+                </div>
+                <div className={'filterTags'}>
+                    {filterTags.map((tag, index) => (
+                        <span onClick={() => addFilterTags(tag)} key={index}>{tag}</span>
+                    ))}
+                </div>
+                <div className="works">
+                    {projects?.map((project, index) => {
+                        if (project.featured) {
+                            return (
+                                <div onClick={() => setSelectedProject(project)} className={"project1"} key={index}>
+                                    <div className="image">
+                                        <img src={project.image} alt={project.title} />
+                                    </div>
+                                    <div className="content">
+                                        <div className={"content-detail"}>
+                                            <h3>{project.title}</h3>
+                                            <span>{project.category}</span>
+                                        </div>
+                                        <p>{project.description}</p>
+                                        <div className="techStacks">
+                                            {project.tech.map((tech, index) => (
+                                                <span
+                                                    onMouseEnter={() => changeInnerTextOnHovering(tech)}
+                                                    onMouseLeave={() => changeInnerTextOnHovering(tech)}
+                                                    className={isTagActive(tech) ? "activeTag" : "notActive"}
+                                                    onClick={() => addFilterTags(tech)} key={index}>{tech}</span>
+                                            ))}
+                                        </div>
+                                        <div className="actions">
+                                            <button><MdLiveTv />Live Preview</button>
+                                            <button><FaCode />Source Code</button>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <p>{project.description}</p>
-                                <div className="techStacks">
-                                    {project.tech.map((tech, index) => (
-                                        <span
-                                            onMouseEnter={() => changeInnerTextOnHovering(tech)}
-                                            onMouseLeave={() => changeInnerTextOnHovering(tech)}
-                                            className={isTagActive(tech) ? "activeTag" : "notActive"}
-                                            onClick={() => addFilterTags(tech)} key={index}>{tech}</span>
-                                    ))}
-                                </div>
-                                <div className="actions">
-                                    <button><MdLiveTv/>Live Preview</button>
-                                    <button><FaCode/>Source Code</button>
-                                </div>
-                            </div>
-                        </div>
-                        )}
-                })}
-            </div>
-        </Container>
+                            );
+                        }
+                    })}
+                </div>
+            </Container>
         </>
-    )
-
+    );
 };
 
-
-
-
-const Container = styled.div<{theme: string}>`
+const Container = styled.div<{ theme: string }>`
     display: grid;
     width: 100%;
     margin: 3rem auto;
@@ -116,7 +128,6 @@ const Container = styled.div<{theme: string}>`
         width: 80%;
         margin: auto;
     }
-
 
     &:after {
         content: '';
@@ -152,7 +163,6 @@ const Container = styled.div<{theme: string}>`
         }
     }
 
-
     .content-header {
         display: flex;
         justify-content: space-around;
@@ -161,7 +171,6 @@ const Container = styled.div<{theme: string}>`
         font-size: 1.2rem;
         font-weight: bold;
         font-family: "Satisfy", cursive;
-
 
         a {
             display: flex;
@@ -173,33 +182,31 @@ const Container = styled.div<{theme: string}>`
             padding: .2rem .4rem;
             border-radius: 5px;
 
-
             &:hover {
                 background-color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                 color: ${props => props.theme === 'light' ? '#fff' : '#333'};
             }
         }
-
     }
 
     .works {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        place-items: center;
         gap: 1rem;
-        row-gap: 4rem;
         margin-top: 3rem;
 
         .project1 {
+            position: relative;
             display: grid;
             grid-template-columns: 1fr;
             transition: transform 0.5s;
+            border: 1px solid rgba(0, 255, 207, 0.62);
             border-radius: 5px;
             cursor: pointer;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
             animation: slideIn 0.5s;
-            background-color: ${props => props.theme === 'light' ? '#e9e2e2' : '#333'};
-
+            background-color: ${(props) => props.theme === "light" ? "#e9e2e2" : "#333"};
+            overflow: hidden;
 
             @keyframes slideIn {
                 from {
@@ -212,21 +219,18 @@ const Container = styled.div<{theme: string}>`
                 }
             }
 
-
             .image {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 aspect-ratio: 16/9;
                 position: relative;
-                top: -2rem;
                 transition: all 0.2s;
-
+                overflow: hidden;
 
                 img {
-                    width: 90%;
+                    width: 100%;
                     height: 100%;
-                    border-radius: 10px;
                     transition: top 0.5s;
                     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
                 }
@@ -331,5 +335,5 @@ const Container = styled.div<{theme: string}>`
                 }
             }
         }
-
-`
+    }
+`;
