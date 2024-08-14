@@ -1,4 +1,4 @@
-import React, {ReactNode, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import { MdLiveTv } from "react-icons/md";
 import { FaCode, FaGithub } from "react-icons/fa";
