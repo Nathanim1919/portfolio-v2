@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, {ReactNode, useEffect, useState} from "react";
 import styled from "styled-components";
 import { MdLiveTv } from "react-icons/md";
 import { FaCode, FaGithub } from "react-icons/fa";
@@ -33,16 +33,32 @@ export const WorksPage: React.FC = () => {
     }, [filterTags]);
 
     useEffect(() => {
-        const masonryLayout = (container, items) => {
+        const masonryLayout = (container: Element, items: HTMLCollection) => {
             const columns = getComputedStyle(container).getPropertyValue('grid-template-columns').split(' ').length;
             const colHeights = Array(columns).fill(0);
 
             Array.from(items).forEach(item => {
                 const col = colHeights.indexOf(Math.min(...colHeights));
-                item.style.gridColumnStart = col + 1;
-                colHeights[col] += item.offsetHeight;
+                (item as HTMLElement).style.gridColumnStart = (col + 1).toString();
+                colHeights[col] += (item as HTMLElement).offsetHeight;
             });
         };
+
+        const handleResize = () => {
+            const works = document.querySelector(".works");
+            if (works) {
+                const items = works.children;
+                masonryLayout(works, items);
+            }
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [projects]);
 
         const handleResize = () => {
             const works = document.querySelector(".works");
