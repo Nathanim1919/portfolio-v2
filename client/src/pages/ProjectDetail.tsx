@@ -8,8 +8,7 @@ import { FaHandPointRight } from "react-icons/fa6";
 import { TbPointFilled } from "react-icons/tb";
 import { MdLiveTv } from "react-icons/md";
 import { FiGithub } from "react-icons/fi";
-
-
+import {useTheme} from "../ThemeContext.tsx";
 
 
 type ProjectDetailProps = {
@@ -19,8 +18,9 @@ type ProjectDetailProps = {
 
 
 export const ProjectDetail: React.FC<ProjectDetailProps> = ({project, setProjectDetail}) => {
+    const {theme} = useTheme();
     return (
-        <Container project={project} className={'project-detail'}>
+        <Container project={project} className={'project-detail'} theme={theme}>
             <div className="project-image">
                 <div className={"closeIcon"} onClick={()=>setProjectDetail(null)}>
                     <IoArrowBackSharp/>
@@ -113,6 +113,7 @@ const Header = styled.div`
 
 interface ContainerProps {
     project: any;
+    theme: string;
 }
 
 const Container = styled.div<ContainerProps>`
@@ -126,7 +127,7 @@ const Container = styled.div<ContainerProps>`
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
+    background-color: ${props => props.theme === 'light' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(51, 51, 51, 0.9)'};
     backdrop-filter: blur(5px);
     overflow: hidden;
     margin: auto;
@@ -134,13 +135,13 @@ const Container = styled.div<ContainerProps>`
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     animation: SlideInUp 0.5s ease;
     padding-bottom: 2rem;
-    
+
     @media screen and (max-width: 900px) {
         width: 100vw;
         overflow: auto;
     }
-    
-    
+
+
     @keyframes SlideInUp {
         from {
             transform: translateY(100%);
@@ -178,11 +179,11 @@ const Container = styled.div<ContainerProps>`
         justify-content: space-around;
         overflow: hidden;
         padding: 20px;
-        
+
         @media screen and (max-width: 900px) {
             grid-template-columns: 1fr;
             overflow-y: auto;
-            
+
         }
 
         .links {
@@ -204,7 +205,7 @@ const Container = styled.div<ContainerProps>`
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: flex-start;
-                
+
                 h3 {
                     background-color: #eee;
                     padding: .4rem 1rem;
@@ -223,7 +224,7 @@ const Container = styled.div<ContainerProps>`
                 span {
                     padding: 5px 10px;
                     border: 1px solid #ffd283;
-                    color: #333;
+                    color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                     border-radius: 5px;
                     font-family: "Satisfy", cursive;
                     display: flex;
@@ -233,14 +234,15 @@ const Container = styled.div<ContainerProps>`
             }
 
             .teckstack {
-                h3{
-                    background-color: #eee;
+                h3 {
+                    background-color: ${props => props.theme === 'light' ? '#eee' : '#333'};
                     padding: .4rem 1rem;
                     display: flex;
                     align-items: center;
                     gap: .5rem;
                 }
-                >div {
+
+                > div {
                     display: flex;
                     align-items: center;
                     gap: 1rem;
@@ -249,29 +251,31 @@ const Container = styled.div<ContainerProps>`
                     span {
                         padding: 5px 10px;
                         border: 1px solid #ffd283;
-                        color: #333;
+                        color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                         border-radius: 5px;
                         //font-family: "Satisfy", cursive;
                     }
                 }
             }
         }
-        
-        .projectLinks{
-            h3{
-                background-color: #eee;
+
+        .projectLinks {
+            h3 {
+                background-color: ${props => props.theme === 'light' ? '#eee' : '#333'};
                 padding: .4rem 1rem;
                 display: flex;
                 align-items: center;
                 gap: .5rem;
             }
-            >div{
+
+            > div {
                 display: flex;
                 gap: 1rem;
+
                 a {
                     padding: 5px 10px;
                     border: 1px solid #ffd283;
-                    color: #333;
+                    color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                     border-radius: 5px;
                     font-family: "Satisfy", cursive;
                     text-decoration: none;
@@ -280,51 +284,54 @@ const Container = styled.div<ContainerProps>`
                     display: flex;
                     align-items: center;
                     gap: 5px;
+
                     &:hover {
-                        background-color: #ffd283;
-                        color: white;
+                        background-color: ${props => props.theme === 'light' ? '#333' : '#fff'};
+                        color: ${props => props.theme === 'light' ? '#fff' : '#333'};
                     }
                 }
-        }
-
-        .story {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            height: 100%;
-            overflow-y: auto;
-            
-            @media screen and (max-width: 900px) {
-                overflow: hidden;
             }
 
-            > * {
-                margin:5px 0;
-                border: 1px solid #dbd8d6;
-                width: 90%;
-                padding: 20px 10px;
+            .story {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                height: 100%;
+                overflow-y: auto;
 
-                h3 {
-                    font-size: 1.2rem;
-                    font-weight: bold;
-                    font-family: "Satisfy", cursive;
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    padding: 0 10px;
-                    margin: 0;
-                    margin-bottom: 1rem;
-                    //border-bottom: 1px solid #dbd8d6;
+
+                @media screen and (max-width: 900px) {
+                    overflow: hidden;
                 }
 
-                p {
-                    font-size: 1rem;
-                    color: #333;
-                    margin: 0;
-                    padding: 0 30px;
+                > * {
+                    margin: 5px 0;
+                    border: 1px solid #dbd8d6;
+                    width: 90%;
+                    padding: 20px 10px;
+                    color: ${props => props.theme === 'light' ? '#333' : '#fff'};
+
+
+                    h3 {
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        font-family: "Satisfy", cursive;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        padding: 0 10px;
+                        margin: 0 0 1rem;
+                        color: ${props => props.theme === 'light' ? '#333' : '#fff'};
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        color: ${props => props.theme === 'light' ? '#333' : '#fff'};
+                        margin: 0;
+                        padding: 0 30px;
+                    }
                 }
-            }
+            //}
         }
-    }
 `

@@ -2,11 +2,14 @@ import styled from "styled-components";
 import { CiLinkedin } from "react-icons/ci";
 import { FiGithub } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
-
+import { FaSun } from "react-icons/fa";
+import { MdNightlight } from "react-icons/md";
+import {useTheme} from "../ThemeContext.tsx";
 
 export const HomePage: React.FC = () => {
+  const {theme, toggleTheme} = useTheme();
   return (
-    <Home>
+    <Home theme={theme}>
       <div className="header">
         <h1>NT</h1>
         <div className="nav">
@@ -14,6 +17,9 @@ export const HomePage: React.FC = () => {
             <li>Home</li>
             <li>Works</li>
           </ul>
+          <div onClick={toggleTheme}>
+            {theme==='light'?<MdNightlight/>:<FaSun/>}
+          </div>
         </div>
       </div>
       <div className="content">
@@ -34,12 +40,16 @@ export const HomePage: React.FC = () => {
   );
 };
 
-const Home = styled.div`
+interface HomeProps {
+    theme: string;
+}
+
+const Home = styled.div<HomeProps>`
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow-x: hidden;
-  color: #333;
+  color: ${(props) => props.theme === 'light' ? '#333' : '#fff'};
   display: grid;
   align-items: center;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
@@ -47,13 +57,12 @@ const Home = styled.div`
 
   &:before {
     content: "";
-    background-color: #efeeeb;
+    background-color: ${(props) => props.theme === 'light' ? '#efeeeb' : '#555353'};
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     width: 35%;
-    border-right: 1px solid #e5dfdf;
     border-bottom-right-radius: 300px;
     
     
@@ -77,10 +86,20 @@ const Home = styled.div`
     h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: #333;
+      color: ${(props) => props.theme === 'light' ? '#333' : '#fff'};
     }
 
     .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      
+      div{
+        font-size: 2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
       ul {
         display: flex;
         list-style: none;
@@ -113,7 +132,8 @@ const Home = styled.div`
 
       > * {
         cursor: pointer;
-        color: #333;
+        color: ${(props) => props.theme === 'light' ? '#333' : '#fff'};
+        
 
 
         &:hover {
@@ -156,14 +176,15 @@ const Home = styled.div`
       margin-top: 1rem;
       font-family: "Satisfy", cursive;
       flex-direction: column;
+      
 
       @media screen and (max-width: 700px){
         display: block;
       }
 
       a {
-        background-color: #333;
-        color: #fff;
+        background-color: ${(props) => props.theme === 'light' ? '#333' : '#fff'};
+        color: ${(props) => props.theme === 'light' ? '#fff' : '#333'};
         padding: 0.5rem 1rem;
         border: none;
         border-radius: 5px;
@@ -172,5 +193,4 @@ const Home = styled.div`
       }
     }
   }
-
 `;

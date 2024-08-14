@@ -1,8 +1,10 @@
 import styled from "styled-components"
+import {useTheme} from "../ThemeContext.tsx";
 
 export const AboutmePage: React.FC = () => {
+    const {theme} = useTheme();
     return (
-        <Container>
+        <Container theme={theme}>
             <h1>Meet Nathanim</h1>
             <p>
                 I am a passionate software engineer experienced in full-stack development with React, Node.js, and
@@ -14,13 +16,14 @@ export const AboutmePage: React.FC = () => {
 }
 
 
-const Container = styled.div`
+
+
+const Container = styled.div<{ theme: string }>`
     width: 100vw;
     place-items: center;
-    color: #333;
+    color: ${(props) => props.theme === 'light' ? '#333' : '#fff'};
     font-size: 1.2rem;
     text-align: center;
-    /* background: #efeeeb; */
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -34,7 +37,7 @@ const Container = styled.div`
         width: 50%;
         height: 100%;
         border-bottom-left-radius: 200px;
-        background-color: #efeeeb;
+        background-color: ${(props) => props.theme === 'light' ? '#efeeeb' : '#555353'};
         content: '';
         
     }

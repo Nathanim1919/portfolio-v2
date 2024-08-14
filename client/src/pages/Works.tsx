@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import ProjectFile from '../projects.json';
 import {useEffect, useState} from "react";
 import {ProjectDetail} from "./ProjectDetail.tsx";
-
+import {useTheme} from "../ThemeContext.tsx";
 
 
 
@@ -13,6 +13,7 @@ export const WorksPage: React.FC = () => {
     const [filterTags, setFilterTags] = useState<string[]>([]);
     const [projects, setProjects] = useState(ProjectFile);
     const [selectedProject, setSelectedProject] = useState<any>();
+    const {theme} = useTheme();
 
     const addFilterTags = (tag: string) => {
         if(filterTags.includes(tag)){
@@ -49,7 +50,7 @@ export const WorksPage: React.FC = () => {
     return (
         <>
         {selectedProject && <ProjectDetail project={selectedProject} setProjectDetail={setSelectedProject}/>}
-        <Container>
+        <Container theme={theme}>
             <div className="content-header">
                 <h2>Latest Projects</h2>
                 <a href={'https://www.github.com/Nathanim1919'} target={'_blank'}><FaGithub/>Github</a>
@@ -102,11 +103,12 @@ export const WorksPage: React.FC = () => {
 
 
 
-const Container = styled.div`
+const Container = styled.div<{theme: string}>`
     display: grid;
     width: 100%;
     margin: 3rem auto;
     position: relative;
+    color: ${(props) => props.theme === 'light' ? '#333' : '#fff'};
 
     > * {
         position: relative;
@@ -122,7 +124,7 @@ const Container = styled.div`
         left: 0;
         width: 50%;
         height: 100%;
-        background-color: #efeeeb;
+        background-color: ${(props) => props.theme === 'light' ? '#efeeeb' : '#555353'};
         top: 0;
         border-bottom-right-radius: 200px;
         padding: 5rem 0;
@@ -166,15 +168,15 @@ const Container = styled.div`
             align-items: center;
             gap: .5rem;
             text-decoration: none;
-            color: #333;
+            color: ${props => props.theme === 'light' ? '#333' : '#fff'};
             border: 1px solid #858282;
             padding: .2rem .4rem;
             border-radius: 5px;
 
 
             &:hover {
-                background-color: #333;
-                color: #fff;
+                background-color: ${props => props.theme === 'light' ? '#333' : '#fff'};
+                color: ${props => props.theme === 'light' ? '#fff' : '#333'};
             }
         }
 
@@ -182,7 +184,7 @@ const Container = styled.div`
 
     .works {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         place-items: center;
         gap: 1rem;
         row-gap: 4rem;
@@ -194,10 +196,9 @@ const Container = styled.div`
             transition: transform 0.5s;
             border-radius: 5px;
             cursor: pointer;
-            height: 100%;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            background-color: #e9e2e2;
             animation: slideIn 0.5s;
+            background-color: ${props => props.theme === 'light' ? '#e9e2e2' : '#333'};
 
 
             @keyframes slideIn {
@@ -245,7 +246,7 @@ const Container = styled.div`
                     span {
                         padding: 5px 10px;
                         border:1px solid #ffd283;
-                        color: #333;
+                        color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                         border-radius: 5px;
                         font-family: "Satisfy", cursive;
                     }
@@ -265,7 +266,7 @@ const Container = styled.div`
                 p {
                     font-size: .8rem;
                     padding: 0 10px;
-                    color: #333;
+                    color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                 }
 
                 .techStacks {
@@ -277,8 +278,8 @@ const Container = styled.div`
                     span {
                         padding: 3px 10px;
                         margin-right: 5px;
-                        background-color: #eee;
-                        color: #333;
+                        background-color: ${props => props.theme === 'light' ? '#eee' : '#5b5959'};
+                        color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                         border-radius: 5px;
                         font-family: "Satisfy", cursive;
                     }
@@ -299,8 +300,8 @@ const Container = styled.div`
                     button {
                         padding: .5rem;
                         border-radius: 5px;
-                        background-color: #333;
-                        color: #fff;
+                        background-color: ${props => props.theme === 'light' ? '#333' : '#fff'};
+                        color: ${props => props.theme === 'light' ? '#fff' : '#333'};
                         cursor: pointer;
                         font-family: "Satisfy", cursive;
                         display: flex;
@@ -312,19 +313,19 @@ const Container = styled.div`
                         &:hover {
                             background-color: transparent;
                             border: 1px solid #979494;
-                            color: #333;
+                            color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                         }
                     }
 
                     button:nth-child(2) {
                         background-color: transparent;
                         border: 1px solid #979494;
-                        color: #333;
+                        color: ${props => props.theme === 'light' ? '#333' : '#fff'};
 
                         &:hover {
                             background-color: #333;
                             border: 1px solid #737171;
-                            color: #fff;
+                            color: ${props => props.theme === 'light' ? '#fff' : '#333'};
                         }
                     }
                 }
