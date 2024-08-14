@@ -2,8 +2,11 @@ import React, {createContext, useContext, useState, useEffect} from "react";
 
 const ThemeContext = createContext<any>(null);
 
+interface ThemeProviderProps {
+    children: React.ReactNode;
+}
 
-export const ThemeProvider: React.FC = ({children}) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({children}) => {
     const [theme, setTheme] = useState<string>('light');
 
     useEffect(() => {
