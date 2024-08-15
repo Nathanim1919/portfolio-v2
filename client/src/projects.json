@@ -29,7 +29,7 @@
     "description": "A platform that connects influencers with brands",
     "image": "https://res.cloudinary.com/dkmnjsvw2/image/upload/v1723727881/portfolio/Screenshot_from_2024-08-15_16-17-48_zhzbra.png",
     "github": "https://github.com/Nathanim1919/influencer-HUB",
-    "deployed": "https://influencer-hub.herokuapp.com/",
+    "deployed": "https://https://landing.nathanim.me/",
     "tech": ["React", "Node.js", "Express", "MongoDB", "Socket.io", "Gemini API"],
     "date": "2023-06-01",
     "category": "Full Stack",

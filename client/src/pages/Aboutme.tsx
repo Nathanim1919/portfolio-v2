@@ -28,6 +28,7 @@ const Container = styled.div<{ theme: string }>`
     z-index: 1;
     overflow: hidden;
     padding: 5rem 0;
+    margin: 3rem 0;
     
     
     &:after{
@@ -37,7 +38,7 @@ const Container = styled.div<{ theme: string }>`
         width: 50%;
         height: 100%;
         border-bottom-left-radius: 200px;
-        background-color: ${(props) => props.theme === 'light' ? '#efeeeb' : '#555353'};
+        //background-color: ${(props) => props.theme === 'light' ? '#efeeeb' : '#555353'};
         content: '';
         
     }

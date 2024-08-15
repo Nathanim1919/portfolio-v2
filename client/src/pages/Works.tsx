@@ -117,7 +117,7 @@ export const WorksPage: React.FC = () => {
 
 const Container = styled.div<{ theme: string }>`
     display: grid;
-    width: 100%;
+    width: 100vw;
     margin: 3rem auto;
     position: relative;
     color: ${(props) => props.theme === 'light' ? '#333' : '#fff'};
@@ -191,9 +191,8 @@ const Container = styled.div<{ theme: string }>`
 
     .works {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1rem;
-        margin-top: 3rem;
 
         .project1 {
             position: relative;
