@@ -23,7 +23,7 @@ export default App
 
 const Container = styled.div<{theme: string}>`
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     position: relative;
     overflow-x: hidden;
     color: #333;

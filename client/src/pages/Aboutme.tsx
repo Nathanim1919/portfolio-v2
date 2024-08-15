@@ -10,6 +10,12 @@ export const AboutmePage: React.FC = () => {
                 I am a passionate software engineer experienced in full-stack development with React, Node.js, and
                 MongoDB. Skilled in TypeScript, GraphQL, and PostgreSQL. Continuously learning and improving to deliver
                 high-quality software solutions.
+                I am a passionate software engineer experienced in full-stack development with React, Node.js, and
+                MongoDB. Skilled in TypeScript, GraphQL, and PostgreSQL. Continuously learning and improving to deliver
+                high-quality software solutions.
+                I am a passionate software engineer experienced in full-stack development with React, Node.js, and
+                MongoDB. Skilled in TypeScript, GraphQL, and PostgreSQL. Continuously learning and improving to deliver
+                high-quality software solutions.
             </p>
         </Container>
     )
@@ -20,6 +26,7 @@ export const AboutmePage: React.FC = () => {
 
 const Container = styled.div<{ theme: string }>`
     width: 100vw;
+    height: 100%;
     place-items: center;
     color: ${(props) => props.theme === 'light' ? '#333' : '#fff'};
     font-size: 1.2rem;
@@ -27,8 +34,8 @@ const Container = styled.div<{ theme: string }>`
     position: relative;
     z-index: 1;
     overflow: hidden;
-    padding: 5rem 0;
-    margin: 3rem 0;
+    padding: 2rem 0;
+    //margin: 3rem 0;
     
     
     &:after{

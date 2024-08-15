@@ -118,7 +118,6 @@ export const WorksPage: React.FC = () => {
 const Container = styled.div<{ theme: string }>`
     display: grid;
     width: 100vw;
-    margin: 3rem auto;
     position: relative;
     color: ${(props) => props.theme === 'light' ? '#333' : '#fff'};
 
@@ -132,13 +131,13 @@ const Container = styled.div<{ theme: string }>`
     &:after {
         content: '';
         position: absolute;
-        left: 0;
+        right: 0;
         width: 50%;
         height: 100%;
         background-color: ${(props) => props.theme === 'light' ? '#efeeeb' : '#555353'};
         top: 0;
-        border-bottom-right-radius: 200px;
-        padding: 5rem 0;
+        border-bottom-left-radius: 200px;
+        padding: 5rem;
 
         @media screen and (max-width: 700px) {
             width: 60%;
@@ -193,6 +192,7 @@ const Container = styled.div<{ theme: string }>`
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1rem;
+       
 
         .project1 {
             position: relative;
