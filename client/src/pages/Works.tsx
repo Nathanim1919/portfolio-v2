@@ -32,33 +32,33 @@ export const WorksPage: React.FC = () => {
         }
     }, [filterTags]);
 
-    useEffect(() => {
-        const masonryLayout = (container: Element, items: HTMLCollection) => {
-            const columns = getComputedStyle(container).getPropertyValue('grid-template-columns').split(' ').length;
-            const colHeights = Array(columns).fill(0);
-
-            Array.from(items).forEach(item => {
-                const col = colHeights.indexOf(Math.min(...colHeights));
-                (item as HTMLElement).style.gridColumnStart = (col + 1).toString();
-                colHeights[col] += (item as HTMLElement).offsetHeight;
-            });
-        };
-
-        const handleResize = () => {
-            const works = document.querySelector(".works");
-            if (works) {
-                const items = works.children;
-                masonryLayout(works, items);
-            }
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, [projects]);
+    // useEffect(() => {
+    //     const masonryLayout = (container: Element, items: HTMLCollection) => {
+    //         const columns = getComputedStyle(container).getPropertyValue('grid-template-columns').split(' ').length;
+    //         const colHeights = Array(columns).fill(0);
+    //
+    //         Array.from(items).forEach(item => {
+    //             const col = colHeights.indexOf(Math.min(...colHeights));
+    //             (item as HTMLElement).style.gridColumnStart = (col + 1).toString();
+    //             colHeights[col] += (item as HTMLElement).offsetHeight;
+    //         });
+    //     };
+    //
+    //     const handleResize = () => {
+    //         const works = document.querySelector(".works");
+    //         if (works) {
+    //             const items = works.children;
+    //             masonryLayout(works, items);
+    //         }
+    //     };
+    //
+    //     handleResize();
+    //     window.addEventListener("resize", handleResize);
+    //
+    //     return () => {
+    //         window.removeEventListener("resize", handleResize);
+    //     };
+    // }, [projects]);
 
     const isTagActive = (tag: string) => filterTags.includes(tag);
 
@@ -90,15 +90,15 @@ export const WorksPage: React.FC = () => {
                                             <h3>{project.title}</h3>
                                             <span>{project.category}</span>
                                         </div>
-                                        <p>{project.description}</p>
                                         <div className="techStacks">
                                             {project.tech.map((tech, index) => (
                                                 <span
-                                                    onMouseEnter={() => changeInnerTextOnHovering(tech)}
-                                                    onMouseLeave={() => changeInnerTextOnHovering(tech)}
-                                                    className={isTagActive(tech) ? "activeTag" : "notActive"}
-                                                    onClick={() => addFilterTags(tech)} key={index}>{tech}</span>
+                                                onMouseEnter={() => changeInnerTextOnHovering(tech)}
+                                                onMouseLeave={() => changeInnerTextOnHovering(tech)}
+                                                className={isTagActive(tech) ? "activeTag" : "notActive"}
+                                                onClick={() => addFilterTags(tech)} key={index}>{tech}</span>
                                             ))}
+                                            <p>{project.description}</p>
                                         </div>
                                         <div className="actions">
                                             <button><MdLiveTv />Live Preview</button>
@@ -125,7 +125,7 @@ const Container = styled.div<{ theme: string }>`
     > * {
         position: relative;
         z-index: 1;
-        width: 80%;
+        width: 90%;
         margin: auto;
     }
 
@@ -191,7 +191,7 @@ const Container = styled.div<{ theme: string }>`
 
     .works {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
         gap: 1rem;
         margin-top: 3rem;
 
@@ -200,7 +200,7 @@ const Container = styled.div<{ theme: string }>`
             display: grid;
             grid-template-columns: 1fr;
             transition: transform 0.5s;
-            border: 1px solid rgba(0, 255, 207, 0.62);
+            border: 1px solid rgba(0, 255, 207, 0.15);
             border-radius: 5px;
             cursor: pointer;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -239,7 +239,6 @@ const Container = styled.div<{ theme: string }>`
             .content {
                 display: flex;
                 flex-direction: column;
-                gap: 7px;
                 overflow: hidden;
 
                 .content-detail {
@@ -249,7 +248,7 @@ const Container = styled.div<{ theme: string }>`
 
                     span {
                         padding: 5px 10px;
-                        border:1px solid #ffd283;
+                        border: 1px solid rgba(255, 210, 131, 0.38);
                         color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                         border-radius: 5px;
                         font-family: "Satisfy", cursive;
@@ -261,9 +260,9 @@ const Container = styled.div<{ theme: string }>`
                 }
 
                 h3 {
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     font-weight: bold;
-                    font-family: "Satisfy", cursive;
+                    //font-family: "Satisfy", cursive;
                     padding: 0 10px;
                 }
 
@@ -280,12 +279,14 @@ const Container = styled.div<{ theme: string }>`
                     gap: 5px;
 
                     span {
-                        padding: 3px 10px;
+                        padding: 3px 5px;
                         margin-right: 5px;
                         background-color: ${props => props.theme === 'light' ? '#eee' : '#5b5959'};
                         color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                         border-radius: 5px;
-                        font-family: "Satisfy", cursive;
+                        font-size: .9rem;
+                        box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+                        //font-family: "Satisfy", cursive;
                     }
 
                     span.activeTag {
@@ -299,15 +300,15 @@ const Container = styled.div<{ theme: string }>`
                     display: flex;
                     justify-content: space-around;
                     margin-top: 10px;
-                    border-top: 1px solid #cdc8c8;
+                    border-top: 1px solid rgba(205, 200, 200, 0.24);
 
                     button {
-                        padding: .5rem;
+                        padding: .4rem .4rem;
                         border-radius: 5px;
                         background-color: ${props => props.theme === 'light' ? '#333' : '#fff'};
                         color: ${props => props.theme === 'light' ? '#fff' : '#333'};
                         cursor: pointer;
-                        font-family: "Satisfy", cursive;
+                        //font-family: "Satisfy", cursive;
                         display: flex;
                         align-items: center;
                         gap: .5rem;
