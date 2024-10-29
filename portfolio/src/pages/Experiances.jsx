@@ -1,7 +1,9 @@
 const Experiances = () => {
   return (
-    <div className="text-white h-screen">
-      <div className="grid grid-cols-[_.4fr_.6fr] gap-5 h-full">
+    <div className="text-white h-screen relative
+    before:w-[50%] before:right-[10%] before:h-[60%] before:bg-gradient-to-b from-black to-red-600 before:absolute before:bottom-[20%] before:animate-slowSpin my-10 rounded-3xl overflow-hidden
+    ">
+      <div className="grid grid-cols-[_.4fr_.6fr] gap-5 h-full bg-black/10 backdrop-blur-3xl rounded-3xl overflow-hidden">
         <div
           className="bg-[#151515] h-[80%] rounded-3xl rounded-br-none relative
                 before:bg-[#004af7] border border-orange-400/10 before:absolute before:animate-extraSlowSpin before:duration-500 before:w-[100%] before:h-[80%] overflow-hidden
@@ -12,8 +14,8 @@ const Experiances = () => {
               Currently i'm working at{" "}
               <span className="text-white font-bold">Webhub</span>
             </h2>
-            <p className="text-gray-400">
-              Webhub is a sofeware campany focused on providing ready-made web
+            <p className="text-gray-500 text-[14px]">
+              Webhub is a software campany focused on providing ready-made web
               templates for businesses and individuals.
             </p>
 
@@ -26,8 +28,7 @@ const Experiances = () => {
         </div>
         <div
           className="h-[80%] rounded-3xl rounded-bl-none border border-orange-400/15 overflow-hidden relative
-                 before:absolute before:w-[80%] before:h-[60%] before:bg-gradient-to-r before:from-[#C33764] before:to-[#131314] before:right-0
-                "
+                                 "
         >
           <div className="relative w-full h-full bg-black/60 p-5 backdrop-blur-xl">
             <h2 className="text-4xl font-bold">
