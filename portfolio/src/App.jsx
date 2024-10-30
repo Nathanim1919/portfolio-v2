@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Experiances from "./pages/Experiances";
 import Projects from "./pages/Projects";
+import Tools from "./pages/Tools";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Services />
         <Experiances/>
         <Projects/>
+        <Tools/>
+        <Footer/>
       </div>
     </div>
   );

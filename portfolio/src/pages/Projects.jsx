@@ -1,12 +1,11 @@
 import { FaGithub } from "react-icons/fa";
 import { MdLiveTv } from "react-icons/md";
-
-
+import {ProjectsData} from "../projects";
 
 const Projects = () => {
   return (
-    <div className="text-white">
-      <div className="grid grid-cols-2  border-b border-gray-900 py-7">
+    <div className="text-white mb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 border-b border-gray-900 pt-7">
         <div className="flex flex-col">
           <h2 className="text-gray-400">
             Let me show you what i am capable of doing
@@ -24,118 +23,76 @@ const Projects = () => {
           </p>
         </div>
       </div>
-      <div>
-        <div className="flex justify-between items-center p-5">
+      <div className="relative w-full h-full overflow-hidden
+      before:absolute before:w-[90%] before:h-[100%] before:bg-gray-600 before:top-[10%] before:left-[10%] before:animate-extraSlowSpin
+      ">
+        <div className="bg-black/70 relative z-10 backdrop-blur-3xl h-full w-full"> 
+         <div className="flex justify-between items-center p-5">
           <h1>Projects</h1>
           <FaGithub className="text-3xl" />
         </div>
-        <div className="project1 grid grid-cols-[_.5fr_.5fr] gap-5 p-5">
-          <div className="w-[100%] relative
-           before:absolute before:w-[30%] before:h-[30%] before:bg-gradient-to-tr from-red-400 before:top-[40%] before:left-10 to-pink-600
-          ">
-            <div className="relative w-full h-full bg-black/5 backdrop-blur-3xl p-6 grid gap-5">
-            {" "}
-            <div className="proinfo">
-              <ul className="pro-type flex items-center border-b border-gray-800 py-4 gap-1">
-                <li className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">Full-Stack</li>
-                <li className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">Web App</li>
-              </ul>
-              <ul className="pro-tech flex items-center py-4 gap-2">
-                <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">React</li>
-                <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">Node.js</li>
-                <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">Express</li>
-                <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">MongoDB</li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h1 className="text-2xl font-bold">Challenge-Track</h1>
-              <p className="text-[14px] text-gray-400 w-[60%]">
-                A web app that helps you track your progress on coding
-                challenges, and compete with friends. it includes advanced
-                features like a leaderboard, and a chat system.
-              </p>
-            </div>
-            <div className="flex items-center gap-5">
-              <FaGithub className="text-2xl" /> 
-                <MdLiveTv className="text-2xl" />
-            </div>
-            </div>
-          </div>
-          <div className="pictures grid grid-cols-3 gap-3">
-            <div className="w-50 h-50 bg-gray-700">
-             <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-                <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-                <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-                <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-                <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-             <img src="" alt="" />
-            </div>
-          </div>
-        </div>
-        <div className="project1 grid grid-cols-[_.5fr_.5fr] gap-5 p-5">
-         
-          <div className="pictures grid grid-cols-3 gap-3">
-            <div className="w-50 h-50 bg-gray-700">
-             <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-                <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-                <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-                <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-                <img src="" alt="" />
-            </div>
-            <div className="w-50 h-50 bg-gray-700">
-             <img src="" alt="" />
-            </div>
-          </div>
-          <div className="w-[100%] relative
-           before:absolute before:w-[30%] before:h-[30%] before:bg-gradient-to-tr from-red-400 before:top-[40%] before:right-10 to-blue-600
-          ">
-            <div className="relative w-full h-full bg-black/5 backdrop-blur-3xl p-6 grid gap-5">
-            {" "}
-            <div className="proinfo">
-              <ul className="pro-type flex items-center border-b border-gray-800 py-4 gap-1">
-                <li className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">Full-Stack</li>
-                <li className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">Web App</li>
-              </ul>
-              <ul className="pro-tech flex items-center py-4 gap-2">
-                <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">React</li>
-                <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">Node.js</li>
-                <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">Express</li>
-                <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">MongoDB</li>
-              </ul>
-            </div>
-            <div className="flex flex-col gap-2">
-              <h1 className="text-2xl font-bold">Challenge-Track</h1>
-              <p className="text-[14px] text-gray-400 w-[60%]">
-                A web app that helps you track your progress on coding
-                challenges, and compete with friends. it includes advanced
-                features like a leaderboard, and a chat system.
-              </p>
-            </div>
-            <div className="flex items-center gap-5">
-              <FaGithub className="text-2xl" /> 
-                <MdLiveTv className="text-2xl" />
-            </div>
-            </div>
-          </div>
-        </div>
+        {ProjectsData.map((project, index) => {
+          if (project.featured) {
+            return (
+              <div
+                key={index}
+                className="project1 grid grid-cols-[1fr] lg:grid-cols-[_.5fr_.5fr] gap-5 px-5 py-10"
+              >
+              <div className={`w-[100%] order-2 relative ${index % 2 === 0 ? "order-1 lg:order-2" : "order-1"}`}>
+                  <div className="relative w-full h-full p-6 grid gap-5">
+                    {" "}
+                    <div className="proinfo">
+                      <ul className="pro-type flex items-center border-b border-gray-800 py-4 gap-1">
+                        <li className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">
+                          Full-Stack
+                        </li>
+                        <li className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">
+                          Web App
+                        </li>
+                      </ul>
+                      <ul className="pro-tech flex items-center py-4 gap-2">
+                        <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">
+                          React
+                        </li>
+                        <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">
+                          Node.js
+                        </li>
+                        <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">
+                          Express
+                        </li>
+                        <li className="py-1 px-2 border border-orange-600/15 text-[13px rounded-full]">
+                          MongoDB
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <h1 className="text-2xl font-bold">Challenge-Track</h1>
+                      <p className="text-[14px] text-gray-400 w-[60%]">
+                        A web app that helps you track your progress on coding
+                        challenges, and compete with friends. it includes
+                        advanced features like a leaderboard, and a chat system.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-5 place-self-end">
+                      <FaGithub className="text-2xl w-10 h-10 grid place-items-center bg-gray-900 cursor-pointer hover:bg-transparent p-2 rounded-full" />
+                      <MdLiveTv className="text-2xl w-10 h-10 grid place-items-center bg-gray-900 cursor-pointer hover:bg-transparent p-2 rounded-full" />
+                    </div>
+                  </div>
+                </div>
+                <div className="pictures grid gap-3 relative overflow-hidden
+                before:w-[50%] before:h-[50%] before:absolute before:bg-red-600 before:animate-pulse
+                after:w-[50%] after:h-[50%] after:absolute after:bg-red-600 after:bottom-0 after:right-0 after:z-0 after:animate-pulse
+                ">
+                  <div className="w-full h-full bg-black/50 backdrop-blur-3xl relative grid place-items-center z-10">
+                    <img src={project.image} className="relative w-[90%] h-[90%] shadow-2xl rounded-xl" alt="" />
+                  </div>
+                 
+                </div>
+              </div>
+            );
+          }
+        })}
+      </div>
       </div>
     </div>
   );
