@@ -4,7 +4,7 @@ const Footer = () => {
       className="relative before:absolute before:w-full h-full before:bg-red-400
     "
     >
-      <div className="text-white relative w-full h-full backdrop-blur-md z-20 grid place-items-center py-40">
+      <div className="text-white relative w-full h-full backdrop-blur-md z-20 grid place-items-center py-10">
         <h2>
           Made with{" "}
           <span role="img" aria-label="heart">

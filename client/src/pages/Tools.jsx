@@ -22,25 +22,35 @@ const Tools = () => {
             Tools and Technologies
           </h1>
           <p className="text-gray-400">
-            I have experience working with a variety of technologies, including
-            HTML, CSS, JavaScript, React, and Node.js. I am always looking for
-            new opportunities to learn and grow as a developer.
+           Languages are just tools, knowing how to use them is the real craft. Even if the first thing is to solve a problem, the second is to solve it in the best way possible. Here are some of the tools and technologies I use to build web applications.
           </p>
+          <div className="tools">
+            <div className="flex items-center gap-5">
+              <FaReact className="text-blue-500 text-4xl" />
+              <FaNodeJs className="text-green-500 text-4xl" />
+              <IoLogoJavascript className="text-yellow-500 text-4xl" />
+              <FaPython className="text-yellow-500 text-4xl" />
+            </div>
+            <div className="flex items-center gap-5">
+              <DiMysql className="text-blue-500 text-4xl" />
+              <RiTailwindCssLine className="text-blue-500 text-4xl" />
+              <FaDocker className="text-blue-500 text-4xl" />
+              <DiRedis className="text-red-500 text-4xl" />
+            </div>
+            <div className="flex items-center gap-5">
+              <TbBrandSocketIo className="text-blue-500 text-4xl" />
+              <SiSvelte className="text-blue-500 text-4xl" />
+              <RiNextjsFill className="text-blue-500 text-4xl" />
+              <FaJava className="text-blue-500 text-4xl" />
+            </div>
+          </div>
         </div>
         <div>
           <div className="grid grid-cols-4 place-items-center h-full">
-            <FaReact className="absolute -top-10  bg-gray-800 p-1 rounded-full border opacity-35 border-orange-500/50 text-[10rem] text-blue-500" />
+            <FaReact className="absolute -top-20 right-0  bg-gray-800 p-1 rounded-full border opacity-35 border-orange-500/50 text-[10rem] text-blue-500" />
             <FaNodeJs className="absolute -bottom-10 -right-3 opacity-25 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-[10rem] text-green-500" />
-            <FaJava className="relative -top-10 animate-ping w-10 h-10 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-4xl text-red-500" />
             <IoLogoJavascript className="absolute -bottom-10 -left-3 opacity-25 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-[10rem] text-yellow-500" />
-            <DiMysql className="relative -top-10 animate-ping w-10 h-10 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-4xl text-blue-500" />
-            <FaPython className="absolute -top-10 right-[50%] opacity-25 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-[10rem] text-yellow-500" />
-            <RiTailwindCssLine className="relative -top-10 animate-ping w-10 h-10 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-4xl text-blue-500" />
-            <FaDocker className="relative -top-10 animate-ping w-10 h-10 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-4xl text-blue-500" />
-            <DiRedis className="relative -top-10 animate-ping w-10 h-10 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-4xl text-red-500" />
-            <TbBrandSocketIo className="relative -top-10 animate-ping w-10 h-10 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-4xl text-black" />
-            <SiSvelte className="relative -top-10 animate-ping w-10 h-10 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-4xl text-blue-500" />
-            <RiNextjsFill className="relative -top-10 animate-ping w-10 h-10 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-4xl text-black" />
+            <FaPython className="absolute -top-10 right-[80%] opacity-25 bg-gray-800 p-1 rounded-full border border-orange-500/50 text-[10rem] text-yellow-500" />
           </div>
         </div>
       </div>
