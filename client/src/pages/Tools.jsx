@@ -17,7 +17,7 @@ const Tools = () => {
     before:absolute before:w-[50%]  before:h-full before:bg-gradient-to-r from-orange-400 before:top-[40%] before:right-10 to-orange-900
     ">
       <div className="grid grid-cols-1 lg:grid-cols-2 p-6 h-full text-white bg-black/10 backdrop-blur-3xl relative z-10 border-3 border-gray-100/10">
-        <div className="p-10 flex flex-col gap-5">
+        <div className="p-1 lg:p-10  flex flex-col gap-5">
           <h1 className="text-white text-3xl font-bold">
             Tools and Technologies
           </h1>

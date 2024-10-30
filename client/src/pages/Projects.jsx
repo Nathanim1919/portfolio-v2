@@ -40,7 +40,7 @@ const Projects = () => {
                   className="project1 grid grid-cols-1 lg:grid-cols-2 gap-5 px-5 py-10"
                 >
                   {/* Text Section */}
-                  <div className={`w-full relative ${index % 2 === 0 ? "order-2 lg:order-1" : "order-1 lg:order-2"}`}>
+                  <div className={`w-full relative ${index % 2 === 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"}`}>
                     <div className="relative w-full h-full p-6 grid gap-5">
                       <div className="proinfo">
                         <ul className="pro-type flex items-center border-b border-gray-800 py-4 gap-1">
