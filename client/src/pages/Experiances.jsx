@@ -10,7 +10,7 @@ const Experiances = () => {
                 "
         >
           <div className="bg-black/60 backdrop-blur-3xl w-full h-full p-6 flex flex-col gap-3">
-            <h2 className="text-3xl lg:text-5xl text-gray-400 leading-[3.5rem] relative z-50">
+            <h2 className="text-3xl lg:text-5xl text-gray-400 lg:leading-[3.5rem] relative z-50">
               Currently i'm working at{" "}<br/>
               <span className="text-white font-bold">Web-hub</span>
             </h2>
