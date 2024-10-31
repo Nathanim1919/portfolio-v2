@@ -52,7 +52,7 @@ const Services = () => {
           </div>
           <div
             className=" bg-gray-950 rounded-xl overflow-hidden shadow-2xl border border-orange-700/20 p-[1px]
-          before:w-[80%] before:h-full before:bg-gradient-to-r before:animate-extraSlowSpin before:from-[#C33764] before:to-[#1a1b1b] before:absolute before:left-0 before:top-0 before:bottom-0 relative
+          before:w-[100%] before:h-full before:bg-gradient-to-r before:animate-extraSlowSpin before:from-[#C33764] before:to-[#1a1b1b] before:absolute before:left-0 before:top-0 before:bottom-0 relative
           "
           >
             <div className="bg-black/70 rounded-lg overflow-hidden backdrop-blur-xl relative w-full h-full p-6 flex flex-col gap-3">
