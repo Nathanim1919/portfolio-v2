@@ -1,12 +1,12 @@
 const Experiances = () => {
   return (
-    <div className="text-white h-screen relative 
+    <div className="text-white h-screen relative
     before:w-[50%] before:right-[10%] before:h-[60%] before:bg-gradient-to-b from-black to-red-600 before:absolute before:bottom-[20%] before:animate-slowSpin my-10 rounded-3xl overflow-hidden
     ">
       <div className="grid grid-cols-1 lg:grid-cols-[_.4fr_.6fr] gap-5 h-full bg-black/10 backdrop-blur-3xl overflow-hidden">
         <div 
-          className="bg-[#151515] h-[80%] rounded-3xl rounded-br-none relative
-                before:bg-[#004af7] border border-orange-400/10 before:absolute before:animate-extraSlowSpin before:duration-500 before:w-[100%] before:h-[80%] overflow-hidden
+          className="bg-[#151515] h-[80%] rounded-3xl rounded-br-none relative p-[1px]
+                before:bg-[#004af7] border border-orange-400/10 before:absolute before:animate-extraSlowSpin before:duration-500 before:w-[100%] before:h-[100%] overflow-hidden
                 "
         >
           <div className="bg-black/60 backdrop-blur-3xl w-full h-full p-6 flex flex-col gap-3">

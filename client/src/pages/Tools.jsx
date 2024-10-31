@@ -14,8 +14,8 @@ import { RiNextjsFill } from "react-icons/ri";
 const Tools = () => {
   return (
     <div
-      className="grid h-full relative overflow-hidden
-    before:absolute before:w-[90%]  before:h-full before:bg-gradient-to-r from-orange-400 before:animate-extraSlowSpin before:top-[40%] before:right-10 to-orange-900
+      className="grid h-full relative overflow-hidden p-[1px]
+    before:absolute before:w-[60%]  before:h-full before:bg-gradient-to-r from-orange-400 before:animate-extraSlowSpin before:top-[40%] before:right-10 to-orange-900
     "
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 p-6 h-full text-white bg-black/60 backdrop-blur-3xl relative z-10 border-3 border-gray-100/10">
