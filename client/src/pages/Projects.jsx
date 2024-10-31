@@ -5,7 +5,7 @@ import { ProjectsData } from "../projects";
 const Projects = () => {
   return (
     <div className="text-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 border-b border-gray-900 pt-7 px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 border-b border-gray-900 pt-7 p-4">
         <div className="flex flex-col">
           <h2 className="text-gray-400">
             Let me show you what I am capable of doing
@@ -44,39 +44,41 @@ const Projects = () => {
                     <div className="relative w-full h-full p-6 grid gap-5">
                       <div className="proinfo">
                         <ul className="pro-type flex items-center border-b border-gray-800 py-4 gap-1">
-                          <li className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">
-                            Full-Stack
-                          </li>
-                          <li className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">
-                            Web App
-                          </li>
+                              {
+                                project.types.map((type, index) => {
+                                  return (
+                                    <li key={index} className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">
+                                      {type}
+                                    </li>
+                                  );
+                                }
+                              )}
                         </ul>
-                        <ul className="pro-tech flex items-center py-4 gap-2">
-                          <li className="py-1 px-2 border border-orange-600/15 rounded-full text-[13px]">
-                            React
-                          </li>
-                          <li className="py-1 px-2 border border-orange-600/15 rounded-full text-[13px]">
-                            Node.js
-                          </li>
-                          <li className="py-1 px-2 border border-orange-600/15 rounded-full text-[13px]">
-                            Express
-                          </li>
-                          <li className="py-1 px-2 border border-orange-600/15 rounded-full text-[13px]">
-                            MongoDB
-                          </li>
+                        <ul className="pro-tech flex items-center py-4 gap-2 flex-wrap">
+                              {
+                                project.Technologies.map((tech, index) => {
+                                  return (
+                                    <li key={index} className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">
+                                      {tech}
+                                    </li>
+                                  );
+                                }
+                              )}
                         </ul>
                       </div>
                       <div className="flex flex-col gap-2">
-                        <h1 className="text-2xl font-bold">Challenge-Track</h1>
+                        <h1 className="text-2xl font-bold">{project.title}</h1>
                         <p className="text-[14px] text-gray-400 w-[90%] lg:w-[60%]">
-                          A web app that helps you track your progress on coding
-                          challenges and compete with friends. It includes advanced
-                          features like a leaderboard and a chat system.
+                         {project.description}
                         </p>
                       </div>
                       <div className="flex items-center gap-5 place-self-end">
+                        <a href={project.Links.github} target="_blank" rel="noreferrer">
                         <FaGithub className="text-2xl w-10 h-10 grid place-items-center bg-gray-900 cursor-pointer hover:bg-transparent p-2 rounded-full" />
+                        </a>
+                        <a href={project.Links.live} target="_blank" rel="noreferrer">
                         <MdLiveTv className="text-2xl w-10 h-10 grid place-items-center bg-gray-900 cursor-pointer hover:bg-transparent p-2 rounded-full" />
+                        </a>
                       </div>
                     </div>
                   </div>

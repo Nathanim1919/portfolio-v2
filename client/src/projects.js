@@ -1,8 +1,8 @@
 import Image1 from "./assets/projectImages/m1.png"
 import Image2 from "./assets/projectImages/m2.png"
 import Image3 from "./assets/projectImages/m3.png"
-
-
+import Image4 from "./assets/projectImages/m4.png"
+import Image5 from "./assets/projectImages/m5.png"
 
 export const ProjectsData = [
   {
@@ -22,7 +22,7 @@ export const ProjectsData = [
       "tailwindcss"
     ],
     "Links": {
-      "github": "https://github.com/Nathanim1919/challenges",
+      "github": "https://github.com/Nathanim1919/ChallengeTrack",
       "live": "https://challenge-track.herokuapp.com/"
     },
     "types": ["Fullstack", "Web Application", "Social Platform"],
@@ -31,66 +31,45 @@ export const ProjectsData = [
     "bgColor": "bg-blue-500"
   },
   {
-    "title": "Challenge Track",
-    "description": "A platform for creating and participating in coding challenges.",
-    "image":Image2,
+    "title":"Finance Vision",
+    "description":"A financial management platform for tracking expenses and income and also set goals.",
+    "image":Image4,
     "Technologies": [
       "React",
       "Node",
       "Express",
       "MongoDB",
-      "Docker",
-      "Socket.io",
-      "Jest",
-      "Redis",
       "Redux",
       "tailwindcss"
     ],
     "Links": {
-      "github": "https://github.com/Nathanim1919/challenges",
-      "live": "https://challenge-track.herokuapp.com/"
+      "github": "https://github.com/Nathanim1919/FinanceVision",
+      "live": "https://fvision.nathanimt.me/"
     },
-    "types": ["Fullstack", "Web Application", "Social Platform"],
+    "types": ["Fullstack", "Web Application", "Finance"],
     "featured": true,
     "date": "2021-06-01",
-    "beforeBg":"before:bg-gradient-to-tr from-red-400 before:top-[40%] before:left-10 to-pink-600"
+    "bgColor": "bg-green-500"
   },
   {
-    "title": "Challenge Track",
-    "description": "A platform for creating and participating in coding challenges.",
-    "image":Image3,
+    "title":"Eventify",
+    "description":"A platform for creating and managing events.",
+    "image":Image5,
     "Technologies": [
       "React",
       "Node",
       "Express",
       "MongoDB",
-      "Docker",
-      "Socket.io",
-      "Jest",
-      "Redis",
       "Redux",
       "tailwindcss"
     ],
     "Links": {
-      "github": "https://github.com/Nathanim1919/challenges",
-      "live": "https://challenge-track.herokuapp.com/"
+      "github": "https://github.com/Nathanim1919/video-streaming",
+      "live": "https://eventify.nathanimt.me/"
     },
-    "types": ["Fullstack", "Web Application", "Social Platform"],
+    "types": ["Fullstack", "Web Application", "Events"],
     "featured": true,
     "date": "2021-06-01",
-    "bgColor": "bg-red-500"
-  },
-  {
-    "title": "Portfolio",
-    "description": "A portfolio website to showcase my projects and skills.",
-    "image":Image3,
-    "Technologies": ["React", "Tailwindcss", "Framer Motion"],
-    "Links": {
-      "github": " ",
-      "live": " "
-    },
-    "types": ["Frontend", "Web Application"],
-    "featured": false,
-    "date": "2021-06-01"
+    "bgColor": "bg-yellow-500"
   }
 ]
