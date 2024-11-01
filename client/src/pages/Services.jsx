@@ -1,10 +1,10 @@
 const Services = () => {
   return (
     <div className="text-white grid place-items-center p-4">
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
-        <div className="py-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-3 lg:gap-10">
+        <div className="py-3 lg:py-6">
           <h3 className="text-gray-400">INTRO</h3>
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-2xl lg:text-4xl font-bold">
             Solving real-world Complex Business problems with software
             solutions.
           </h1>

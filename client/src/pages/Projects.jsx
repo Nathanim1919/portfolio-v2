@@ -43,12 +43,16 @@ const Projects = () => {
                   <div className={`w-full relative ${index % 2 === 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"}`}>
                     <div className="relative w-full h-full p-6 grid gap-5">
                       <div className="proinfo">
-                        <ul className="pro-type flex items-center border-b border-gray-800 py-4 gap-1">
+                        <ul className="pro-type flex flex-wrap items-center border-b border-gray-800 py-4 gap-1">
                               {
                                 project.types.map((type, index) => {
                                   return (
-                                    <li key={index} className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">
+                                    <li key={index}  className="p-[1px] relative overflow-hidden rounded-full text-[12px] text-gray-400
+                                    before:absolute before:w-full before:h-full before:bg-gradient-to-r from-sky-500 to-orange-400 before:rounded-full before:animate-extraSlowSpin
+                                    ">
+                                      <li className="bg-black relative w-full h-full grid place-items-center py-1 px-3 rounded-full">
                                       {type}
+                                      </li>
                                     </li>
                                   );
                                 }
