@@ -1,4 +1,4 @@
-import ScreenImage from "../assets/projectImages/screen.png";
+import ScreenImage from "../assets/projectImages/screen2.png";
 
 const Experiances = () => {
   return (
