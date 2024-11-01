@@ -42,8 +42,9 @@ const Experiances = () => {
                 A hub for web templates, web design, and web development.
               </p>
             </div>
-            <div className="p-1 relative
-            before:w-[100%] before:h-[100%] before:bg-gradient-to-b rounded-3xl overflow-hidden from-orange-300 to-sky-600 before:absolute before:bottom-[20%] before:animate-slowSpin my-10
+            <div className="p-[1px] relative
+            before:w-[100%] before:h-[50%] before:bg-gradient-to-b rounded-3xl overflow-hidden from-orange-300 to-sky-600 before:absolute before:animate-extraSlowSpin my-10
+            
             ">
               <div className="relative bg-black w-full h-full overflow-hidden rounded-3xl">
               <img src={ScreenImage} alt="Screen" className="w-full h-full" />

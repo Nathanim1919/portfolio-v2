@@ -37,10 +37,9 @@ const Projects = () => {
               return (
                 <div
                   key={index}
-                  className="project1 grid grid-cols-1 lg:grid-cols-2 gap-10 px-5"
+                  className="project1 grid grid-cols-1 lg:grid-cols-2 lg:gap-10 px-5"
                 >
-                  {/* Text Section */}
-                  <div className={`w-full relative ${index % 2 === 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"}`}>
+                  <div className={`w-full relative ${index % 2 === 0 ? "order-2 lg:order-2" : "order-2 lg:order-1"}`}>
                     <div className="relative w-full h-full p-6 grid gap-5">
                       <div className="proinfo">
                         <ul className="pro-type flex flex-wrap items-center border-b border-gray-800 py-4 gap-1">
@@ -58,24 +57,29 @@ const Projects = () => {
                                 }
                               )}
                         </ul>
+                        <div className="flex flex-col gap-2">
+                        <h1 className="text-2xl font-bold">{project.title}</h1>
+                        <p className="text-[14px] text-gray-400 w-[90%] lg:w-[60%]">
+                         {project.description}
+                        </p>
+                      </div>
                         <ul className="pro-tech flex items-center py-4 gap-2 flex-wrap">
                               {
                                 project.Technologies.map((tech, index) => {
                                   return (
-                                    <li key={index} className="py-1 px-3 border border-gray-700 rounded-full text-[12px] text-gray-400">
+                                    <li key={index} className="rounded-full text-[12px] text-gray-400 relative overflow-hidden p-[1px]
+                                    before:absolute before:w-full before:h-[150%] before:bg-gradient-to-r from-red-500 to-gray-900 before:rounded-full before:animate-extraSlowSpin
+                                    ">
+                                      <li className="py-1 px-3 rounded-full relative w-full h-full bg-black/60 backdrop-blur-3xl">
                                       {tech}
+                                      </li>
                                     </li>
                                   );
                                 }
                               )}
                         </ul>
                       </div>
-                      <div className="flex flex-col gap-2">
-                        <h1 className="text-2xl font-bold">{project.title}</h1>
-                        <p className="text-[14px] text-gray-400 w-[90%] lg:w-[60%]">
-                         {project.description}
-                        </p>
-                      </div>
+                     
                       <div className="flex items-center gap-5 place-self-end">
                         <a href={project.Links.github} target="_blank" rel="noreferrer">
                         <FaGithub className="text-2xl w-10 h-10 grid place-items-center bg-gray-900 cursor-pointer hover:bg-transparent p-2 rounded-full" />
@@ -88,7 +92,7 @@ const Projects = () => {
                   </div>
 
                   {/* Image Section */}
-                  <div className={`pictures ${index % 2 === 0 ? "order-1 lg:order-2" : "order-2 lg:order-1"} grid gap-3 relative overflow-hidden
+                  <div className={`pictures ${index % 2 === 0 ? "order-1" : "order-1 lg:order-1"} grid gap-3 relative overflow-hidden
                       before:w-[50%] before:h-[50%] before:absolute before:bg-red-600 before:animate-pulse
                       after:w-[50%] after:h-[50%] after:absolute after:bg-red-600 after:bottom-0 after:right-0 after:animate-pulse
                     `}>
