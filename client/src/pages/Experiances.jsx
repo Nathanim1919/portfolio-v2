@@ -1,17 +1,20 @@
+import ScreenImage from "../assets/projectImages/screen.png";
+
 const Experiances = () => {
   return (
-    <div className="text-white h-screen relative
-    before:w-[50%] before:right-[10%] before:h-[60%] before:bg-gradient-to-b from-black to-red-600 before:absolute before:bottom-[20%] before:animate-slowSpin my-10 rounded-3xl overflow-hidden
-    ">
+    <div
+      className="text-white relative
+    "
+    >
       <div className="grid grid-cols-1 lg:grid-cols-[_.4fr_.6fr] gap-5 h-full bg-black/10 backdrop-blur-3xl overflow-hidden">
-        <div 
-          className="bg-[#151515] h-[80%] rounded-3xl rounded-br-none relative p-[1px]
+        <div
+          className="bg-[#151515] h-full rounded-3xl rounded-br-none relative p-[1px]
                 before:bg-[#004af7] border border-orange-400/10 before:absolute before:animate-extraSlowSpin before:duration-500 before:w-[100%] before:h-[100%] overflow-hidden
                 "
         >
           <div className="bg-black/60 backdrop-blur-3xl w-full h-full p-6 flex flex-col gap-3">
             <h2 className="text-3xl lg:text-5xl text-gray-400 lg:leading-[3.5rem] relative z-50">
-              Currently i'm working at{" "}<br/>
+              Currently i'm working at <br />
               <span className="text-white font-bold">Web-hub</span>
             </h2>
             <p className="text-gray-500 text-[14px] relative z-50">
@@ -27,16 +30,25 @@ const Experiances = () => {
           </div>
         </div>
         <div
-          className="h-[80%] rounded-3xl rounded-bl-none border border-orange-400/15 overflow-hidden relative
+          className="h-full rounded-3xl rounded-bl-none border border-orange-400/15 overflow-hidden relative
                                  "
         >
           <div className="relative w-full h-full bg-black/60 p-5 backdrop-blur-xl">
-            <h2 className="text-4xl font-bold">
-              webhub.<span className="text-gray-400">com</span>
-            </h2>
-            <p className="text-gray-600">
-              A hub for web templates, web design, and web development.
-            </p>
+            <div>
+              <h2 className="text-4xl font-bold">
+                webhub.<span className="text-gray-400">com</span>
+              </h2>
+              <p className="text-gray-600">
+                A hub for web templates, web design, and web development.
+              </p>
+            </div>
+            <div className="p-1 relative
+            before:w-[100%] before:h-[100%] before:bg-gradient-to-b rounded-3xl overflow-hidden from-orange-300 to-sky-600 before:absolute before:bottom-[20%] before:animate-slowSpin my-10
+            ">
+              <div className="relative bg-black w-full h-full overflow-hidden rounded-3xl">
+              <img src={ScreenImage} alt="Screen" className="w-full h-full" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
