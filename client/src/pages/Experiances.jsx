@@ -8,8 +8,8 @@ const Experiances = () => {
     >
       <div className="grid grid-cols-1 lg:grid-cols-[_.4fr_.6fr] gap-5 h-full bg-black/10 backdrop-blur-3xl overflow-hidden">
         <div
-          className="bg-[#151515] h-full rounded-3xl rounded-br-none relative p-[1px]
-                before:bg-[#004af7] border border-orange-400/10 before:absolute before:animate-extraSlowSpin before:duration-500 before:w-[100%] before:h-[100%] overflow-hidden
+          className="bg-[#151515] h-full rounded-3xl rounded-br-none relative
+                before:bg-[#004af7] border border-orange-400/10 before:absolute before:duration-500 before:w-[100%] before:h-[100%] overflow-hidden
                 "
         >
           <div className="bg-black/60 backdrop-blur-3xl w-full h-full p-6 flex flex-col gap-3">
@@ -17,15 +17,15 @@ const Experiances = () => {
               Currently i'm working at <br />
               <span className="text-white font-bold">Web-hub</span>
             </h2>
-            <p className="text-gray-500 text-[14px] relative z-50">
+            <p className="text-gray-200 text-[14px] relative z-50">
               Webhub is a software campany focused on providing ready-made web
               templates for businesses and individuals.
             </p>
 
-            <div className="w-[60%] h-[40%] bg-black/25 rounded-xl shadow-2xl grid  absolute z-30 -bottom-40 lg:bottom-0 right-40 transform rotate-45">
-              <div className="w-20 h-10 bg-blue-500 rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-5"></div>
-              <div className="w-30 h-20 bg-blue-500 rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-5"></div>
-              <div className="w-40 h-30 bg-red-500 rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-20"></div>
+            <div className="w-[120%] h-[140%] gap-2 rounded-xl grid  absolute z-30 mx-auto -top-0 md:-bottom-40  lg:bottom-0 transform rotate-45 opacity-10">
+              <div className="w-100 h-30 bg-sky-500 rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-5"></div>
+              <div className="w-80 h-30 bg-blue-500 rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-5"></div>
+              <div className="w-60 h-30 bg-white rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-20"></div>
             </div>
           </div>
         </div>

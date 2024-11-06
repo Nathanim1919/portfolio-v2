@@ -39,9 +39,15 @@ const Home = () => {
           "
           >
             <div className="socialMedias p-2 bg-black flex items-center gap-6 relative w-full h-full  rounded-full">
+              <a href="https://www.github.com/Nathanim1919" target="_blank" rel="noreferrer">
               <FaGithub className="text-2xl w-full h-full relative cursor-pointer bg-black hover:bg-gray-900 rounded-full grid place-items-center" />
+              </a>
+              <a href="https://x.com/NathanimTadele" target="_blank" rel="noreferrer">
               <FaTwitter className="text-2xl w-full h-full relative cursor-pointer bg-black hover:bg-gray-900 rounded-full grid place-items-center" />
+              </a>
+              <a href="https://www.linkedin.com/in/nathanim-tadele-762099247/" target="_blank" rel="noreferrer">
               <TiSocialLinkedin className="text-2xl w-full h-full relative cursor-pointer bg-black hover:bg-gray-900 rounded-full grid place-items-center" />
+              </a>
             </div>
           </div>
         </div>

@@ -16,9 +16,9 @@ const CallToAction = () => {
           <div className="relative w-[50%] grid place-items-center h-full p-[1px] rounded-full overflow-hidden
           before:absolute before:w-full before:h-full before:bg-gradient-to-r from-sky-500 to-orange-400 before:rounded-full before:animate-extraSlowSpin
           ">
-            <button className=" relative w-full h-full py-2 px-3 bg-gradient-to-r from-red-900 to-black rounded-full">
+            <a href="https://www.linkedin.com/in/nathanim-tadele-762099247/" className=" relative w-full h-full py-2 px-3 bg-gradient-to-r from-red-900 to-black rounded-full">
               Get in touch
-            </button>
+            </a>
           </div>
         </div>
         <div className=" grid place-items-center">
