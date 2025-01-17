@@ -5,13 +5,19 @@ import { ProjectsData } from "../projects";
 const Projects = () => {
   return (
     <div className="text-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 border-b border-gray-900 pt-7 p-4">
-        <div className="flex flex-col">
-          <h2 className="text-gray-400">
-            Let me show you what I am capable of doing
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 py-20 place-items-center">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-sky-400/75">
+            Building software is my passion, and I strive to create solutions
+            that are not only visually stunning but also highly functional and
+            impactful.
           </h2>
-          <h1 className="text-2xl md:text-4xl font-bold">My Latest Projects</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+            These Are My Recent Projects, Pushing Boundaries to Deliver
+            Excellence
+          </h1>
         </div>
+
         <div>
           <p className="text-[14px] text-gray-400">
             I believe in the power of the web and its ability to connect people

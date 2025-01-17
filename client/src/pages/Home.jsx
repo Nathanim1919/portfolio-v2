@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div
       className="relative w-full h-full p-[1px]
-    before:absolute before:w-[100%] before:right-0 before:animate-extraSlowSpin rounded-[3rem] rounded-br-none border border-orange-500/10 overflow-hidden before:rounded-tl-full before:h-full before:bg-gradient-to-r from-[#C33764] to-[#131314]
+    before:absolute before:w-[100%] before:right-10 before:top-10  rounded-[3rem] rounded-br-none border border-orange-500/10 overflow-hidden before:rounded-tl-full before:h-full before:bg-gradient-to-r from-[#29808b] to-[#1b1b5c67]
     "
     >
       <div className="relative w-full h-full rounded-[3rem] rounded-br-none overflow-hidden flex flex-col p-4 lg:p-6 gap-10 bg-black/55 backdrop-blur-3xl">
