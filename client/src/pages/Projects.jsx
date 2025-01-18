@@ -5,7 +5,7 @@ import { ProjectsData } from "../projects";
 const Projects = () => {
   return (
     <div className="text-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10 py-20 place-items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10 md:py-20 place-items-center">
         <div className="flex w-full flex-col gap-3 items-start justify-center">
           <h3 className="text-gray-400 m-0 bg-gray-900 border border-orange-400/25 py-1 px-3 rounded-full text-[13px]">
             01 PROJECTS
