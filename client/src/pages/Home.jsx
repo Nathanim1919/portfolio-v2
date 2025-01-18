@@ -1,5 +1,3 @@
-import React from "react";
-import ProfileImage from "../assets/me.jpg";
 import SaluteImage from "../assets/hey.png";
 import { FaGithub } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";

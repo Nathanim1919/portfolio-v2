@@ -1,4 +1,3 @@
-import ScreenImage from "../assets/projectImages/screen2.png";
 import { FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { FaJava } from "react-icons/fa";
@@ -16,7 +15,6 @@ import { SiRedux } from "react-icons/si";
 import { SiTypescript } from "react-icons/si";
 // import { SiNextDotJs } from "react-icons/si";
 import { SiGraphql } from "react-icons/si";
-import { SiMysql } from "react-icons/si";
 
 const Experiances = () => {
   return (

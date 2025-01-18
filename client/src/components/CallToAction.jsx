@@ -10,7 +10,7 @@ const CallToAction = () => {
       <div className="relative bg-black/60 w-full h-full rounded-[3rem] rounded-bl-none text-white p-4 grid backdrop-blur-3xl">
         <div className="flex items-start p-4 flex-col gap-5">
           <h1 className="text-gray-400 ">
-            Let's build something amazing together!
+            Let&apos;s build something amazing together!
           </h1>
           <h2 className="font-bold text-3xl">Ready to get started?</h2>
           <div className="relative w-[50%] grid place-items-center h-full p-[1px] rounded-full overflow-hidden

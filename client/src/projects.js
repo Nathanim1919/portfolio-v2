@@ -1,6 +1,4 @@
 import Image1 from "./assets/projectImages/m1.png"
-import Image2 from "./assets/projectImages/m2.png"
-import Image3 from "./assets/projectImages/m3.png"
 import Image4 from "./assets/projectImages/m4.png"
 import Image5 from "./assets/projectImages/m5.png"
 
