@@ -32,7 +32,7 @@ const Experiances = () => {
                 "
         >
           <div className="bg-black/60 backdrop-blur-3xl w-full h-full p-10 flex flex-col gap-3">
-            <h1 className="text-4xl font-bold">
+            <h1 className="text-3xl md:text-4xl font-bold">
               Tools & Technologies I am Comfortable with.
             </h1>
 
