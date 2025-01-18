@@ -53,7 +53,7 @@ const Experiances = () => {
           className="h-full rounded-bl-none border border-orange-400/15 overflow-hidden relative p-6
                                  "
         >
-          <div className="relative w-full h-full text-5xl gap-5 bg-black/60 p-5 backdrop-blur-xl flex flex-wrap">
+          <div className="relative w-full h-full text-4xl md:text-5xl gap-5 bg-black/60 p-5 backdrop-blur-xl flex flex-wrap justify-center items-center">
             <FaNodeJs />
             <FaReact />
             <IoLogoJavascript />
