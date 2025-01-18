@@ -53,24 +53,24 @@ const Experiances = () => {
           className="h-full rounded-bl-none border border-orange-400/15 overflow-hidden relative p-6
                                  "
         >
-          <div className="relative w-full h-full text-4xl md:text-5xl gap-5 bg-black/60 p-5 backdrop-blur-xl flex flex-wrap justify-center items-center">
-            <FaNodeJs />
-            <FaReact />
-            <IoLogoJavascript />
-            <FaJava />
-            <FaPython />
-            <FaDocker />
-            <DiRedis />
-            <RiTailwindCssFill />
-            <SiSpring />
-            <DiMongodb />
-            <SiPostgresql />
-            <SiSocketdotio />
-            <SiJest />
-            <SiRedux />
-            <SiTypescript />
-            {/* <SiNextDotJs /> */}
-            <SiGraphql />
+          <div className="relative w-full h-full text-4xl md:text-5xl gap-3 bg-black/60 px-0 py-4 backdrop-blur-xl flex flex-wrap justify-center items-center">
+            <FaNodeJs  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <FaReact  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <IoLogoJavascript  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <FaJava  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <FaPython  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <FaDocker  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <DiRedis  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <RiTailwindCssFill  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <SiSpring  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <DiMongodb  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <SiPostgresql  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <SiSocketdotio  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <SiJest  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <SiRedux  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            <SiTypescript  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+            {/* <SiNextDotJs  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/> */}
+            <SiGraphql  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
           </div>
         </div>
       </div>
