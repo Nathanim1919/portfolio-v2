@@ -51,12 +51,12 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="grid gap-3">
+        <div className="grid gap-5 p-6">
           <h1 className="text-2xl md:text-3xl lg:text-6xl text-white font-bold">
             Passionate to Pursue
             <br /> The Technology.
           </h1>
-          <p className="text-gray-400">
+          <p className="text-gray-400 text-[13px] md:text-[15px]">
             I am a software engineer with a passion for building software
             applications that solve real-world problems. I have experience in
             building web applications using JavaScript, React, and Node.js. I am

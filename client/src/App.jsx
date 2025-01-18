@@ -20,7 +20,6 @@ function App() {
         <Services />
         <Experiances/>
         <Projects/>
-        <Tools/>
         <Footer/>
       </div>
     </div>

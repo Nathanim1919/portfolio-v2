@@ -14,7 +14,7 @@ const CallToAction = () => {
           </h1>
           <h2 className="font-bold text-3xl">Ready to get started?</h2>
           <div className="relative w-[50%] grid place-items-center h-full p-[1px] rounded-full overflow-hidden
-          before:absolute before:w-full before:h-full before:bg-gradient-to-r from-sky-500 to-orange-400 before:rounded-full before:animate-extraSlowSpin
+          before:absolute before:w-full before:h-full before:bg-gradient-to-r from-sky-500 to-orange-400 before:rounded-full
           ">
             <a href="https://www.linkedin.com/in/nathanim-tadele-762099247/" className=" relative w-full h-full py-2 px-3 bg-gradient-to-r from-red-900 to-black rounded-full">
               Get in touch

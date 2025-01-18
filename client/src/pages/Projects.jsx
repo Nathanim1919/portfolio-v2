@@ -5,27 +5,23 @@ import { ProjectsData } from "../projects";
 const Projects = () => {
   return (
     <div className="text-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 py-20 place-items-center">
-        <div className="flex flex-col gap-3">
-          <h2 className="text-sky-400/75">
-            Building software is my passion, and I strive to create solutions
-            that are not only visually stunning but also highly functional and
-            impactful.
-          </h2>
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
-            These Are My Recent Projects, Pushing Boundaries to Deliver
-            Excellence
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10 py-20 place-items-center">
+        <div className="flex w-full flex-col gap-3 items-start justify-center">
+          <h3 className="text-gray-400 m-0 bg-gray-900 border border-orange-400/25 py-1 px-3 rounded-full text-[13px]">
+            01 PROJECTS
+          </h3>
+
+          <h1 className="text-2xl m-0 md:text-4xl lg:text-5xl font-bold">
+            Projects I’ve Proudly Built
           </h1>
         </div>
 
         <div>
           <p className="text-[14px] text-gray-400">
-            I believe in the power of the web and its ability to connect people
-            and ideas. I am passionate about creating websites and web
-            applications that are both beautiful and functional. I have
-            experience working with a variety of technologies, including HTML,
-            CSS, JavaScript, React, and Node.js. I am always looking for new
-            opportunities to learn and grow as a developer.
+            I believe in the transformative power of the web to bring people and
+            ideas together. My focus is on creating websites and web
+            applications that are both aesthetically pleasing and highly
+            functional, tailored to make a real difference.
           </p>
         </div>
       </div>
