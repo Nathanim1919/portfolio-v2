@@ -51,14 +51,11 @@ const Home = () => {
         </div>
         <div className="grid gap-5 p-6">
           <h1 className="text-2xl md:text-3xl lg:text-6xl text-white font-bold">
-            Passionate to Pursue
-            <br /> The Technology.
+          Driven to Explore
+            <br />  Technology.
           </h1>
           <p className="text-gray-400 text-[13px] md:text-[15px]">
-            I am a software engineer with a passion for building software
-            applications that solve real-world problems. I have experience in
-            building web applications using JavaScript, React, and Node.js. I am
-            always eager to learn new technologies and improve my skills.
+          I am a passionate software engineer dedicated to developing innovative solutions that solve real-world challenges. Committed to continuous learning and growth, I strive to create impactful and efficient digital experiences.
           </p>
         </div>
       </div>
