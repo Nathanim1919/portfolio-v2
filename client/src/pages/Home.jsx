@@ -12,9 +12,9 @@ const Home = () => {
     before:absolute before:w-[100%] before:right-10 before:top-10  md:rounded-[3rem] rounded-br-none border border-orange-500/10 overflow-hidden before:rounded-tl-full before:h-full before:bg-gradient-to-r from-[#29808b] to-[#1b1b5c67]
     "
     >
-      <div className="relative w-full h-full md:rounded-[3rem] rounded-br-none overflow-hidden flex flex-col p-4 lg:p-6 gap-8 bg-black/55 backdrop-blur-3xl">
+      <div className="relative w-full h-full md:rounded-[3rem] rounded-br-none overflow-hidden flex flex-col p-4 lg:p-6 gap-4 md:gap-8 bg-black/55 backdrop-blur-3xl">
         <div className="flex justify-between items-center text-white mt-[1rem] flex-col lg:flex-row">
-          <div className="flex items-center gap-4 relative z-50">
+          <div className="flex items-center gap-4 relative z-50 backdrop-blur-md border border-orange-50/25 py-1 px-1 pr-6 rounded-full">
             <div
               className="w-[3rem] h-[3rem] rounded-full relative bg-gray-800 transform p-[1px]
             before:absolute before:w-full before:h-[90%] before:bg-gradient-to-r from-sky-500 to-orange-400 before:rounded-full before:animate-extraSlowSpin
