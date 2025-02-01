@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer
-      className="relative before:absolute before:w-full h-full before:bg-red-400
+      className="bg-gray-500/10 w-full h-[100px] flex items-center justify-center border border-gray-800 rounded-md mt-6
     "
     >
       <div className="text-white relative w-full h-full backdrop-blur-md z-20 grid place-items-center py-10">
@@ -9,6 +9,10 @@ const Footer = () => {
           Made with{" "}
           <span role="img" aria-label="heart">
             ❤️
+          </span>{"  "}
+          & 
+          <span role="img" aria-label="coffee">
+            ☕
           </span>{" "}
           by{" "}
           <a

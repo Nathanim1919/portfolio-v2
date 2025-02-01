@@ -1,11 +1,29 @@
 import { FaGithub } from "react-icons/fa";
 import { MdLiveTv } from "react-icons/md";
 import { ProjectsData } from "../projects";
+import { FaReact } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { FaJava } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
+import { FaPython } from "react-icons/fa";
+import { FaDocker } from "react-icons/fa";
+import { DiRedis } from "react-icons/di";
+import { MdOutlineArrowOutward } from "react-icons/md";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiSpring } from "react-icons/si";
+import { DiMongodb } from "react-icons/di";
+import { SiPostgresql } from "react-icons/si";
+import { SiSocketdotio } from "react-icons/si";
+import { SiJest } from "react-icons/si";
+import { SiRedux } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+// import { SiNextDotJs } from "react-icons/si";
+import { SiGraphql } from "react-icons/si";
 
 const Projects = () => {
   return (
     <div className="text-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10 md:py-20 place-items-center">
+      <div className="grid grid-cols-1 my-6 lg:grid-cols-1 gap-4 md:gap-10 md:py-20 place-items-center">
         <div className="flex w-full flex-col gap-3 items-start justify-center">
           <h3 className="text-gray-400 m-0 bg-gray-900 border border-orange-400/25 py-1 px-3 rounded-full text-[13px]">
             01 PROJECTS
@@ -27,116 +45,53 @@ const Projects = () => {
       </div>
 
       {/* Projects Section */}
-      <div className="relative w-full h-full overflow-hidden before:absolute before:w-[90%] before:h-[100%] before:bg-gray-600 before:top-[10%] before:left-[10%] before:animate-extraSlowSpin">
-        <div className="bg-black/70 relative z-10 backdrop-blur-3xl h-full w-full">
-          <div className="flex justify-between items-center p-5">
-            <h1>Projects</h1>
-            <a
-              href="https://www.github.com/Nathanim1919"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaGithub className="text-3xl" />
-            </a>
+      <div className="relative w-full h-full overflow-hidden">
+        <div className="relative z-10 backdrop-blur-3xl h-full w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {ProjectsData.map((project, index) => {
+              if (project.featured) {
+                return (
+                  <div
+                    key={index}
+                    className="flex flex-col gap-8 p-6 hover:bg-gray-900/50 border border-transparent hover:border-gray-800 rounded-md cursor-pointer"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-gray-800"></div>
+                    <div className="flex flex-col gap-2">
+                      <h2 className="">{project.title.toUpperCase()}</h2>
+                      <p className="text-gray-400">{project.description}</p>
+                    </div>
+                    <div className="flex items-center text-2xl gap-6">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        <FaGithub />
+                      </a>
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 text-blue-500"
+                      >
+                        <MdOutlineArrowOutward />
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2 flex-wrap text-2xl border-t border-gray-600 pt-4">
+                      <FaReact className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
+                      <IoLogoJavascript className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
+                      <FaJava className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
+                      <FaNodeJs className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
+                      <FaPython className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
+                      <FaDocker className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
+                      <DiRedis className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
+                    </div>
+                  </div>
+                );
+              }
+            })}
           </div>
-
-          {ProjectsData.map((project, index) => {
-            if (project.featured) {
-              return (
-                <div
-                  key={index}
-                  className="project1 grid grid-cols-1 lg:grid-cols-2 lg:gap-10 px-5"
-                >
-                  <div
-                    className={`w-full relative ${
-                      index % 2 === 0
-                        ? "order-2 lg:order-2"
-                        : "order-2 lg:order-1"
-                    }`}
-                  >
-                    <div className="relative w-full h-full p-6 grid gap-5">
-                      <div className="proinfo">
-                        <ul className="pro-type flex flex-wrap items-center border-b border-gray-800 py-4 gap-1">
-                          {project.types.map((type, index) => {
-                            return (
-                              <li
-                                key={index}
-                                className="p-[1px] relative overflow-hidden rounded-full text-[12px] text-gray-400
-                                    before:absolute before:w-full before:h-full before:bg-gradient-to-r from-sky-500 to-orange-400 before:rounded-full
-                                    "
-                              >
-                                <li className="bg-black/60 backdrop-blur-3xl relative w-full h-full grid place-items-center py-1 px-3 rounded-full">
-                                  {type}
-                                </li>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                        <div className="flex flex-col gap-2">
-                          <h1 className="text-2xl font-bold">
-                            {project.title}
-                          </h1>
-                          <p className="text-[14px] text-gray-400 w-[90%] lg:w-[60%]">
-                            {project.description}
-                          </p>
-                        </div>
-                        <ul className="pro-tech flex items-center py-4 gap-2 flex-wrap">
-                          {project.Technologies.map((tech, index) => {
-                            return (
-                              <li
-                                key={index}
-                                className="rounded-full text-[12px] text-gray-400 relative overflow-hidden p-[1px]
-                                    before:absolute before:w-full before:h-[150%] before:bg-gradient-to-r from-sky-500 to-gray-900 before:rounded-full
-                                    "
-                              >
-                                <li className="py-1 px-3 rounded-full relative w-full h-full bg-black/60 backdrop-blur-3xl">
-                                  {tech}
-                                </li>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-
-                      <div className="flex items-center gap-5 place-self-end">
-                        <a
-                          href={project.Links.github}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <FaGithub className="text-2xl w-10 h-10 grid place-items-center bg-gray-900 cursor-pointer hover:bg-transparent p-2 rounded-full" />
-                        </a>
-                        <a
-                          href={project.Links.live}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <MdLiveTv className="text-2xl w-10 h-10 grid place-items-center bg-gray-900 cursor-pointer hover:bg-transparent p-2 rounded-full" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className={`pictures ${
-                      index % 2 === 0 ? "order-1" : "order-1 lg:order-1"
-                    } grid gap-3 relative overflow-hidden
-                      before:w-[50%] before:h-[50%] before:absolute before:bg-red-600 before:animate-pulse
-                      after:w-[50%] after:h-[50%] after:absolute after:bg-red-600 after:bottom-0 after:right-0 after:animate-pulse
-                    `}
-                  >
-                    <div className="w-full h-full bg-black/50 backdrop-blur-3xl relative grid place-items-center z-10">
-                      <img
-                        src={project.image}
-                        className="relative w-[90%] h-[90%] shadow-2xl rounded-xl"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-          })}
         </div>
       </div>
     </div>

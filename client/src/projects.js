@@ -50,6 +50,90 @@ export const ProjectsData = [
     "bgColor": "bg-green-500"
   },
   {
+    "title":"Finance Vision",
+    "description":"A financial management platform for tracking expenses and income and also set goals.",
+    "image":Image4,
+    "Technologies": [
+      "React",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Redux",
+      "tailwindcss"
+    ],
+    "Links": {
+      "github": "https://github.com/Nathanim1919/FinanceVision",
+      "live": "https://fvision.nathanimt.me/"
+    },
+    "types": ["Fullstack", "Web Application", "Finance"],
+    "featured": true,
+    "date": "2021-06-01",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "title":"Finance Vision",
+    "description":"A financial management platform for tracking expenses and income and also set goals.",
+    "image":Image4,
+    "Technologies": [
+      "React",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Redux",
+      "tailwindcss"
+    ],
+    "Links": {
+      "github": "https://github.com/Nathanim1919/FinanceVision",
+      "live": "https://fvision.nathanimt.me/"
+    },
+    "types": ["Fullstack", "Web Application", "Finance"],
+    "featured": true,
+    "date": "2021-06-01",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "title":"Finance Vision",
+    "description":"A financial management platform for tracking expenses and income and also set goals.",
+    "image":Image4,
+    "Technologies": [
+      "React",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Redux",
+      "tailwindcss"
+    ],
+    "Links": {
+      "github": "https://github.com/Nathanim1919/FinanceVision",
+      "live": "https://fvision.nathanimt.me/"
+    },
+    "types": ["Fullstack", "Web Application", "Finance"],
+    "featured": true,
+    "date": "2021-06-01",
+    "bgColor": "bg-green-500"
+  },
+  {
+    "title":"Finance Vision",
+    "description":"A financial management platform for tracking expenses and income and also set goals.",
+    "image":Image4,
+    "Technologies": [
+      "React",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Redux",
+      "tailwindcss"
+    ],
+    "Links": {
+      "github": "https://github.com/Nathanim1919/FinanceVision",
+      "live": "https://fvision.nathanimt.me/"
+    },
+    "types": ["Fullstack", "Web Application", "Finance"],
+    "featured": true,
+    "date": "2021-06-01",
+    "bgColor": "bg-green-500"
+  },
+  {
     "title":"Eventify",
     "description":"A platform for creating and managing events.",
     "image":Image5,
