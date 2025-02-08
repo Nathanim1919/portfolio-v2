@@ -56,9 +56,10 @@ const Projects = () => {
                     className="flex flex-col gap-8 p-6 hover:bg-gray-900/50 border border-transparent hover:border-gray-800 rounded-md cursor-pointer"
                   >
                     <div className="w-10 h-10 rounded-full bg-gray-800 grid place-items-center">
-                      <div className="w-8 h-8 rounded-full
-                      bg-gradient-to-r from-[#1e299f] to-[#9999f7] grid place-items-center">
-                      </div>
+                      <div
+                        className="w-8 h-8 rounded-full
+                      bg-gradient-to-r from-[#1e299f] to-[#9999f7] grid place-items-center"
+                      ></div>
                     </div>
                     <div className="flex flex-col gap-2">
                       <h2 className="">{project.title.toUpperCase()}</h2>
@@ -66,7 +67,7 @@ const Projects = () => {
                     </div>
                     <div className="flex items-center text-2xl gap-6">
                       <a
-                        href={project.github}
+                        href={project.Links.github}
                         target="_blank"
                         rel="noreferrer"
                         className="flex items-center gap-2"
@@ -74,7 +75,7 @@ const Projects = () => {
                         <FaGithub />
                       </a>
                       <a
-                        href={project.live}
+                        href={project.Links.live}
                         target="_blank"
                         rel="noreferrer"
                         className="flex items-center gap-2 text-blue-500"
@@ -82,14 +83,11 @@ const Projects = () => {
                         <MdOutlineArrowOutward />
                       </a>
                     </div>
-                    <div className="flex items-center gap-2 flex-wrap text-2xl border-t border-gray-600 pt-4">
-                      <FaReact className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
-                      <IoLogoJavascript className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
-                      <FaJava className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
-                      <FaNodeJs className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
-                      <FaPython className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
-                      <FaDocker className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
-                      <DiRedis className="w-8 h-8 grid place-items-center p-1 bg-gray-900 rounded-full" />
+                    <div className="flex items-center gap-2 flex-wrap border-t border-gray-600 pt-4">
+                      {project.Technologies.map((tech, index) => (
+                        <span className="px-[12px] text-[11px] py-[4px] bg-gray-800 rounded-full"
+                         key={index}>{tech}</span>
+                      ))}
                     </div>
                   </div>
                 );

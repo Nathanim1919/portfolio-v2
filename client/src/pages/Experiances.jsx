@@ -28,7 +28,7 @@ const Experiances = () => {
       <div className="grid grid-cols-1 lg:grid-cols-[_.5fr_.5fr] gap-5 h-full bg-black/10 backdrop-blur-3xl overflow-hidden">
         <div
           className="bg-[#151515] h-full rounded-3xl rounded-br-none relative
-                before:bg-[#004af7] border border-orange-400/10 before:absolute before:duration-500 before:w-[100%] before:h-[100%] overflow-hidden
+                before:bg-[#2b2f39] border border-orange-400/10 before:absolute before:duration-500 before:w-[100%] before:h-[100%] overflow-hidden
                 "
         >
           <div className="bg-black/60 backdrop-blur-3xl w-full h-full p-10 flex flex-col gap-3">
@@ -44,33 +44,33 @@ const Experiances = () => {
 
             <div className="w-[120%] h-[140%] gap-2 rounded-xl grid  absolute z-30 mx-auto -top-0 md:-bottom-40  lg:bottom-0 transform rotate-45 opacity-10">
               <div className="w-100 h-30 bg-sky-500 rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-5"></div>
-              <div className="w-80 h-30 bg-blue-500 rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-5"></div>
-              <div className="w-60 h-30 bg-white rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-20"></div>
+              <div className="w-80 h-30 bg-blue-500 animate-pulse rounded-xl shadow-2xl  relative z-30 bottom-5 right-5 transform rotate-5"></div>
+              <div className="w-60 h-30 bg-white rounded-xl shadow-2xl  relative z-30 bottom-5 right-20 transform rotate-20"></div>
             </div>
           </div>
         </div>
         <div
-          className="h-full rounded-bl-none border border-orange-400/15 overflow-hidden relative p-6
+          className="h-full rounded-bl-none overflow-hidden relative p-6
                                  "
         >
-          <div className="relative w-full h-full text-4xl md:text-5xl gap-3 bg-black/60 px-0 py-4 backdrop-blur-xl flex flex-wrap justify-center items-center">
-            <FaNodeJs  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <FaReact  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <IoLogoJavascript  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <FaJava  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <FaPython  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <FaDocker  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <DiRedis  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <RiTailwindCssFill  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <SiSpring  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <DiMongodb  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <SiPostgresql  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <SiSocketdotio  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <SiJest  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <SiRedux  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            <SiTypescript  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
-            {/* <SiNextDotJs  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/> */}
-            <SiGraphql  className="w-16 h-16 p-2 rounded-full  border-8 border-gray-900"/>
+          <div className="relative w-full h-full text-4xl md:text-5xl gap-3 px-0 py-4 flex flex-wrap justify-center items-center">
+            <FaNodeJs  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <FaReact  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <IoLogoJavascript  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <FaJava  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <FaPython  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <FaDocker  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <DiRedis  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <RiTailwindCssFill  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <SiSpring  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <DiMongodb  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <SiPostgresql  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <SiSocketdotio  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <SiJest  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <SiRedux  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            <SiTypescript  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
+            {/* <SiNextDotJs  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/> */}
+            <SiGraphql  className="w-12 h-12 rounded-full  border-8 border-gray-900 bg-transparent p-[1px]"/>
           </div>
         </div>
       </div>
