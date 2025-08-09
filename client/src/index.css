@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Satisfy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Geist", serif;
+   font-family: "Baloo 2", sans-serif;
   background-color: rgb(8, 8, 8);
   overflow-x: hidden;
 }

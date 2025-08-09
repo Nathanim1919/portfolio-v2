@@ -53,16 +53,13 @@ const Projects = () => {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col gap-8 p-6 hover:bg-gray-900/50 border border-transparent hover:border-gray-800 rounded-md cursor-pointer"
+                    className="flex flex-col gap-8 p-6 bg-gray-900/50 border border-transparent border-gray-800 rounded-md cursor-pointer"
                   >
-                    <div className="w-10 h-10 rounded-full bg-gray-800 grid place-items-center">
-                      <div
-                        className="w-8 h-8 rounded-full
-                      bg-gradient-to-r from-[#1e299f] to-[#9999f7] grid place-items-center"
-                      ></div>
+                    <div>
+                       <img src={project.image} alt="project-image"/>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <h2 className="">{project.title.toUpperCase()}</h2>
+                      <h2 className="text-4xl font-bold">{project.title.toUpperCase()}</h2>
                       <p className="text-gray-400">{project.description}</p>
                     </div>
                     <div className="flex items-center text-2xl gap-6">

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer
-      className="bg-gray-500/10 w-full h-[100px] flex items-center justify-center border border-gray-800 rounded-md mt-6
+      className="my-10 w-full h-[100px] flex items-center justify-center rounded-md mt-6
     "
     >
       <div className="text-white relative w-full h-full backdrop-blur-md z-20 grid place-items-center py-10">
