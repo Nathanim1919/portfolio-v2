@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Experiances from "./pages/Experiances";
@@ -12,7 +12,7 @@ function App() {
     "
     >
       <div className="w-[100%] p-3 lg:p-0 lg:w-[75%] mx-auto">
-        <Header />
+        {/* <Header /> */}
         <Home />
         <Services />
         <Experiances />
