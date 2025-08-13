@@ -8,7 +8,7 @@ import { CiLocationArrow1 } from "react-icons/ci";
 const Home = () => {
   return (
     <div
-      className="relative w-full h-full p-[1px]
+      className="relative w-full h-full p-[1px] mt-14
     before:absolute before:w-[100%] before:right-10 before:animate-extraSlowSpin before:top-10  md:rounded-[3rem] rounded-br-none border border-orange-500/10 overflow-hidden before:rounded-tl-full before:h-full before:bg-gradient-to-r from-[#29808b] to-[#1b1b5c67]
     "
     >

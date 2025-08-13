@@ -3,6 +3,7 @@ import Image5 from "./assets/projectImages/m5.png";
 import Image6 from "./assets/projectImages/deepen.png"
 import Image7 from "./assets/projectImages/MINDSCRIBE.png"
 import Image8 from "./assets/projectImages/influ.png"
+import Maed from "./assets/projectImages/maed.jpg";
 
 export const ProjectsData = [
    {
@@ -20,6 +21,30 @@ export const ProjectsData = [
       "Redis",
       "Qdrant - Vector Database",
       "tailwindcss",
+    ],
+    Links: {
+      github: "https://github.com/Nathanim1919/LinkMeld-backend",
+      live: "https://www.linkedin.com/posts/nathanim-tadele-762099247_ai-productivity-secondbrain-activity-7360237846940504064-cqIx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0PCfoBDkKDYzMdsgx30Hn6HJLgKcQIpcs",
+    },
+    types: ["Fullstack", "Web Application", "Social Platform"],
+    featured: true,
+    date: "",
+    bgColor: "bg-blue-500",
+  },
+    {
+    title: "Ma'ed",
+    description: "Ongoing Ethiopian Video-first Food Discovery and Delivery Platform",
+    image: Maed,
+    Technologies: [
+      "React-Native",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Docker",
+      "Jest",
+      "Redis",
+      "tailwindcss",
+      "Cloudinary",
     ],
     Links: {
       github: "https://github.com/Nathanim1919/LinkMeld-backend",
