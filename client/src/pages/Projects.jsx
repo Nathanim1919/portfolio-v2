@@ -53,7 +53,7 @@ const Projects = () => {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col gap-8 p-6 bg-gray-900/50 border border-transparent border-gray-800 rounded-md cursor-pointer"
+                    className="flex flex-col gap-8 p-6 hover:bg-gray-900/50 border border-transparent hover:border-gray-800 rounded-md cursor-pointer"
                   >
                     <div>
                        <img src={project.image} alt="project-image"/>
