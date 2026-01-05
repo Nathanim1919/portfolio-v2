@@ -5,7 +5,7 @@ import { TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter } from
 export default function Hero() {
   return (
     <div className="flex flex-col items-center justify-center relative md:py-16">
-      <div className="text-center text-xl sm:text-2xl md:text-5xl font-bold flex flex-col text-black dark:text-white">
+      <div className="text-center text-2xl md:text-5xl font-bold flex flex-col text-black dark:text-white">
         <span className="flex items-center justify-center md:gap-2">
           Hi, I'm
           <span className="md:mr-2 w-16 md:w-25 inline-block p-1.5 shadow-2xl rounded-2xl md:rounded-4xl">

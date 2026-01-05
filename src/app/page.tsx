@@ -9,7 +9,7 @@ import TechStack from "@/components/TechStack";
 
 export default function Home() {
   return (
-    <div className="w-[95%] md:w-[70%] flex flex-col gap-10 mx-auto h-screen scroll-smooth scroll-behavior-smooth overflow-y-scroll scrollbar-hide p-6">
+    <div className="w-full md:w-[70%] flex flex-col gap-10 mx-auto h-screen scroll-smooth scroll-behavior-smooth overflow-y-scroll scrollbar-hide p-2">
       <Header />
       <Hero />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-start py-10">
