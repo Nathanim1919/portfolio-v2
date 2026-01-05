@@ -47,8 +47,8 @@ export default function Projects () {
     return (
         <div className="flex flex-col gap-14">
             <div>
-            <h2 className="text-6xl font-bold text-black dark:text-white">Projects I put A lot of Efforts.</h2>
-            <p className="text-gray-500 dark:text-gray-400">I've worked on a variety of projects, from small side projects to large scale applications.</p>
+            <h2 className="text-6xl font-bold text-black dark:text-white">Work I'm Proud Of</h2>
+            <p className="text-gray-500 dark:text-gray-400">From side projects to production apps, here's what I've been building.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden">
                 {projects.map((project) => (
