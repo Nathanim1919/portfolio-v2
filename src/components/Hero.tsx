@@ -4,22 +4,22 @@ import { TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter } from
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center justify-center relative py-16">
-      <div className="text-center text-3xl md:text-5xl font-bold flex flex-col text-black dark:text-white">
-        <span className="flex items-center justify-center gap-2">
-        Hi, I'm
-        <span className="mr-2 w-25 inline-block p-1.5 shadow-2xl rounded-4xl">
-          <Image src={me} alt="Nathanim Tadele" className="rounded-3xl w-full h-full object-cover bg-white" />
-        </span>
-         Nathanim Tadele!
+    <div className="flex flex-col items-center justify-center relative md:py-16">
+      <div className="text-center text-xl sm:text-2xl md:text-5xl font-bold flex flex-col text-black dark:text-white">
+        <span className="flex items-center justify-center md:gap-2">
+          Hi, I'm
+          <span className="md:mr-2 w-16 md:w-25 inline-block p-1.5 shadow-2xl rounded-2xl md:rounded-4xl">
+            <Image src={me} alt="Nathanim Tadele" className="rounded-2xl md:rounded-3xl w-full h-full object-cover bg-white" />
+          </span>
+          Nathanim Tadele!
         </span><br />
-        <span className="flex flex-col items-center justify-center gap-2 -mt-14">
-        <span className="font-bold">
-         <span className="text-gray-400">I'm a</span> software engineer
-        </span>
-        <span className="font-bold">
-          <span className="text-gray-400">and a</span> founder.
-        </span>
+        <span className="flex flex-col items-center justify-center gap-2 -mt-8 md:-mt-14">
+          <span className="font-bold">
+            <span className="text-gray-400">I'm a</span> software engineer
+          </span>
+          <span className="font-bold">
+            <span className="text-gray-400">and a</span> founder.
+          </span>
         </span>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-around gap-2 w-[90%] md:w-[70%] py-10">
