@@ -70,7 +70,7 @@ const GithubActivity = () => {
       </div>
 
       {/* --- Bento Grid Layout --- */}
-      <div className="grid grid-cols-[.5fr_1fr] gap-4">
+      <div className="grid md:grid-cols-[.5fr_1fr] gap-4">
         
         {/* 1. Profile Card (The Anchor) */}
         <div className=" bg-white dark:bg-[#0d1117] border border-gray-200 dark:border-white/10 rounded-[32px] p-6 flex flex-col justify-between group">
@@ -97,7 +97,7 @@ const GithubActivity = () => {
         </div>
 
         {/* 2. Repositories Stats */}
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid md:grid-cols-2 gap-2">
         <div className=" bg-gray-50 dark:bg-white/5 border border-transparent dark:border-white/5 rounded-3xl p-4 flex flex-col justify-center relative overflow-hidden">
           <Command size={80} className="absolute -right-4 -top-4 text-gray-200 dark:text-white/5 rotate-12" />
           <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Public Repositories</p>

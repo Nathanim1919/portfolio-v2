@@ -92,7 +92,7 @@ const GithubCalendar = () => {
         {data.total.lastYear.toLocaleString()} contributions in the last year
       </h3>
 
-      <div className="relative inline-block">
+      <div className="relative inline-block w-full overflow-x-auto">
         {/* Month Labels */}
         <div className="flex text-[14px] text-gray-400 mb-1 ml-8 h-4 relative">
           {monthLabels.map((label, i) => (
@@ -106,7 +106,7 @@ const GithubCalendar = () => {
           ))}
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 w-[95%] md:w-full">
           {/* Day Labels */}
           <div className="flex flex-col justify-between text-[10px] text-gray-400 pt-1 pb-1">
             <span className="h-[16px]"></span>

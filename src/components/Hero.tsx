@@ -5,7 +5,7 @@ import { TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter } from
 export default function Hero() {
   return (
     <div className="flex flex-col items-center justify-center relative py-16">
-      <div className="text-center text-5xl font-bold flex flex-col text-black dark:text-white">
+      <div className="text-center text-3xl md:text-5xl font-bold flex flex-col text-black dark:text-white">
         <span className="flex items-center justify-center gap-2">
         Hi, I'm
         <span className="mr-2 w-25 inline-block p-1.5 shadow-2xl rounded-4xl">
@@ -22,7 +22,7 @@ export default function Hero() {
         </span>
         </span>
       </div>
-      <div className="flex items-center justify-around gap-2 w-[70%] py-10">
+      <div className="flex flex-col md:flex-row items-center justify-around gap-2 w-[90%] md:w-[70%] py-10">
         <button className="bg-black shadow-2xl cursor-pointer text-white px-4 py-2 rounded-md">
           Download Resume
         </button>
