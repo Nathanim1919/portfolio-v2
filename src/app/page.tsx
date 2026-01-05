@@ -1,8 +1,10 @@
 import Experiance from "@/components/Experiance";
+import { Footer } from "@/components/Footer";
 import GithubActivity from "@/components/GithInfo";
 import GithubCalendar from "@/components/GithubGraph";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
 import TechStack from "@/components/TechStack";
 
 export default function Home() {
@@ -16,6 +18,8 @@ export default function Home() {
       </div>
       <GithubActivity />
       <GithubCalendar />
+      <Projects/>
+      <Footer />
     </div>
   );
 }
