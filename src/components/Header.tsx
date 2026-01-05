@@ -4,6 +4,7 @@ import { TbMenuDeep } from "react-icons/tb";
 import { motion } from "framer-motion";
 import Logo from "../../public/logo.jpg";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -15,6 +16,7 @@ export default function Header() {
         </span>
       </div>
       <TbMenuDeep />
+     
     </header>
   );
 }

@@ -36,7 +36,7 @@ export default function Experiance() {
         },
     ];
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center bg-white p-2 shadow-2xl rounded-2xl text-black">
+        <div className="w-full h-full flex flex-col items-center justify-center bg-white p-2 rounded-2xl text-black">
             <div className="bg-gray-100 w-full h-full rounded-2xl flex flex-col items-start">
 
                 <div className="flex items-center justify-between w-full px-4 py-2">
