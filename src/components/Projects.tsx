@@ -1,90 +1,157 @@
-import { MoveUpRight } from "lucide-react";
+"use client";
+
+import { ArrowUpRight, Github, Globe, Lock, MoreHorizontal } from "lucide-react";
 import { 
     SiNextdotjs, SiTailwindcss, SiTypescript, 
     SiGit, SiGithub, SiDocker, SiKubernetes, SiSpringboot, 
     SiOpenai, SiLangchain, SiPython, SiPostgresql, 
     SiReact, SiExpo, SiSupabase, SiFramer, SiMongodb, SiRedis, SiPrisma, SiVercel, SiGooglegemini, 
-  } from "react-icons/si";
+} from "react-icons/si";
+import { motion } from "framer-motion";
 
-
-export default function Projects () {
+export default function Projects() {
     const projects = [
         {
             title: "Deepen",
-            description: "A second brain / AI",
-            techStack: [SiReact, SiTailwindcss, SiTypescript, SiGit, SiGithub, SiDocker, SiFramer, SiMongodb, SiRedis, SiVercel, SiGooglegemini, SiOpenai],
-            image: "https://deepen.com/image.png",
+            description: "A second brain / AI powered knowledge management system designed to augment human intelligence.",
+            techStack: [SiReact, SiTypescript, SiFramer, SiOpenai],
             link: "https://deepen.com",
+            featured: true,
+            status: "Production"
         },
         {
             title: "Ma'ed",
-            description: "A video-first food discovery mobile app",
-            techStack: [SiTailwindcss, SiTypescript, SiGit, SiGithub, SiExpo, SiMongodb, SiRedis],
-            image: "https://maed.com/image.png",
+            description: "Video-first food discovery mobile application revolutionizing how users explore culinary experiences.",
+            techStack: [SiExpo, SiTypescript, SiRedis],
             link: "https://maed.com",
+            status: "Beta"
         },
         {
             title: "ViralBrain",
-            description: "A viral content creation and sharing platform",
-            techStack: [SiNextdotjs, SiTailwindcss, SiTypescript, SiGit, SiGithub, SiPostgresql, SiSpringboot, SiFramer, SiRedis, SiPrisma, SiVercel, SiGooglegemini, SiOpenai],
-            image: "https://viralbrain.com/image.png",
+            description: "AI-driven content viralization platform optimizing engagement through predictive analytics.",
+            techStack: [SiNextdotjs, SiPostgresql, SiPrisma],
             link: "https://viralbrain.ai",
+            status: "Active"
         },
         {
-            title: "private and Governmental projects",
-            description: "I worked on a variety of private and governmental projects which i cannot share publicly",
-            techStack: [SiNextdotjs, SiTailwindcss, SiTypescript, SiGit, SiGithub, SiPostgresql, SiSupabase, SiFramer, SiRedis],
-            image: "https://viralbrain.com/image.png",
-         
+            title: "Enterprise Solutions",
+            description: "Confidential governmental and private sector infrastructure projects.",
+            techStack: [SiNextdotjs, SiSupabase, SiDocker],
+            isPrivate: true,
+            status: "Confidential"
         },
         {
-            title: "MUCH MORE",
-            description: "Coming soon...",
-            image: "https://viralbrain.com/image.png",
-            link: "https://github.com/Nathanim1919",
+            title: "Coming Soon",
+            description: "Experimental lab work and upcoming releases.",
+            techStack: [],
+            isPlaceholder: true,
+            status: "In Development"
         }
     ];
+
     return (
-        <div className="flex flex-col gap-14">
-            <div>
-            <h2 className="text-6xl font-bold text-black dark:text-white">Work I'm Proud Of</h2>
-            <p className="text-gray-500 dark:text-gray-400">From side projects to production apps, here's what I've been building.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden">
-                {projects.map((project) => (
-                    <div key={project.title} className="bg-white overflow-hidden dark:bg-[#0d1117] border border-gray-200 dark:border-white/10 rounded-3xl flex flex-col justify-between">
-                        <div className="flex flex-col p-4 gap-2">
-                        <h3 className="text-lg font-bold text-black dark:text-white">{project.title.toUpperCase()}</h3>
-                        <p className="text-gray-500 dark:text-gray-400">{project.description}</p>
-                        {project?.link && (
-                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-400 text-right group-hover:text-black transition-all duration-300">
-                               {project.link.replace('https://', '')}
-                            </a>
-                        )}
-                        </div>
-                        <div className="flex flex-wrap gap-1 p-4 border-t border-gray-100">
-                            {project?.techStack?.map((tech, index) => {
-                                return (
-                                    <Tech Icon={tech} key={index} />
-                                )
-                            })}
-                        </div>
-                        <div className="p-4 self-end border-t border-gray-100 w-full flex items-center justify-end group bg-gray-50">
-                        <button className=" dark:bg-white text-black px-4 py-2 rounded-md opacity-50 cursor-pointer group-hover:scale-105 transition-all duration-300"><MoveUpRight /></button>
-                        </div>
-                    </div>
-                    ))}
+        <section className="w-full flex flex-col gap-12 py-8 font-sans">
+            
+            {/* Header Section */}
+            <div className="flex flex-col gap-4 max-w-2xl">
+                <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-zinc-900 dark:bg-white animate-pulse" />
+                    <h2 className="text-sm font-mono uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Selected Work</h2>
                 </div>
+                <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white">
+                    Building the future <br />
+                    <span className="text-zinc-400 dark:text-zinc-600">one pixel at a time.</span>
+                </h3>
             </div>
-        );
-    }
 
-
-
-    const Tech = ({ Icon }: { Icon: React.ComponentType<{ className?: string }> }) => {
-        return (
-            <div className="inline-block p-1 text-2xl">
-                <Icon className="text-gray-500 dark:text-gray-400" />
+            {/* Project Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {projects.map((project, index) => (
+                    <ProjectCard key={index} project={project} index={index} />
+                ))}
             </div>
-        )
-    }
+
+        </section>
+    );
+}
+
+const ProjectCard = ({ project, index }: { project: any, index: number }) => {
+    const isPlaceholder = project.isPlaceholder;
+    
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.4 }}
+            className={`
+                group relative flex flex-col justify-between
+                bg-white dark:bg-[#0A0A0A] 
+                border border-zinc-200 dark:border-white/10 
+                rounded-3xl p-6 md:p-8 h-[320px]
+                overflow-hidden hover:border-zinc-300 dark:hover:border-white/20 transition-colors
+                ${project.featured ? 'md:col-span-2' : 'col-span-1'}
+            `}
+        >
+            {/* Background Gradient for Featured */}
+            {project.featured && (
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-zinc-100/50 to-transparent dark:from-white/5 dark:to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+            )}
+
+            {/* Top Section */}
+            <div className="flex flex-col gap-4 relative z-10">
+                <div className="flex justify-between items-start">
+                    <div className="flex flex-col gap-1">
+                        <div className="flex items-center gap-2">
+                            <h4 className="text-xl font-bold text-zinc-900 dark:text-white tracking-tight">
+                                {project.title}
+                            </h4>
+                            {project.isPrivate && (
+                                <Lock className="w-3 h-3 text-zinc-400" />
+                            )}
+                        </div>
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 border border-zinc-100 dark:border-white/10 px-2 py-0.5 rounded-full w-fit bg-zinc-50 dark:bg-white/5">
+                            {project.status}
+                        </span>
+                    </div>
+                    
+                    {!isPlaceholder && !project.isPrivate && (
+                        <a 
+                            href={project.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-full bg-zinc-50 dark:bg-white/5 text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-all"
+                        >
+                            <ArrowUpRight className="w-4 h-4" />
+                        </a>
+                    )}
+                </div>
+
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-medium max-w-[90%]">
+                    {project.description}
+                </p>
+            </div>
+
+            {/* Bottom Section: Tech Stack */}
+            <div className="flex items-end justify-between relative z-10 mt-auto">
+                <div className="flex items-center gap-2">
+                    {project.techStack.map((Icon: any, i: number) => (
+                        <div 
+                            key={i} 
+                            className="p-2 rounded-xl bg-zinc-50 dark:bg-white/5 text-zinc-400 dark:text-zinc-500 border border-zinc-100 dark:border-white/5 group-hover:scale-110 group-hover:text-zinc-900 dark:group-hover:text-white transition-all duration-300"
+                        >
+                            <Icon className="w-4 h-4" />
+                        </div>
+                    ))}
+                    {isPlaceholder && (
+                        <MoreHorizontal className="w-5 h-5 text-zinc-300 dark:text-zinc-600" />
+                    )}
+                </div>
+
+                {/* Subtle ID watermark */}
+                <span className="text-[10px] font-mono text-zinc-200 dark:text-zinc-800 absolute bottom-0 right-0 pointer-events-none">
+                    0{index + 1}
+                </span>
+            </div>
+        </motion.div>
+    );
+}

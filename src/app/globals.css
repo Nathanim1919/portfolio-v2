@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-bebas-neue: 'Bebas Neue', sans-serif;
@@ -9,31 +10,45 @@
   --font-space-grotesk: 'Space Grotesk', sans-serif;
 }
 
-
 body {
   font-family: var(--font-space-grotesk), sans-serif;
-  overflow: hidden; /* Day 6: No-Scroll Lock */
+  overflow: hidden; 
   height: 100vh;
   width: 100vw;
-  background-color: #f0f0f0;
+}
 
-  /* width */
+/* Custom Scrollbar for Webkit */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 6px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #d4d4d8; /* zinc-300 */
+  border-radius: 10px;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46; /* zinc-700 */
 }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa; /* zinc-400 */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #52525b; /* zinc-600 */
+}
+
+/* Utility for hiding scrollbar but allowing scroll */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
 }

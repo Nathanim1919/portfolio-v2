@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { 
-  MapPin, Briefcase, Link as LinkIcon, 
-  Github, ArrowUpRight, Command, 
-  History, Sparkles, Clock,
-  UserCheck
+  MapPin, Link as LinkIcon, 
+  Github, Command, 
+  Sparkles,
+  Users, Calendar,
+  ArrowUpRight
 } from 'lucide-react';
-import { MdCardMembership } from 'react-icons/md';
+import { motion } from 'framer-motion';
 
 const USERNAME = "Nathanim1919";
 
@@ -29,14 +30,12 @@ const GithubActivity = () => {
     fetchData();
   }, []);
 
-  // Logic to calculate years of experience based on created_at
   const { yearsExperience, joinedDate } = useMemo(() => {
     if (!profile) return { yearsExperience: '0', joinedDate: '' };
     
     const start = new Date(profile.created_at);
-    const now = new Date(); // In your context, it's 2026
+    const now = new Date();
     
-    // Calculate total years with one decimal point
     const diffInMs = now.getTime() - start.getTime();
     const years = (diffInMs / (1000 * 60 * 60 * 24 * 365.25)).toFixed(1);
     
@@ -48,97 +47,144 @@ const GithubActivity = () => {
     return { yearsExperience: years, joinedDate: formattedDate };
   }, [profile]);
 
-  if (loading) return <div className="w-full h-[400px] rounded-[32px] bg-gray-50 dark:bg-white/5 animate-pulse" />;
+  if (loading) return <div className="w-full h-[400px] rounded-[32px] bg-zinc-50 dark:bg-zinc-900/50 animate-pulse border border-zinc-100 dark:border-zinc-800" />;
   if (!profile) return null;
 
   return (
-    <div className="w-full max-w-5xl mx-auto font-sans antialiased flex flex-col">
+    <div className="w-full h-full mx-auto font-sans antialiased flex flex-col">
       
       {/* --- Minimalist Header --- */}
-      <div className="flex items-center justify-between mb-8 px-2">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-black dark:bg-white flex items-center justify-center">
-            <Github size={20} className="text-white dark:text-black" />
-          </div>
-          <div>
-            <h2 className="text-lg font-semibold tracking-tight text-black dark:text-white">Engineering Activity</h2>
-            <div className="flex items-center gap-2 text-emerald-500">
-              <p className="text-[11px] font-bold uppercase tracking-widest">Github Profile</p>
+      <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center gap-4">
+            <div className="p-3 bg-white dark:bg-white/10 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm group hover:scale-105 transition-transform duration-300">
+                <Github className="w-6 h-6 text-zinc-900 dark:text-white group-hover:rotate-12 transition-transform" />
             </div>
-          </div>
+            <div className="flex flex-col gap-0.5">
+                <h2 className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
+                    Engineering
+                </h2>
+                <div className="flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+                        System Online
+                    </span>
+                </div>
+            </div>
         </div>
+        
+        <a 
+            href={`https://github.com/${USERNAME}`}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-all hover:gap-3 group"
+        >
+            View Profile 
+            <ArrowUpRight className="w-3.5 h-3.5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+        </a>
       </div>
 
       {/* --- Bento Grid Layout --- */}
       <div className="grid md:grid-cols-[.5fr_1fr] gap-4">
         
-        {/* 1. Profile Card (The Anchor) */}
-        <div className=" bg-white dark:bg-[#0d1117] border border-gray-200 dark:border-white/10 rounded-[32px] p-6 flex flex-col justify-between group">
+        {/* 1. Profile Card (Monochrome) */}
+        <div className="bg-white dark:bg-[#0d1117] border border-zinc-200 dark:border-white/10 rounded-[32px] p-6 flex flex-col justify-between group h-full relative overflow-hidden">
           <div>
             <div className="relative inline-block">
-              <img src={profile.avatar_url} className="w-20 h-20 rounded-3xl object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700" alt="avatar" />
+              <img src={profile.avatar_url} className="w-20 h-20 rounded-3xl object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="avatar" />
               {profile.hireable && (
-                <div className="absolute -top-2 -right-2 px-2 py-1 bg-emerald-500 text-white text-[9px] font-bold rounded-full uppercase shadow-lg">
+                <div className="absolute -top-2 -right-2 px-2.5 py-1 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-[9px] font-bold rounded-full uppercase tracking-wider border-2 border-white dark:border-[#0d1117]">
                   Hireable
                 </div>
               )}
             </div>
-            <h3 className="text-2xl font-bold text-black dark:text-white tracking-tighter">{profile.name}</h3>
-            <p className="text-gray-500 text-sm">@{profile.login}</p>
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
+            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tighter mt-4">{profile.name}</h3>
+            <p className="text-zinc-500 text-sm">@{profile.login}</p>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-medium mt-4">
               {profile.bio}
             </p>
           </div>
           
-          <div className="pt-6 border-t border-gray-100 dark:border-white/5 space-y-3">
+          <div className="pt-6 border-t border-zinc-100 dark:border-white/5 space-y-3 mt-4">
             <MetaRow icon={<MapPin size={14}/>} text={profile.location} />
             <MetaRow icon={<LinkIcon size={14}/>} text={profile.blog} isLink />
           </div>
         </div>
 
-        {/* 2. Repositories Stats */}
-        <div className="grid md:grid-cols-2 gap-2">
-        <div className=" bg-gray-50 dark:bg-white/5 border border-transparent dark:border-white/5 rounded-3xl p-4 flex flex-col justify-center relative overflow-hidden">
-          <Command size={80} className="absolute -right-4 -top-4 text-gray-200 dark:text-white/5 rotate-12" />
-          <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-2">Public Repositories</p>
-          <p className="text-5xl font-bold text-black  dark:text-white tracking-tighter">{profile.public_repos}</p>
-        </div>
+        {/* 2. Redesigned Stats Cards (Strictly Monochrome) */}
+        <div className="grid md:grid-cols-2 gap-3 h-full">
+            
+            <StatCard 
+                label="Public Repositories"
+                value={profile.public_repos}
+                icon={Command}
+            />
 
-        {/* 3. Followers Stats */}
-        <div className=" bg-white relative overflow-hidden dark:bg-white border border-transparent rounded-3xl p-4 flex flex-col justify-center text-black">
-          <UserCheck size={80} className="absolute -right-4 -top-4 text-gray-200 dark:text-white/5" />
-          <p className="text-[11px] font-bold opacity-50 uppercase tracking-widest mb-2">Followers</p>
-          <p className="text-5xl font-bold text-black tracking-tighter">{profile.followers}</p>
-        </div>
+            <StatCard 
+                label="Followers"
+                value={profile.followers}
+                icon={Users}
+            />
 
-        {/* 4. Started Journey (New Box) */}
-        <div className=" bg-white relative overflow-hidden dark:bg-[#0d1117] border border-gray-200 dark:border-white/10 rounded-3xl p-4 flex flex-col justify-center">
-            <MdCardMembership size={80} className="absolute -right-4 -top-4 text-gray-200 dark:text-white/5"/>
-          <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-1">Member Since</p>
-          <p className="text-3xl font-bold text-black dark:text-white tracking-tight">{joinedDate}</p>
-        </div>
+            <StatCard 
+                label="Member Since"
+                value={joinedDate}
+                icon={Calendar}
+                isText
+            />
 
-        {/* 5. Years of Experience (New Box) */}
-        <div className=" bg-gray-50  dark:bg-white/5 border border-transparent dark:border-white/5 rounded-3xl p-4 flex items-center justify-between group overflow-hidden relative">
-          <div className="relative z-10">
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-1">GitHub Experience</p>
-            <div className="flex items-baseline gap-2">
-                <p className="text-5xl font-bold text-black dark:text-white tracking-tighter">{yearsExperience}</p>
-                <p className="text-xl font-bold text-black tracking-tight">Years</p>
-            </div>
-          </div>
-          <Sparkles  className="absolute -right-4 -top-4 text-gray-200 dark:text-white/5" size={80} />
-        </div>
+            <StatCard 
+                label="Experience"
+                value={yearsExperience}
+                suffix="Years"
+                icon={Sparkles}
+            />
+
         </div>
       </div>
     </div>
   );
 };
 
-// --- Helper ---
+// --- Sub Components ---
+
+const StatCard = ({ label, value, icon: Icon, suffix, isText }: any) => (
+    <motion.div 
+        whileHover={{ y: -2 }}
+        className="bg-zinc-50 dark:bg-white/5 border border-transparent dark:border-white/5 hover:border-zinc-200 dark:hover:border-white/10 rounded-3xl p-5 flex flex-col justify-between relative overflow-hidden group transition-all duration-300 h-[160px]"
+    >
+        <div className="absolute inset-0 bg-zinc-100/0 group-hover:bg-zinc-100/50 dark:group-hover:bg-white/5 transition-colors duration-500" />
+        
+        <div className="flex justify-between items-start z-10">
+            <div className="p-2 rounded-xl bg-white dark:bg-white/10 text-zinc-900 dark:text-white shadow-sm ring-1 ring-zinc-100 dark:ring-white/5 group-hover:scale-110 transition-transform duration-300">
+                <Icon size={18} />
+            </div>
+            <Icon className="absolute -right-4 -top-4 w-24 h-24 opacity-5 dark:opacity-[0.02] rotate-12 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-0 text-black dark:text-white" />
+        </div>
+
+        <div className="z-10">
+            <p className="text-[11px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-1 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
+                {label}
+            </p>
+            <div className="flex items-baseline gap-1">
+                <span className={`font-bold tracking-tighter text-zinc-900 dark:text-white ${isText ? 'text-xl' : 'text-4xl'}`}>
+                    {value}
+                </span>
+                {suffix && (
+                    <span className="text-sm font-semibold text-zinc-400 dark:text-zinc-500">
+                        {suffix}
+                    </span>
+                )}
+            </div>
+        </div>
+    </motion.div>
+);
+
 const MetaRow = ({ icon, text, isLink }: any) => (
-  <div className="flex items-center gap-3 text-xs font-medium text-gray-500 dark:text-gray-400">
-    <span className="text-gray-300 dark:text-white/20">{icon}</span>
+  <div className="flex items-center gap-3 text-xs font-medium text-zinc-500 dark:text-zinc-400">
+    <span className="text-zinc-300 dark:text-white/20">{icon}</span>
     {isLink ? (
       <a href={text} target="_blank" className="hover:text-black dark:hover:text-white truncate transition-colors">
         {text.replace('https://', '')}

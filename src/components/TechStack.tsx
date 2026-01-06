@@ -41,9 +41,9 @@ export default function TechStack() {
         {/* Minimalist Header */}
         <div className="flex items-center justify-between px-8 py-6">
           <div className="flex items-center gap-3">
-            <h1 className="text-xl font-bold dark:text-white tracking-tighter">Toolkit</h1>
+            <h1 className="text-xl font-bold text-black dark:text-white tracking-tighter">Toolkit</h1>
             <div className="h-1 w-1 rounded-full bg-gray-300" />
-            <p className="text-xs text-gray-400 font-medium">Modern Full Stack & Gen AI</p>
+            <p className="text-xs font-medium text-black dark:text-white">Modern Full Stack & Gen AI</p>
           </div>
           <div className="w-10 h-10 rounded-full bg-gray-50 dark:bg-white/5 flex items-center justify-center dark:text-white border border-gray-100 dark:border-white/5">
             <MdOutlineArrowOutward size={18} />
@@ -93,10 +93,10 @@ function TechIcon({ name, icon }: { name: string; icon: React.ReactNode }) {
       <motion.div
         animate={{
           scale: isHovered ? 1.4 : 1,
-          opacity: isHovered ? 1 : 0.35,
+          opacity: isHovered ? 1 : 0.95,
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="text-3xl text-gray-600 dark:text-gray-400 cursor-default"
+        className="text-3xl text-black dark:text-gray-400 cursor-default"
       >
         {icon}
       </motion.div>

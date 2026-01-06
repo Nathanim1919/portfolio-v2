@@ -1,46 +1,90 @@
+"use client";
+
 import Image from "next/image";
 import me from "../../public/me.jpg";
-import { TbBrandGithub, TbBrandInstagram, TbBrandLinkedin, TbBrandTwitter } from "react-icons/tb";
+import { ArrowDown, Download, MoveRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col items-center justify-center relative md:py-16">
-      <div className="text-center text-2xl md:text-5xl font-bold flex flex-col text-black dark:text-white">
-        <span className="flex items-center justify-center md:gap-2">
-          Hi, I'm
-          <span className="md:mr-2 w-16 md:w-25 inline-block p-1.5 shadow-2xl rounded-2xl md:rounded-4xl">
-            <Image src={me} alt="Nathanim Tadele" className="rounded-2xl md:rounded-3xl w-full h-full object-cover bg-white" />
-          </span>
-          Nathanim Tadele!
-        </span><br />
-        <span className="flex flex-col items-center justify-center gap-2 -mt-8 md:-mt-14">
-          <span className="font-bold">
-            <span className="text-gray-400">I'm a</span> software engineer
-          </span>
-          <span className="font-bold">
-            <span className="text-gray-400">and a</span> founder.
-          </span>
-        </span>
+    <section className=" h-screen w-full flex flex-col items-center justify-center">
+      
+      {/* --- Architectural Grid Background --- */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: `linear-gradient(to right, #808080 1px, transparent 1px), linear-gradient(to bottom, #808080 1px, transparent 1px)`,
+            backgroundSize: '4rem 4rem',
+            maskImage: 'radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)'
+          }} 
+        />
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-around gap-2 w-[90%] md:w-[70%] py-10">
-        <button className="bg-black shadow-2xl cursor-pointer text-white px-4 py-2 rounded-md">
-          Download Resume
-        </button>
-        <div className="flex items-center justify-center gap-6 text-4xl text-gray-500">
-          <span className="hover:text-black transition-all duration-300 cursor-pointer">
-            <TbBrandLinkedin />
-          </span>
-          <span className="hover:text-black transition-all duration-300 cursor-pointer">
-            <TbBrandGithub />
-          </span>
-          <span className="hover:text-black transition-all duration-300 cursor-pointer">
-            <TbBrandTwitter />
-          </span>
-          <span className="hover:text-black transition-all duration-300 cursor-pointer">
-            <TbBrandInstagram />
-          </span>
+
+      <div className="flex flex-col items-center relative z-10 px-4 h-full">
+        
+        {/* Status Badge */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/10">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-400">
+              Open to new opportunities
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Main Heading - Integrated with Image */}
+        <div className="text-center text-4xl md:text-6xl lg:text-7xl font-bold flex flex-col items-center text-zinc-900 dark:text-white leading-tight md:leading-[1.1] mb-12">
+            <span className="flex items-center justify-center gap-3 md:gap-4 flex-wrap">
+              Hi, I'm
+              <motion.div 
+                initial={{ scale: 0, rotate: -10 }}
+                animate={{ scale: 1, rotate: 3 }}
+                transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.2 }}
+                className="relative w-16 h-16 md:w-24 md:h-24 inline-block shadow-2xl rounded-2xl md:rounded-3xl border-4 border-white dark:border-zinc-800 overflow-hidden"
+              >
+                <Image src={me} alt="Nathanim Tadele" fill className="object-cover" />
+              </motion.div>
+              Nathanim!
+            </span>
+            
+            <span className="flex flex-col items-center justify-center mt-2 md:mt-4">
+              <span className="block">
+                <span className="text-zinc-400 dark:text-zinc-600 font-medium">I'm a</span> Software Engineer
+              </span>
+              <span className="block">
+                <span className="text-zinc-400 dark:text-zinc-600 font-medium">and a</span> Founder.
+              </span>
+            </span>
         </div>
+
+        {/* Action Buttons */}
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center"
+        >
+            <button className="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-full font-bold text-sm tracking-wide overflow-hidden transition-transform hover:scale-105">
+                <span>View Projects</span>
+                <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+            
+            <button className="group inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-zinc-100 dark:bg-white/5 text-zinc-900 dark:text-white rounded-full font-bold text-sm tracking-wide border border-zinc-200 dark:border-white/10 hover:bg-zinc-200 dark:hover:bg-white/10 transition-colors">
+                <Download className="w-4 h-4" />
+                <span>Resume</span>
+            </button>
+        </motion.div>
+
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const spaceGrotesk = Space_Grotesk({
-  variable: "--font-geist-sans", // Reusing the variable name to match globals.css or I should update globals.css
+  variable: "--font-geist-sans", 
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -19,11 +20,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${spaceGrotesk.variable} antialiased bg-[#ffffff] text-[#e5e5e5] overflow-hidden`}
+        className={`${spaceGrotesk.variable} antialiased bg-[#f6f4f4] dark:bg-[#050505] text-zinc-900 dark:text-zinc-100 overflow-hidden transition-colors duration-300`}
       >
-        {children}
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
       </body>
     </html>
   );
