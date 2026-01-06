@@ -9,7 +9,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full flex flex-col gap-6 py-8 font-sans">
+    <footer className="w-full flex flex-col gap-6 py-8">
       
       {/* Main Footer Card */}
       <div className="bg-white dark:bg-[#0A0A0A] border border-zinc-200 dark:border-white/10 rounded-[40px] p-8 md:p-12 overflow-hidden relative flex flex-col justify-between min-h-[400px]">
@@ -44,14 +44,14 @@ export const Footer = () => {
                 </h2>
 
                 <div className="flex flex-wrap gap-3 mt-2">
-                    <a href="mailto:contact@nathanim.dev" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-bold tracking-wide hover:scale-105 transition-transform duration-300">
+                    <a href="mailto:nathanim2tadele@gmail.com" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-bold tracking-wide hover:scale-105 transition-transform duration-300">
                         <Mail className="w-4 h-4" />
                         Get in touch
                     </a>
-                    <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-100 dark:bg-white/10 text-zinc-900 dark:text-white text-sm font-bold tracking-wide hover:bg-zinc-200 dark:hover:bg-white/20 transition-colors">
-                        <Copy className="w-4 h-4" />
-                        Copy Email
-                    </button>
+                    <a href="tel:+251942581962" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-zinc-100 dark:bg-white/10 text-zinc-900 dark:text-white text-sm font-bold tracking-wide border border-zinc-200 dark:border-white/10 hover:bg-zinc-200 dark:hover:bg-white/20 transition-colors">
+                        <span className="text-xs">📞</span>
+                        Call me
+                    </a>
                 </div>
             </div>
 
@@ -63,9 +63,9 @@ export const Footer = () => {
                     </h3>
                     <ul className="flex flex-col gap-3">
                         <FooterLink href="https://github.com/Nathanim1919" label="GitHub" />
-                        <FooterLink href="#" label="LinkedIn" />
-                        <FooterLink href="#" label="Twitter / X" />
-                        <FooterLink href="#" label="Instagram" />
+                        <FooterLink href="https://www.linkedin.com/in/nathanim-tadele-762099247/" label="LinkedIn" />
+                        <FooterLink href="https://x.com/NathanimTadele" label="Twitter / X" />
+                        <FooterLink href="https://www.instagram.com/nathan21te/" label="Instagram" />
                     </ul>
                 </div>
                 

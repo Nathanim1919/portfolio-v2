@@ -51,7 +51,7 @@ const GithubActivity = () => {
   if (!profile) return null;
 
   return (
-    <div className="w-full h-full mx-auto font-sans antialiased flex flex-col">
+    <div className="w-full h-full mx-auto antialiased flex flex-col">
       
       {/* --- Minimalist Header --- */}
       <div className="flex items-center justify-between mb-8">

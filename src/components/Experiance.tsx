@@ -40,7 +40,7 @@ export default function Experience() {
     ];
 
     return (
-        <div className="w-full h-full flex flex-col bg-white dark:bg-[#0d1117] p-2 rounded-2xl text-zinc-900 dark:text-zinc-100 overflow-hidden font-sans border border-zinc-200 dark:border-white/10 shadow-sm dark:shadow-none transition-colors duration-300">
+        <div className="w-full h-full flex flex-col bg-white dark:bg-[#0d1117] p-2 rounded-2xl text-zinc-900 dark:text-zinc-100 overflow-hidden border border-zinc-200 dark:border-white/10 shadow-sm dark:shadow-none transition-colors duration-300">
             <div className="bg-zinc-50/50 dark:bg-white/5 w-full h-full rounded-xl flex flex-col border border-zinc-100 dark:border-white/5 overflow-hidden relative">
                 
                 {/* Header */}

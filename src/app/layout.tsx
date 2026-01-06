@@ -3,8 +3,9 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
+
 const spaceGrotesk = Space_Grotesk({
-  variable: "--font-geist-sans", 
+  variable: "--font-space-grotesk", 
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -12,6 +13,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Nathanim",
   description: "Living Mind Portfolio",
+  icons: {
+    icon: "/logo.jpg?v=1",
+    shortcut: "/logo.jpg?v=1",
+    apple: "/logo.jpg?v=1",
+  },
 };
 
 export default function RootLayout({

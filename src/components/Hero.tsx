@@ -22,24 +22,6 @@ export default function Hero() {
       </div>
 
       <div className="flex flex-col items-center relative z-10 px-4 h-full">
-        
-        {/* Status Badge */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/10">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-400">
-              Open to new opportunities
-            </span>
-          </div>
-        </motion.div>
 
         {/* Main Heading - Integrated with Image */}
         <div className="text-center text-4xl md:text-6xl lg:text-7xl font-bold flex flex-col items-center text-zinc-900 dark:text-white leading-tight md:leading-[1.1] mb-12">

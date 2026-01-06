@@ -87,7 +87,7 @@ const GithubCalendar = () => {
   };
 
   return (
-    <div className="p-6 bg-white dark:bg-[#0d1117] border border-gray-200 dark:border-gray-800 rounded-xl font-sans mb-10">
+    <div className="p-6 bg-white dark:bg-[#0d1117] border border-gray-200 dark:border-gray-800 rounded-xl mb-10">
       <h3 className="text-sm font-medium mb-4 text-black dark:text-gray-300">
         {data.total.lastYear.toLocaleString()} contributions in the last year
       </h3>

@@ -50,7 +50,7 @@ export default function Projects() {
     ];
 
     return (
-        <section className="w-full flex flex-col gap-12 py-8 font-sans">
+        <section className="w-full flex flex-col gap-12 py-8">
             
             {/* Header Section */}
             <div className="flex flex-col gap-4 max-w-2xl">

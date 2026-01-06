@@ -36,14 +36,17 @@ export default function Header() {
       <div className="flex items-center gap-6">
         {/* Social Icons */}
         <div className="hidden sm:flex items-center gap-5 text-xl text-zinc-400 dark:text-zinc-500">
-          <a href="#" className="hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-300">
+          <a href="https://www.linkedin.com/in/nathanim-tadele-762099247/" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-300">
             <TbBrandLinkedin />
           </a>
-          <a href="#" className="hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-300">
+          <a href="https://github.com/Nathanim1919" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-300">
             <TbBrandGithub />
           </a>
-          <a href="#" className="hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-300">
+          <a href="https://x.com/NathanimTadele" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-300">
             <TbBrandTwitter />
+          </a>
+          <a href="https://www.instagram.com/nathan21te/" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-300">
+            <TbBrandInstagram />
           </a>
         </div>
 
