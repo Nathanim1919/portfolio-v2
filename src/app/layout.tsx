@@ -18,29 +18,6 @@ export const metadata: Metadata = {
     shortcut: "/logo.jpg?v=1",
     apple: "/logo.jpg?v=1",
   },
-  openGraph: {
-    title: "Nathanim - Full Stack Engineer",
-    description: "Living Mind Portfolio - Showcasing projects, skills, and experience.",
-    url: "https://portfolio-v2-self-gamma.vercel.app/",
-    siteName: "Nathanim Portfolio",
-    images: [
-      {
-        url: "/logo.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Nathanim Portfolio Preview",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Nathanim - Full Stack Engineer",
-    description: "Living Mind Portfolio - Showcasing projects, skills, and experience.",
-    images: ["/logo.jpg"],
-    creator: "@NathanimTadele",
-  },
 };
 
 export default function RootLayout({

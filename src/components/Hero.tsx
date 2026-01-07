@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import me from "../../public/me.jpg";
+import me from "../../public/logo.jpg";
 import { ArrowDown, Download, MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -10,7 +10,7 @@ export default function Hero() {
     <section className=" h-screen w-full flex flex-col items-center justify-center">
       
       {/* --- Architectural Grid Background --- */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none">
+      <div className="absolute inset-0 z-0 opacity-[0.2] dark:opacity-[0.2] pointer-events-none">
         <div 
           className="absolute inset-0" 
           style={{

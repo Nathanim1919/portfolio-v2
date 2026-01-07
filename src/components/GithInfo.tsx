@@ -48,13 +48,13 @@ const GithubActivity = () => {
   }, [profile]);
 
   if (loading) return <div className="w-full h-[400px] rounded-[32px] bg-zinc-50 dark:bg-zinc-900/50 animate-pulse border border-zinc-100 dark:border-zinc-800" />;
-  if (!profile) return null;
+  if (!profile) return null;2
 
   return (
-    <div className="w-full h-full mx-auto antialiased flex flex-col">
+    <div className="w-full mx-auto flex flex-col gap-4">
       
       {/* --- Minimalist Header --- */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
             <div className="p-3 bg-white dark:bg-white/10 rounded-2xl border border-zinc-200 dark:border-white/10 shadow-sm group hover:scale-105 transition-transform duration-300">
                 <Github className="w-6 h-6 text-zinc-900 dark:text-white group-hover:rotate-12 transition-transform" />
@@ -64,12 +64,8 @@ const GithubActivity = () => {
                     Engineering
                 </h2>
                 <div className="flex items-center gap-2">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                    </span>
                     <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
-                        System Online
+                       Github Info
                     </span>
                 </div>
             </div>
@@ -114,7 +110,7 @@ const GithubActivity = () => {
         </div>
 
         {/* 2. Redesigned Stats Cards (Strictly Monochrome) */}
-        <div className="grid md:grid-cols-2 gap-3 h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 h-full">
             
             <StatCard 
                 label="Public Repositories"
@@ -153,7 +149,7 @@ const GithubActivity = () => {
 const StatCard = ({ label, value, icon: Icon, suffix, isText }: any) => (
     <motion.div 
         whileHover={{ y: -2 }}
-        className="bg-zinc-50 dark:bg-white/5 border border-transparent dark:border-white/5 hover:border-zinc-200 dark:hover:border-white/10 rounded-3xl p-5 flex flex-col justify-between relative overflow-hidden group transition-all duration-300 h-[160px]"
+        className="bg-zinc-50 dark:bg-white/5 border border-transparent dark:border-white/5 hover:border-zinc-200 dark:hover:border-white/10 rounded-3xl p-5 flex flex-col justify-between relative overflow-hidden group transition-all duration-300"
     >
         <div className="absolute inset-0 bg-zinc-100/0 group-hover:bg-zinc-100/50 dark:group-hover:bg-white/5 transition-colors duration-500" />
         
