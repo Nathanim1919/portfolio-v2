@@ -12,13 +12,20 @@ export const Footer = () => {
     <footer className="w-full flex flex-col gap-6 py-8">
       
       {/* Main Footer Card */}
-      <div className="bg-white dark:bg-[#0A0A0A] border border-zinc-200 dark:border-white/10 rounded-[40px] p-8 md:p-12 overflow-hidden relative flex flex-col justify-between min-h-[400px]">
+      <div className="bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-[40px] p-8 md:p-12 overflow-hidden relative flex flex-col justify-between min-h-[400px]
+        /* Diamond / Crystal Prism Effect - Intensified Blue (Light) / Silver (Dark) */
+        before:absolute before:inset-0 before:content-[''] before:z-0
+        before:bg-[conic-gradient(from_0deg_at_50%_50%,rgba(56,189,248,0.2)_0deg,transparent_60deg,rgba(56,189,248,0.2)_120deg,transparent_180deg,rgba(56,189,248,0.2)_240deg,transparent_300deg,rgba(56,189,248,0.2)_360deg)]
+        dark:before:bg-[conic-gradient(from_0deg_at_50%_50%,rgba(161,161,170,0.05)_0deg,transparent_60deg,rgba(161,161,170,0.05)_120deg,transparent_180deg,rgba(161,161,170,0.05)_240deg,transparent_300deg,rgba(161,161,170,0.05)_360deg)]
         
-        {/* Background Texture */}
-        <div className="absolute inset-0 opacity-40 dark:opacity-20 pointer-events-none mix-blend-overlay"
-             style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\' opacity=\'0.1\'/%3E%3C/svg%3E")' }} 
-        />
+        after:absolute after:inset-0 after:content-[''] after:z-0
+        after:bg-[radial-gradient(circle_at_50%_-20%,rgba(56,189,248,0.4),transparent_40%),radial-gradient(circle_at_50%_120%,rgba(56,189,248,0.2),transparent_40%)]
+        dark:after:bg-[radial-gradient(circle_at_50%_-20%,rgba(255,255,255,0.1),transparent_40%),radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.05),transparent_40%)]
+      ">
         
+        {/* Shimmer / Sparkle Overlay */}
+        <div className="absolute inset-0 z-0 opacity-30 dark:opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-150 contrast-150 mix-blend-overlay pointer-events-none" />
+
         {/* Top Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
             

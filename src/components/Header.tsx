@@ -16,8 +16,13 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="flex items-center justify-between w-full text-zinc-900 dark:text-zinc-100 px-4 py-4 sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-black/50 border-b border-zinc-200/50 dark:border-white/5 supports-backdrop-filter:bg-white/60 rounded-full">
-      <div className="flex items-center gap-3">
+    <header className="flex items-center justify-between w-full text-zinc-900 dark:text-zinc-100 px-4 py-2 sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-black/50 border-b border-zinc-200/50 dark:border-white/5 supports-backdrop-filter:bg-white/60 rounded-full
+    /* Minimal Strike Effect */
+    before:absolute before:inset-0 before:w-full before:h-full before:content-[''] before:z-0 before:pointer-events-none
+    before:bg-[linear-gradient(110deg,transparent_25%,rgba(56,189,248,0.05)_45%,transparent_50%,rgba(56,189,248,0.1)_50%,transparent_55%)]
+    dark:before:bg-[linear-gradient(110deg,transparent_25%,rgba(161,161,170,0.05)_45%,transparent_50%,rgba(161,161,170,0.1)_50%,transparent_55%)]
+    ">
+      <div className="flex items-center gap-3 relative z-10">
         <div className="relative group">
           <div className="absolute -inset-1 bg-linear-to-r from-zinc-200 to-zinc-400 dark:from-zinc-800 dark:to-zinc-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
           <Image 
@@ -33,7 +38,7 @@ export default function Header() {
         </span>
       </div>
       
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 relative z-10">
         {/* Social Icons */}
         <div className="hidden sm:flex items-center gap-5 text-xl text-zinc-400 dark:text-zinc-500">
           <a href="https://www.linkedin.com/in/nathanim-tadele-762099247/" target="_blank" rel="noopener noreferrer" className="hover:text-black dark:hover:text-white hover:scale-110 transition-all duration-300">

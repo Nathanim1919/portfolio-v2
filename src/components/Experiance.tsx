@@ -40,8 +40,24 @@ export default function Experience() {
     ];
 
     return (
-        <div className="w-full h-full flex flex-col bg-white dark:bg-[#0d1117] p-2 rounded-2xl text-zinc-900 dark:text-zinc-100 overflow-hidden border border-zinc-200 dark:border-white/10 shadow-sm dark:shadow-none transition-colors duration-300">
-            <div className="bg-zinc-50/50 dark:bg-white/5 w-full h-full rounded-xl flex flex-col border border-zinc-100 dark:border-white/5 overflow-hidden relative">
+        <div className="w-full h-full flex flex-col bg-white dark:bg-[#0d1117] p-2 rounded-2xl text-zinc-900 dark:text-zinc-100 overflow-hidden border border-zinc-200 dark:border-white/10 shadow-sm dark:shadow-none transition-colors duration-300 relative
+            /* Sun Glow Effect - Blue (Light Mode) / Silver (Dark Mode) */
+            before:absolute before:-top-[30%] before:-left-[10%] before:w-[80%] before:h-[150%] before:content-[''] 
+            before:bg-[radial-gradient(circle,rgba(56,189,248,0.2),transparent_70%)] dark:before:bg-[radial-gradient(circle,rgba(161,161,170,0.3),transparent_70%)]
+            before:blur-[100px] before:rotate-[-10deg] before:z-0
+            
+            /* Sun Rays / Streaks - Blue (Light Mode) / Silver (Dark Mode) */
+            after:absolute after:inset-0 after:content-[''] 
+            after:bg-[linear-gradient(110deg,transparent_30%,rgba(56,189,248,0.15)_40%,transparent_42%,rgba(56,189,248,0.1)_45%,transparent_48%,rgba(56,189,248,0.05)_55%,transparent_100%)]
+            dark:after:bg-[linear-gradient(110deg,transparent_30%,rgba(161,161,170,0.3)_40%,transparent_42%,rgba(161,161,170,0.2)_45%,transparent_48%,rgba(161,161,170,0.15)_55%,transparent_100%)]
+            after:z-0
+        ">
+            {/* Animated Scanner/Strike Line */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-sky-400/10 dark:via-zinc-400/10 to-transparent skew-x-12 animate-[shimmer_8s_infinite]" />
+            </div>
+
+            <div className="bg-zinc-50/50 dark:bg-white/5 w-full h-full rounded-xl flex flex-col border border-zinc-100 dark:border-white/5 overflow-hidden relative z-10">
                 
                 {/* Header */}
                 <div className="flex items-center justify-between w-full px-6 py-5 z-10 bg-white/80 dark:bg-[#0d1117]/80 backdrop-blur-sm sticky top-0 border-b border-zinc-100 dark:border-white/5">

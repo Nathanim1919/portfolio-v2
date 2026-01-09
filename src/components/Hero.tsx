@@ -7,21 +7,21 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className=" h-screen w-full flex flex-col items-center justify-center">
+    <section className="relative w-full shrink-0 min-h-[80vh] flex flex-col items-center justify-center rounded-3xl border border-zinc-200 dark:border-zinc-900 overflow-hidden bg-zinc-50 dark:bg-zinc-950/50
+    /* Sun Glow Effect - Blue (Light Mode) / Silver (Dark Mode) */
+    before:absolute before:-top-[30%] before:-left-[10%] before:w-[80%] before:h-[150%] before:content-[''] 
+    before:bg-[radial-gradient(circle,rgba(56,189,248,0.2),transparent_70%)] dark:before:bg-[radial-gradient(circle,rgba(161,161,170,0.3),transparent_70%)]
+    before:blur-[100px] before:rotate-[-10deg] before:z-0
+    
+    /* Sun Rays / Streaks - Blue (Light Mode) / Silver (Dark Mode) */
+    after:absolute after:inset-0 after:content-[''] 
+    after:bg-[linear-gradient(110deg,transparent_30%,rgba(56,189,248,0.15)_40%,transparent_42%,rgba(56,189,248,0.1)_45%,transparent_48%,rgba(56,189,248,0.05)_55%,transparent_100%)]
+    dark:after:bg-[linear-gradient(110deg,transparent_30%,rgba(161,161,170,0.3)_40%,transparent_42%,rgba(161,161,170,0.2)_45%,transparent_48%,rgba(161,161,170,0.15)_55%,transparent_100%)]
+    after:z-0
+    ">
       
-      {/* --- Architectural Grid Background --- */}
-      <div className="absolute inset-0 z-0 opacity-[0.2] dark:opacity-[0.2] pointer-events-none">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: `linear-gradient(to right, #808080 1px, transparent 1px), linear-gradient(to bottom, #808080 1px, transparent 1px)`,
-            backgroundSize: '4rem 4rem',
-            maskImage: 'radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)'
-          }} 
-        />
-      </div>
 
-      <div className="flex flex-col items-center relative z-10 px-4 h-full">
+      <div className="flex flex-col items-center relative z-10 px-4 dark:bg-black/20 w-full h-full py-10 backdrop-blur-md">
 
         {/* Main Heading - Integrated with Image */}
         <div className="text-center text-4xl md:text-6xl lg:text-7xl font-bold flex flex-col items-center text-zinc-900 dark:text-white leading-tight md:leading-[1.1] mb-12">

@@ -9,17 +9,20 @@ import TechStack from "@/components/TechStack";
 
 export default function Home() {
   return (
-    <div className="w-full md:w-[70%] flex flex-col gap-10 mx-auto h-screen scroll-smooth scroll-behavior-smooth overflow-y-scroll scrollbar-hide p-2">
-      <Header />
-      <Hero />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-start py-10">
-      <Experiance />
-      <TechStack />
+    <div className="w-full h-full">
+
+      <div className="w-full md:w-[70%] flex flex-col gap-4 mx-auto h-screen scroll-smooth scroll-behavior-smooth overflow-y-scroll scrollbar-hide p-2">
+        <Header />
+        <Hero />
+        <GithubActivity />
+        <GithubCalendar />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 place-items-start">
+          <Experiance />
+          <TechStack />
+        </div>
+        <Projects />
+        <Footer />
       </div>
-      <GithubActivity />
-      <GithubCalendar />
-      <Projects/>
-      <Footer />
     </div>
   );
 }

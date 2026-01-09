@@ -86,8 +86,14 @@ const GithubActivity = () => {
       <div className="grid md:grid-cols-[.5fr_1fr] gap-4">
         
         {/* 1. Profile Card (Monochrome) */}
-        <div className="bg-white dark:bg-[#0d1117] border border-zinc-200 dark:border-white/10 rounded-[32px] p-6 flex flex-col justify-between group h-full relative overflow-hidden">
-          <div>
+        <div className="bg-white dark:bg-[#0d1117] border border-zinc-200 dark:border-white/10 rounded-[32px] p-6 flex flex-col justify-between group h-full relative overflow-hidden
+          /* Sun Rays Effect - Intensified Blue (Light) / Silver (Dark) */
+          after:absolute after:inset-0 after:content-[''] 
+          after:bg-[linear-gradient(110deg,transparent_30%,rgba(56,189,248,0.3)_40%,transparent_42%,rgba(56,189,248,0.2)_45%,transparent_48%,rgba(56,189,248,0.15)_55%,transparent_100%)]
+          dark:after:bg-[linear-gradient(110deg,transparent_30%,rgba(161,161,170,0.1)_40%,transparent_42%,rgba(161,161,170,0.05)_45%,transparent_48%,rgba(161,161,170,0.02)_55%,transparent_100%)]
+          after:z-0
+        ">
+          <div className="relative z-10">
             <div className="relative inline-block">
               <img src={profile.avatar_url} className="w-20 h-20 rounded-3xl object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="avatar" />
               {profile.hireable && (
@@ -103,7 +109,7 @@ const GithubActivity = () => {
             </p>
           </div>
           
-          <div className="pt-6 border-t border-zinc-100 dark:border-white/5 space-y-3 mt-4">
+          <div className="pt-6 border-t border-zinc-100 dark:border-white/5 space-y-3 mt-4 relative z-10">
             <MetaRow icon={<MapPin size={14}/>} text={profile.location} />
             <MetaRow icon={<LinkIcon size={14}/>} text={profile.blog} isLink />
           </div>
@@ -149,18 +155,24 @@ const GithubActivity = () => {
 const StatCard = ({ label, value, icon: Icon, suffix, isText }: any) => (
     <motion.div 
         whileHover={{ y: -2 }}
-        className="bg-zinc-50 dark:bg-white/5 border border-transparent dark:border-white/5 hover:border-zinc-200 dark:hover:border-white/10 rounded-3xl p-5 flex flex-col justify-between relative overflow-hidden group transition-all duration-300"
+        className="bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 rounded-3xl p-5 flex flex-col justify-between relative overflow-hidden group transition-all duration-300 shadow-sm hover:shadow-md
+        /* Sun Rays Effect - Intensified Blue (Light) / Silver (Dark) */
+        after:absolute after:inset-0 after:content-[''] 
+        after:bg-[linear-gradient(110deg,transparent_30%,rgba(56,189,248,0.3)_40%,transparent_42%,rgba(56,189,248,0.2)_45%,transparent_48%,rgba(56,189,248,0.15)_55%,transparent_100%)]
+        dark:after:bg-[linear-gradient(110deg,transparent_30%,rgba(161,161,170,0.1)_40%,transparent_42%,rgba(161,161,170,0.05)_45%,transparent_48%,rgba(161,161,170,0.02)_55%,transparent_100%)]
+        after:z-0
+        "
     >
-        <div className="absolute inset-0 bg-zinc-100/0 group-hover:bg-zinc-100/50 dark:group-hover:bg-white/5 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-zinc-100/50 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         
         <div className="flex justify-between items-start z-10">
             <div className="p-2 rounded-xl bg-white dark:bg-white/10 text-zinc-900 dark:text-white shadow-sm ring-1 ring-zinc-100 dark:ring-white/5 group-hover:scale-110 transition-transform duration-300">
                 <Icon size={18} />
             </div>
-            <Icon className="absolute -right-4 -top-4 w-24 h-24 opacity-5 dark:opacity-[0.02] rotate-12 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-0 text-black dark:text-white" />
+            <Icon className="absolute -right-4 -top-4 w-24 h-24 opacity-[0.03] dark:opacity-[0.02] rotate-12 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-0 text-black dark:text-white" />
         </div>
 
-        <div className="z-10">
+        <div className="z-10 mt-6">
             <p className="text-[11px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-1 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors">
                 {label}
             </p>

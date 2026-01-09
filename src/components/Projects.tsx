@@ -90,6 +90,12 @@ const ProjectCard = ({ project, index }: { project: any, index: number }) => {
                 rounded-3xl p-6 md:p-8 h-[320px]
                 overflow-hidden hover:border-zinc-300 dark:hover:border-white/20 transition-colors
                 ${project.featured ? 'md:col-span-2' : 'col-span-1'}
+                
+                /* Sun Rays Effect - Intensified Blue (Light) / Silver (Dark) */
+                after:absolute after:inset-0 after:content-[''] 
+                after:bg-[linear-gradient(110deg,transparent_30%,rgba(56,189,248,0.3)_40%,transparent_42%,rgba(56,189,248,0.2)_45%,transparent_48%,rgba(56,189,248,0.15)_55%,transparent_100%)]
+                dark:after:bg-[linear-gradient(110deg,transparent_30%,rgba(161,161,170,0.1)_40%,transparent_42%,rgba(161,161,170,0.05)_45%,transparent_48%,rgba(161,161,170,0.02)_55%,transparent_100%)]
+                after:z-0
             `}
         >
             {/* Background Gradient for Featured */}
